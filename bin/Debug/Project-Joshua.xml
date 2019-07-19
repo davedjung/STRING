@@ -1,0 +1,73 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Project-Joshua
+</name>
+</assembly>
+<members>
+<member name="T:Project_Joshua.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Project_Joshua.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Project_Joshua.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Project_Joshua.My.Resources.Resources.MAT_DATA">
+<summary>
+  Looks up a localized string similar to .
+</summary>
+</member>
+<member name="P:Project_Joshua.My.Resources.Resources.OPTION_DATA">
+<summary>
+  Looks up a localized string similar to XSLIB
+E71JD40#E71#E70#E68
+DEPLIB
+E71JD40#E71#E70#E68
+KAPPALIB
+OTF
+DET
+92235 FISSION 45103 CAPTURE
+ON
+RUP#HOMADF#RESTART#STN#THE
+CRI
+1
+BRANCH
+0#1#2#3#4
+END OF FILE.
+</summary>
+</member>
+<member name="P:Project_Joshua.My.Resources.Resources.OPTION_SETTING">
+<summary>
+  Looks up a localized string similar to XSLIB
+ENDF/B-VII.1 &amp; JENDL-4.0 [Default]#ENDF/B-VII.1#ENDF/B-VII.0#ENDF/B-VI.8
+DEPLIB
+ENDF/B-VII.1 &amp; JENDL-4.0 [Default]#ENDF/B-VII.1#ENDF/B-VII.0#ENDF/B-VI.8
+KAPPALIB
+OTF
+DET
+92235 FISSION 45103 CAPTURE
+CRI
+1
+BRANCH
+0#1#2 [Default]#3#4
+H2O
+
+700.0
+DEP
+36.85
+80
+END OF FILE.
+</summary>
+</member>
+</members>
+</doc>

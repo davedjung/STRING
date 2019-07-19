@@ -1,0 +1,55 @@
+UO2
+Fuel gram density (g/cc)#U-235 Enrichment (weight %)# 
+10.1# # 
+GAP
+Material# # 
+AIR# # 
+GAD
+Fuel gram density (g/cc)#U-235 Enrichment (weight %)#Gd2O3 Content (weight %)
+10.1# # 
+ERB
+Fuel gram density (g/cc)#U-235 Enrichment (weight %)#Er2O3 Content (weight %)
+10.1# # 
+PYREX
+Gram density (g/cc)#B2O3 Content (weight %)# 
+2.25#12.5# 
+COO
+Coolant temperature (K)#Boron concentration (ppm)# 
+ #700.0# 
+ZIR2
+Gram density (g/cc)# # 
+6.55# # 
+ZIR4
+Gram density (g/cc)# # 
+6.55# # 
+ZIRLO
+Gram density (g/cc)# # 
+6.55# # 
+SS347
+Gram density (g/cc)# # 
+7.90# # 
+SS304
+Gram density (g/cc)# # 
+7.90# # 
+ICN718
+Gram density (g/cc)# # 
+8.25# # 
+ICN750
+Gram density (g/cc)# # 
+8.25# # 
+ICN 625
+Gram density (g/cc)# # 
+8.47# # 
+B4C
+Gram density (g/cc)# # 
+1.76# # 
+AIR
+Gram density (g/cc)# # 
+0.001
+ERNAT
+Gram density (g/cc)# # 
+9.066# # 
+HFB2
+Gram density (g/cc)# # 
+10.5# # 
+END OF FILE
