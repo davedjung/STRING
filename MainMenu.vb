@@ -106,6 +106,17 @@
 
     Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
 
+        Dim fileIndex As Integer
+        fileIndex = lbxFileList.SelectedIndex
+        Dim targetFile As File
+        targetFile = fileList(fileIndex)
+        Select Case targetFile.getFileType
+            Case 0
+                LINK_OPTION.setFileIndex(fileIndex)
+                LINK_OPTION.Show()
+        End Select
+
+
     End Sub
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click

@@ -38,13 +38,33 @@ Public Class LINK_OPTION
         If control.SelectedIndex = -1 Then control.SelectedIndex = 0
     End Sub
 
+
+
+
+
+    Private Sub BtnBRANCHHelp_Click(sender As Object, e As EventArgs) Handles btnBRANCHHelp.Click
+
+        Dim information As String
+        information = "0: User creates branch cases manually" & vbNewLine
+        information = information & "1: Hot-state full case matrix created with coolant temperature of +-20K change without rod insertion" & vbNewLine
+        information = information & "2: Hot-state full case matrix created with coolant temperature of +-20K change [Default]" & vbNewLine
+        information = information & "3: Hot-state full case matrix created with coolant temperature of +-25K change" & vbNewLine
+        information = information & "4: Cold-state full case matrix created"
+
+        MessageBox.Show(information, "Branch calculation options")
+
+    End Sub
     Private Sub BtnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
 
         initialization()
         If fileIndex <> -1 Then loadConfiguration()
 
     End Sub
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
 
+        Me.Close()
+
+    End Sub
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
 
@@ -79,26 +99,6 @@ Public Class LINK_OPTION
 
     End Sub
 
-    Private Sub BtnBRANCHHelp_Click(sender As Object, e As EventArgs) Handles btnBRANCHHelp.Click
-
-        Dim information As String
-        information = "0: User creates branch cases manually" & vbNewLine
-        information = information & "1: Hot-state full case matrix created with coolant temperature of +-20K change without rod insertion" & vbNewLine
-        information = information & "2: Hot-state full case matrix created with coolant temperature of +-20K change [Default]" & vbNewLine
-        information = information & "3: Hot-state full case matrix created with coolant temperature of +-25K change" & vbNewLine
-        information = information & "4: Cold-state full case matrix created"
-
-        MessageBox.Show(information, "Branch calculation options")
-
-    End Sub
-
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-
-        Me.Close()
-
-    End Sub
-
-
 
 
 
@@ -118,7 +118,6 @@ Public Class LINK_OPTION
     Public Sub setFileIndex(index As Integer)
         Me.fileIndex = index
     End Sub
-
     Private Sub initialization()
 
         cbxXSLIB.Items.Clear()
@@ -171,7 +170,7 @@ Public Class LINK_OPTION
     End Sub
     Private Sub loadConfiguration()
 
-        Dim saveFile '= DirectCast(Menu.fileList(editFile), OptionFile)
+        Dim saveFile = DirectCast(MainMenu.getFile(fileIndex), OptionFile)
 
         cbxXSLIB.SelectedIndex = saveFile.getXSLIB()
         cbxDEPLIB.SelectedIndex = saveFile.getDEPLIB()
@@ -197,24 +196,5 @@ Public Class LINK_OPTION
         lblTitle.Text = saveFile.getFileName & " Configurator"
 
     End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 End Class

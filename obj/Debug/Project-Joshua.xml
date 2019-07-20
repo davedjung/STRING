@@ -24,7 +24,32 @@ Project-Joshua
 </member>
 <member name="P:Project_Joshua.My.Resources.Resources.MAT_DATA">
 <summary>
-  Looks up a localized string similar to .
+  Looks up a localized string similar to UO2
+Fuel gram density (g/cc)#U-235 Enrichment (weight %)# 
+10.1# # 
+GAP
+Material# # 
+AIR# # 
+GAD
+Fuel gram density (g/cc)#U-235 Enrichment (weight %)#Gd2O3 Content (weight %)
+10.1# # 
+ERB
+Fuel gram density (g/cc)#U-235 Enrichment (weight %)#Er2O3 Content (weight %)
+10.1# # 
+PYREX
+Gram density (g/cc)#B2O3 Content (weight %)# 
+2.25#12.5# 
+COO
+Coolant temperature (K)#Boron concentration (ppm)# 
+ #700.0# 
+ZIR2
+Gram density (g/cc)# # 
+6.55# # 
+ZIR4
+Gram density (g/cc)# # 
+6.55# # 
+ZIRLO
+ [rest of string was truncated]&quot;;.
 </summary>
 </member>
 <member name="P:Project_Joshua.My.Resources.Resources.OPTION_DATA">
