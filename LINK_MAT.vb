@@ -76,6 +76,19 @@ Public Class LINK_MAT
 
     Private Sub BtnMATGenerateMaterial_Click(sender As Object, e As EventArgs) Handles btnMATGenerateMaterial.Click
 
+        If Not IsNumeric(txtMATOption1.Text) Then
+            MessageBox.Show("Inappropriate value detected", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtMATOption2.Text) Then
+            MessageBox.Show("Inappropriate value detected", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtMATOption3.Text) Then
+            MessageBox.Show("Inappropriate value detected", "Error")
+            Exit Sub
+        End If
+
         Dim materialName As String
         Dim identifier As String
         materialName = txtMATMaterialName.Text
@@ -163,6 +176,27 @@ Public Class LINK_MAT
     End Sub
     Private Sub BtnMATAddCustomElement_Click(sender As Object, e As EventArgs) Handles btnMATAddCustomElement.Click
 
+        If txtMATMaterialNameCustom.Text = "" Then
+            MessageBox.Show("Missing Material Name", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtMATAtomicNumber.Text) Then
+            MessageBox.Show("Atomic Number is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtMATMassNumber.Text) Then
+            MessageBox.Show("Mass Number is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtMATNumberDensity.Text) Then
+            MessageBox.Show("Number Density is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtMATNumberDensityE.Text) Then
+            MessageBox.Show("Number Density Exponent is not a number", "Error")
+            Exit Sub
+        End If
+
         If txtMATMaterialNameCustom.Enabled Then
             Dim materialName = txtMATMaterialNameCustom.Text
             Dim identifier = materialName
@@ -231,6 +265,19 @@ Public Class LINK_MAT
     End Sub
     Private Sub BtnHOMOAddMaterial_Click(sender As Object, e As EventArgs) Handles btnHOMOAddMaterial.Click
 
+        If txtHOMOHomoMaterialName.Text = "" Then
+            MessageBox.Show("Missing Homogeneous Material Name", "Error")
+            Exit Sub
+        End If
+        If txtHOMOMaterialName.Text = "" Then
+            MessageBox.Show("Missing Material Name", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtHOMOFraction.Text) Then
+            MessageBox.Show("Fraction for Mixture is not a number", "Error")
+            Exit Sub
+        End If
+
         If txtHOMOHomoMaterialName.Enabled Then
             Dim homoName = txtHOMOHomoMaterialName.Text
             Dim newHomoMaterial = New Homogeneous(homoName)
@@ -238,7 +285,7 @@ Public Class LINK_MAT
         End If
 
         Dim composition As String
-        composition = txtHOMOMaterialName.Text & " " & txtHOMOFraction.Text
+        composition = txtHOMOMaterialName.Text & " " & Format(CDbl(txtHOMOFraction.Text), "0.000")
         homoOfInterest.addComposition(composition)
 
         lbxHOMOMaterial.Items.Clear()
