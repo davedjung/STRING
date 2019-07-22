@@ -76,15 +76,15 @@ Public Class LINK_MAT
 
     Private Sub BtnMATGenerateMaterial_Click(sender As Object, e As EventArgs) Handles btnMATGenerateMaterial.Click
 
-        If Not IsNumeric(txtMATOption1.Text) Then
+        If txtMATOption1.Enabled And Not IsNumeric(txtMATOption1.Text) Then
             MessageBox.Show("Inappropriate value detected", "Error")
             Exit Sub
         End If
-        If Not IsNumeric(txtMATOption2.Text) Then
+        If txtMATOption2.Enabled And Not IsNumeric(txtMATOption2.Text) Then
             MessageBox.Show("Inappropriate value detected", "Error")
             Exit Sub
         End If
-        If Not IsNumeric(txtMATOption3.Text) Then
+        If txtMATOption3.Enabled And Not IsNumeric(txtMATOption3.Text) Then
             MessageBox.Show("Inappropriate value detected", "Error")
             Exit Sub
         End If
@@ -428,9 +428,9 @@ Public Class LINK_MAT
 
         saveFile.removeHomo(index)
 
-        lbxHOMOMaterial.Items.Clear()
+        lbxHOMOHomoMaterial.Items.Clear()
         Dim homoList() = saveFile.getAllHomogeneous()
-        If Not IsNothing(homoList(0)) Then
+        If Not homoList.Length() = 0 Then
             For i = 0 To homoList.Length() - 1 Step 1
                 lbxHOMOHomoMaterial.Items.Add(homoList(i).getName())
             Next
@@ -590,16 +590,24 @@ Public Class LINK_MAT
     Private Sub loadConfiguration()
 
         Dim materialList = saveFile.getAllMaterial()
-        For i = 0 To materialList.Length() - 1 Step 1
-            lbxMAT.Items.Add(materialList(i).getIdentifier())
-        Next
+        If Not materialList.Length() = 0 Then
+            If Not IsNothing(materialList(0)) Then
+                For i = 0 To materialList.Length() - 1 Step 1
+                    lbxMAT.Items.Add(materialList(i).getIdentifier())
+                Next
+            End If
+        End If
 
         Dim homoList = saveFile.getAllHomogeneous()
-        For i = 0 To homoList.Length() - 1 Step 1
-            lbxHOMOHomoMaterial.Items.Add(homoList(i).getName())
-        Next
+        If Not homoList.Length() = 0 Then
+            If Not IsNothing(homoList(0)) Then
+                For i = 0 To homoList.Length() - 1 Step 1
+                    lbxHOMOHomoMaterial.Items.Add(homoList(i).getName())
+                Next
+            End If
+        End If
 
-        Dim databaseFile As String = My.Resources.MAT_DATA
+            Dim databaseFile As String = My.Resources.MAT_DATA
         Dim line As String
         Dim reader As TextReader = New StringReader(databaseFile)
         line = reader.ReadLine
