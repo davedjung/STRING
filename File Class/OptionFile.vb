@@ -10,10 +10,10 @@ Public Class OptionFile
     Private ONstatus() As Boolean
     Private CRI As Integer 'Index
     Private BRANCH As Integer 'Index
-    Private H2OTemp As Double 'Format(,"0.0")
-    Private H2OBoron As Double 'Format(,"0.0")
-    Private DEPPower As Double 'Format(,"0.00")
-    Private DEPBurnup As Double ' Format(,"0.0")
+    Private H2OTemp As String 'Format(,"0.0")
+    Private H2OBoron As String 'Format(,"0.0")
+    Private DEPPower As String 'Format(,"0.00")
+    Private DEPBurnup As String ' Format(,"0.0")
 
     Sub New(ByVal fileName As String)
         Me.fileName = fileName
@@ -40,16 +40,16 @@ Public Class OptionFile
     Public Function getBRANCH() As Integer
         Return Me.BRANCH
     End Function
-    Public Function getH2OTemp() As Double
+    Public Function getH2OTemp() As String
         Return Me.H2OTemp
     End Function
-    Public Function getH2OBoron() As Double
+    Public Function getH2OBoron() As String
         Return Me.H2OBoron
     End Function
-    Public Function getDEPPower() As Double
+    Public Function getDEPPower() As String
         Return Me.DEPPower
     End Function
-    Public Function getDEPBurnup() As Integer
+    Public Function getDEPBurnup() As String
         Return Me.DEPBurnup
     End Function
     Public Sub setXSLIB(XSLIB As Integer)

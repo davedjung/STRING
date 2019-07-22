@@ -114,6 +114,15 @@
             Case 0
                 LINK_OPTION.setFileIndex(fileIndex)
                 LINK_OPTION.Show()
+            Case 1
+                LINK_MAT.setFileIndex(fileIndex)
+                LINK_MAT.Show()
+            Case 2
+                Assem.setFileIndex(fileIndex)
+                LINK_MAT.Show()
+            Case 3
+                LINK_FA.setFileIndex(fileIndex)
+                LINK_FA.Show()
         End Select
 
 

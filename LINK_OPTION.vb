@@ -37,11 +37,7 @@ Public Class LINK_OPTION
         Next
         If control.SelectedIndex = -1 Then control.SelectedIndex = 0
     End Sub
-
-
-
-
-
+          
     Private Sub BtnBRANCHHelp_Click(sender As Object, e As EventArgs) Handles btnBRANCHHelp.Click
 
         Dim information As String
@@ -67,6 +63,22 @@ Public Class LINK_OPTION
     End Sub
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
+        If Not IsNumeric(txtH2OTemp.Text) Then
+            MessageBox.Show("Moderator Inlet Temperature is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtH2OBoron.Text) Then
+            MessageBox.Show("Boron Concentration is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtDEPPower.Text) Then
+            MessageBox.Show("Power Density is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtDEPBurnup.Text) Then
+            MessageBox.Show("Final Burnup is not a number", "Error")
+            Exit Sub
+        End If
 
         saveFile.setXSLIB(cbxXSLIB.SelectedIndex)
         saveFile.setDEPLIB(cbxDEPLIB.SelectedIndex)

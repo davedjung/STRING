@@ -154,6 +154,12 @@ Public Class LINK_MAT
             line = reader.ReadLine
         Loop
 
+        If lbxMAT.Items.Count = 0 Then
+            btnMATRemoveMaterial.Enabled = False
+        Else
+            btnMATRemoveMaterial.Enabled = True
+        End If
+
     End Sub
     Private Sub BtnMATAddCustomElement_Click(sender As Object, e As EventArgs) Handles btnMATAddCustomElement.Click
 
@@ -187,6 +193,14 @@ Public Class LINK_MAT
         txtMATNumberDensity.Text = ""
         txtMATNumberDensityE.Text = ""
 
+        If lbxMATCustom.Items.Count = 0 Then
+            btnMATRemoveElement.Enabled = False
+            btnMATGenerateCustomMaterial.Enabled = False
+        Else
+            btnMATRemoveElement.Enabled = True
+            btnMATGenerateCustomMaterial.Enabled = True
+        End If
+
     End Sub
     Private Sub BtnMATGenerateCustomMaterial_Click(sender As Object, e As EventArgs) Handles btnMATGenerateCustomMaterial.Click
 
@@ -205,6 +219,14 @@ Public Class LINK_MAT
         Next
 
         lbxMATCustom.Items.Clear()
+
+        If lbxMATCustom.Items.Count = 0 Then
+            btnMATRemoveElement.Enabled = False
+            btnMATGenerateCustomMaterial.Enabled = False
+        Else
+            btnMATRemoveElement.Enabled = True
+            btnMATGenerateCustomMaterial.Enabled = True
+        End If
 
     End Sub
     Private Sub BtnHOMOAddMaterial_Click(sender As Object, e As EventArgs) Handles btnHOMOAddMaterial.Click
@@ -230,6 +252,14 @@ Public Class LINK_MAT
         txtHOMOMaterialName.Text = ""
         txtHOMOFraction.Text = ""
 
+        If lbxHOMOMaterial.Items.Count = 0 Then
+            btnHOMORemoveMaterial.Enabled = False
+            btnHOMOGenerateHomoMaterial.Enabled = False
+        Else
+            btnHOMORemoveMaterial.Enabled = True
+            btnHOMOGenerateHomoMaterial.Enabled = True
+        End If
+
     End Sub
     Private Sub BtnHOMOGenerateHomoMaterial_Click(sender As Object, e As EventArgs) Handles btnHOMOGenerateHomoMaterial.Click
 
@@ -246,9 +276,28 @@ Public Class LINK_MAT
 
         lbxHOMOMaterial.Items.Clear()
 
+        If lbxHOMOMaterial.Items.Count = 0 Then
+            btnHOMORemoveMaterial.Enabled = False
+            btnHOMOGenerateHomoMaterial.Enabled = False
+        Else
+            btnHOMORemoveMaterial.Enabled = True
+            btnHOMOGenerateHomoMaterial.Enabled = True
+        End If
+
+        If lbxHOMOHomoMaterial.Items.Count = 0 Then
+            btnHOMORemoveHomoMaterial.Enabled = False
+        Else
+            btnHOMORemoveHomoMaterial.Enabled = True
+        End If
+
     End Sub
 
     Private Sub BtnMATRemoveMaterial_Click(sender As Object, e As EventArgs) Handles btnMATRemoveMaterial.Click
+
+        If lbxMAT.SelectedIndex = -1 Then
+            MessageBox.Show("No material selected", "Error")
+            Exit Sub
+        End If
 
         Dim index = lbxMAT.SelectedIndex
 
@@ -256,14 +305,39 @@ Public Class LINK_MAT
 
         lbxMAT.Items.Clear()
         Dim materialList() = saveFile.getAllMaterial()
-        If Not IsNothing(materialList(0)) Then
+        If Not materialList.Length() = 0 Then
             For i = 0 To materialList.Length() - 1 Step 1
                 lbxMAT.Items.Add(materialList(i).getIdentifier())
             Next
         End If
 
+        If lbxMAT.Items.Count = 0 Then
+            btnMATRemoveMaterial.Enabled = False
+        Else
+            btnMATRemoveMaterial.Enabled = True
+        End If
+
     End Sub
     Private Sub BtnMATRemoveElement_Click(sender As Object, e As EventArgs) Handles btnMATRemoveElement.Click
+
+        If lbxMATCustom.SelectedIndex = -1 Then
+            MessageBox.Show("No element selected", "Error")
+            Exit Sub
+        ElseIf lbxMATCustom.SelectedIndex = 0 Then
+            lbxMATCustom.Items.Clear()
+            If lbxMATCustom.Items.Count = 0 Then
+                btnMATRemoveElement.Enabled = False
+                btnMATGenerateCustomMaterial.Enabled = False
+            Else
+                btnMATRemoveElement.Enabled = True
+                btnMATGenerateCustomMaterial.Enabled = True
+            End If
+            txtMATMaterialNameCustom.Enabled = True
+            txtMATMaterialNameCustom.Text = ""
+            chkMATMaterialBURN.Enabled = True
+            chkMATMaterialBURN.Checked = False
+            Exit Sub
+        End If
 
         Dim index = lbxMATCustom.SelectedIndex - 1
 
@@ -271,7 +345,13 @@ Public Class LINK_MAT
 
         lbxMATCustom.Items.Clear()
         Dim elementList() = materialOfInterest.getAllComposition()
-        If Not IsNothing(elementList(0)) Then
+        If elementList.Length() = 0 Then
+            txtMATMaterialNameCustom.Enabled = True
+            txtMATMaterialNameCustom.Text = ""
+            chkMATMaterialBURN.Enabled = True
+            chkMATMaterialBURN.Checked = False
+        Else
+            lbxMATCustom.Items.Add(materialOfInterest.getIdentifier())
             For i = 0 To elementList.Length() - 1 Step 1
                 lbxMATCustom.Items.Add(elementList(i).toString())
             Next
@@ -281,8 +361,21 @@ Public Class LINK_MAT
             lbxMATCustom.Items.Clear()
         End If
 
+        If lbxMATCustom.Items.Count = 0 Then
+            btnMATRemoveElement.Enabled = False
+            btnMATGenerateCustomMaterial.Enabled = False
+        Else
+            btnMATRemoveElement.Enabled = True
+            btnMATGenerateCustomMaterial.Enabled = True
+        End If
+
     End Sub
     Private Sub BtnHOMORemoveHomoMaterial_Click(sender As Object, e As EventArgs) Handles btnHOMORemoveHomoMaterial.Click
+
+        If lbxHOMOHomoMaterial.SelectedIndex = -1 Then
+            MessageBox.Show("No material selected", "Error")
+            Exit Sub
+        End If
 
         Dim index = lbxHOMOHomoMaterial.SelectedIndex
 
@@ -296,15 +389,43 @@ Public Class LINK_MAT
             Next
         End If
 
+        If lbxHOMOHomoMaterial.Items.Count = 0 Then
+            btnHOMORemoveHomoMaterial.Enabled = False
+        Else
+            btnHOMORemoveHomoMaterial.Enabled = True
+        End If
+
     End Sub
     Private Sub BtnHOMORemoveMaterial_Click(sender As Object, e As EventArgs) Handles btnHOMORemoveMaterial.Click
+
+        If lbxHOMOMaterial.SelectedIndex = -1 Then
+            MessageBox.Show("No material selected", "Error")
+            Exit Sub
+        ElseIf lbxHOMOMaterial.SelectedIndex = 0 Then
+            lbxHOMOMaterial.Items.Clear()
+            If lbxHOMOMaterial.Items.Count = 0 Then
+                btnHOMORemoveMaterial.Enabled = False
+                btnHOMOGenerateHomoMaterial.Enabled = False
+            Else
+                btnHOMORemoveMaterial.Enabled = True
+                btnHOMOGenerateHomoMaterial.Enabled = True
+            End If
+            txtHOMOHomoMaterialName.Enabled = True
+            txtHOMOHomoMaterialName.Text = ""
+            Exit Sub
+        End If
+
         Dim index = lbxHOMOMaterial.SelectedIndex - 1
 
         homoOfInterest.removeComposition(index)
 
-        lbxHOMOHomoMaterial.Items.Clear()
+        lbxHOMOMaterial.Items.Clear()
         Dim compositionList() = homoOfInterest.getAllComposition()
-        If Not IsNothing(compositionList(0)) Then
+        If compositionList.Length() = 0 Then
+            txtHOMOHomoMaterialName.Enabled = True
+            txtHOMOHomoMaterialName.Text = ""
+        Else
+            lbxHOMOMaterial.Items.Add(homoOfInterest.getName())
             For i = 0 To compositionList.Length() - 1 Step 1
                 lbxHOMOMaterial.Items.Add(compositionList(i))
             Next
@@ -313,6 +434,15 @@ Public Class LINK_MAT
         If lbxHOMOMaterial.Items.Count() = 1 Then
             lbxHOMOMaterial.Items.Clear()
         End If
+
+        If lbxHOMOMaterial.Items.Count = 0 Then
+            btnHOMORemoveMaterial.Enabled = False
+            btnHOMOGenerateHomoMaterial.Enabled = False
+        Else
+            btnHOMORemoveMaterial.Enabled = True
+            btnHOMOGenerateHomoMaterial.Enabled = True
+        End If
+
     End Sub
 
     Private Sub BtnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
@@ -381,6 +511,34 @@ Public Class LINK_MAT
             line = reader.ReadLine
         Loop
 
+        If lbxMAT.Items.Count = 0 Then
+            btnMATRemoveMaterial.Enabled = False
+        Else
+            btnMATRemoveMaterial.Enabled = True
+        End If
+
+        If lbxMATCustom.Items.Count = 0 Then
+            btnMATRemoveElement.Enabled = False
+            btnMATGenerateCustomMaterial.Enabled = False
+        Else
+            btnMATRemoveElement.Enabled = True
+            btnMATGenerateCustomMaterial.Enabled = True
+        End If
+
+        If lbxHOMOMaterial.Items.Count = 0 Then
+            btnHOMORemoveMaterial.Enabled = False
+            btnHOMOGenerateHomoMaterial.Enabled = False
+        Else
+            btnHOMORemoveMaterial.Enabled = True
+            btnHOMOGenerateHomoMaterial.Enabled = True
+        End If
+
+        If lbxHOMOHomoMaterial.Items.Count = 0 Then
+            btnHOMORemoveHomoMaterial.Enabled = False
+        Else
+            btnHOMORemoveHomoMaterial.Enabled = True
+        End If
+
     End Sub
     Private Sub loadConfiguration()
 
@@ -404,6 +562,34 @@ Public Class LINK_MAT
             line = reader.ReadLine
             line = reader.ReadLine
         Loop
+
+        If lbxMAT.Items.Count = 0 Then
+            btnMATRemoveMaterial.Enabled = False
+        Else
+            btnMATRemoveMaterial.Enabled = True
+        End If
+
+        If lbxMATCustom.Items.Count = 0 Then
+            btnMATRemoveElement.Enabled = False
+            btnMATGenerateCustomMaterial.Enabled = False
+        Else
+            btnMATRemoveElement.Enabled = True
+            btnMATGenerateCustomMaterial.Enabled = True
+        End If
+
+        If lbxHOMOMaterial.Items.Count = 0 Then
+            btnHOMORemoveMaterial.Enabled = False
+            btnHOMOGenerateHomoMaterial.Enabled = False
+        Else
+            btnHOMORemoveMaterial.Enabled = True
+            btnHOMOGenerateHomoMaterial.Enabled = True
+        End If
+
+        If lbxHOMOHomoMaterial.Items.Count = 0 Then
+            btnHOMORemoveHomoMaterial.Enabled = False
+        Else
+            btnHOMORemoveHomoMaterial.Enabled = True
+        End If
 
     End Sub
 

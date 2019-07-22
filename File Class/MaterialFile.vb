@@ -32,7 +32,7 @@ Public Class MaterialFile
         For i = index To materialCount - 2 Step 1
             Me.material(i) = Me.material(i + 1)
         Next
-        Dim newMaterialList(materialCount - 1) As Material
+        Dim newMaterialList(materialCount - 2) As Material
         For i = 0 To materialCount - 2 Step 1
             newMaterialList(i) = Me.material(i)
         Next

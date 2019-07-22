@@ -31,7 +31,7 @@
         For i = index To elementCount - 2 Step 1
             Me.composition(i) = Me.composition(i + 1)
         Next
-        Dim newElementList(elementCount - 1) As Element
+        Dim newElementList(elementCount - 2) As Element
         For i = 0 To elementCount - 2 Step 1
             newElementList(i) = Me.composition(i)
         Next
