@@ -211,7 +211,7 @@ Partial Class LINK_FA
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(95, 40)
         Me.btnAdd.TabIndex = 6
-        Me.btnAdd.Text = "A&dd to List"
+        Me.btnAdd.Text = "Add to &List"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
         'btnErase
@@ -229,7 +229,7 @@ Partial Class LINK_FA
         Me.btnSelectAll.Name = "btnSelectAll"
         Me.btnSelectAll.Size = New System.Drawing.Size(95, 40)
         Me.btnSelectAll.TabIndex = 2
-        Me.btnSelectAll.Text = "Selec&t All"
+        Me.btnSelectAll.Text = "Select &All"
         Me.btnSelectAll.UseVisualStyleBackColor = True
         '
         'btnCreateFA
@@ -238,7 +238,7 @@ Partial Class LINK_FA
         Me.btnCreateFA.Name = "btnCreateFA"
         Me.btnCreateFA.Size = New System.Drawing.Size(95, 40)
         Me.btnCreateFA.TabIndex = 0
-        Me.btnCreateFA.Text = "&Create FA"
+        Me.btnCreateFA.Text = "Create &FA"
         Me.btnCreateFA.UseVisualStyleBackColor = True
         '
         'btnEraseAll
@@ -247,7 +247,7 @@ Partial Class LINK_FA
         Me.btnEraseAll.Name = "btnEraseAll"
         Me.btnEraseAll.Size = New System.Drawing.Size(95, 40)
         Me.btnEraseAll.TabIndex = 5
-        Me.btnEraseAll.Text = "E&rase All"
+        Me.btnEraseAll.Text = "Erase All"
         Me.btnEraseAll.UseVisualStyleBackColor = True
         '
         'btnSetPin
@@ -274,7 +274,7 @@ Partial Class LINK_FA
         Me.btnClearSelection.Name = "btnClearSelection"
         Me.btnClearSelection.Size = New System.Drawing.Size(95, 40)
         Me.btnClearSelection.TabIndex = 3
-        Me.btnClearSelection.Text = "C&lear Selection"
+        Me.btnClearSelection.Text = "Clear Selection"
         Me.btnClearSelection.UseVisualStyleBackColor = True
         '
         'lbxFAList
@@ -388,7 +388,7 @@ Partial Class LINK_FA
         Me.btnCalculate.Name = "btnCalculate"
         Me.btnCalculate.Size = New System.Drawing.Size(106, 23)
         Me.btnCalculate.TabIndex = 4
-        Me.btnCalculate.Text = "C&alculate"
+        Me.btnCalculate.Text = "Calculate"
         Me.btnCalculate.UseVisualStyleBackColor = True
         '
         'txtPinPitchCalc
@@ -474,7 +474,7 @@ Partial Class LINK_FA
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(91, 94)
         Me.btnReset.TabIndex = 5
-        Me.btnReset.Text = "Rese&t"
+        Me.btnReset.Text = "&Reset"
         Me.btnReset.UseVisualStyleBackColor = True
         '
         'btnClose
@@ -483,7 +483,7 @@ Partial Class LINK_FA
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(124, 94)
         Me.btnClose.TabIndex = 6
-        Me.btnClose.Text = "Cl&ose without Saving"
+        Me.btnClose.Text = "&Close without Saving"
         Me.btnClose.UseVisualStyleBackColor = True
         '
         'LINK_FA

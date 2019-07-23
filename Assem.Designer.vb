@@ -255,7 +255,7 @@ Partial Class Assem
         Me.btnGenerate.Name = "btnGenerate"
         Me.btnGenerate.Size = New System.Drawing.Size(188, 23)
         Me.btnGenerate.TabIndex = 10
-        Me.btnGenerate.Text = "Generate"
+        Me.btnGenerate.Text = "&Generate"
         Me.btnGenerate.UseVisualStyleBackColor = True
         '
         'lbxPinInfo
@@ -495,7 +495,7 @@ Partial Class Assem
         Me.Controls.Add(Me.lblTitle)
         Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "Assem"
-        Me.Text = "*//////////////////////////////////////////////////////////////////////////////"
+        Me.Text = "Configure [Reactor Core]_Assem_#.inp"
         Me.gbxLINK.ResumeLayout(False)
         Me.gbxLINK.PerformLayout()
         Me.gbxSPA.ResumeLayout(False)

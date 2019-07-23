@@ -81,32 +81,34 @@ Public Class MaterialFile
         filePath = MainMenu.getPath() & "\" & Me.fileName
         Dim output = ""
 
-        For i = 0 To material.Length() - 1 Step 1
-            output = output & "MAT " & material(i).getIdentifier()
-            If Not material(i).getPrefab() And material(i).getBurnable() Then output = output & " BURN"
-            output = output & vbNewLine
-            If material(i).getPrefab() Then
-                output = output & material(i).getName() & " "
-                Dim optionList() = DirectCast(material(i), PrefabMaterial).getAllOption()
-                For j = 0 To optionList.Length() - 1 Step 1
-                    output = output & optionList(j) & " "
-                Next
+        If Not IsNothing(material(0)) Then
+            For i = 0 To material.Length() - 1 Step 1
+                output = output & "MAT " & material(i).getIdentifier()
+                If Not material(i).getPrefab() And material(i).getBurnable() Then output = output & " BURN"
                 output = output & vbNewLine
-            Else
-                Dim compositionList() = DirectCast(material(i), CustomMaterial).getAllComposition()
-                For j = 0 To compositionList.Length() - 1 Step 1
-                    output = output & compositionList(j).toString() & vbNewLine
-                Next
-            End If
-            output = output & vbNewLine
-        Next
+                If material(i).getPrefab() Then
+                    output = output & material(i).getName() & " "
+                    Dim optionList() = DirectCast(material(i), PrefabMaterial).getAllOption()
+                    For j = 0 To optionList.Length() - 1 Step 1
+                        output = output & optionList(j) & " "
+                    Next
+                    output = output & vbNewLine
+                Else
+                    Dim compositionList() = DirectCast(material(i), CustomMaterial).getAllComposition()
+                    For j = 0 To compositionList.Length() - 1 Step 1
+                        output = output & compositionList(j).toString() & vbNewLine
+                    Next
+                End If
+                output = output & vbNewLine
+            Next
+        End If
 
         If IsNothing(homogeneous(0)) Then Exit Sub
         For i = 0 To homogeneous.Length() - 1 Step 1
             output = output & "HOMO " & homogeneous(i).getName() & vbNewLine
             Dim compositionList() = homogeneous(i).getAllComposition()
             For j = 0 To compositionList.Length() - 1 Step 1
-                output = output & compositionList(i) & vbNewLine
+                output = output & compositionList(j) & vbNewLine
             Next
             output = output & vbNewLine
         Next

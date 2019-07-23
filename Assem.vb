@@ -145,6 +145,12 @@
 
         graphics.Clear(pbxPreview.BackColor)
 
+        If lbxPinList.Items.Count = 0 Then
+            btnRemove.Enabled = False
+        Else
+            btnRemove.Enabled = True
+        End If
+
     End Sub
 
 
@@ -218,6 +224,12 @@
             End If
         Next
 
+        If lbxPinList.Items.Count = 0 Then
+            btnRemove.Enabled = False
+        Else
+            btnRemove.Enabled = True
+        End If
+
     End Sub
     Public Sub loadConfiguration()
 
@@ -232,13 +244,29 @@
         txtSPALinDensity.Text = SPA(2)
 
         Dim pin() = saveFile.getAllPin()
-        For i = 0 To pin.Length Step 1
+        For i = 0 To pin.Length - 1 Step 1
             lbxPinList.Items.Add(pin(i).getPinID())
         Next
+
+        Dim CORE() = saveFile.getCORE()
+        txtCOREAssemX.Text = CORE(0)
+        txtCOREAssemY.Text = CORE(1)
+        txtCOREAssemIndex.Text = CORE(2)
+
+        If lbxPinList.Items.Count = 0 Then
+            btnRemove.Enabled = False
+        Else
+            btnRemove.Enabled = True
+        End If
 
     End Sub
 
     Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
+
+        If lbxPinList.SelectedIndex = -1 Then
+            MessageBox.Show("No pin selected", "Error")
+            Exit Sub
+        End If
 
         Dim index = lbxPinList.SelectedIndex
         saveFile.removePin(index)
@@ -248,20 +276,38 @@
             lbxPinList.Items.Add("Pin " & allPin(i).getPinID)
         Next
 
+        If lbxPinList.Items.Count = 0 Then
+            btnRemove.Enabled = False
+        Else
+            btnRemove.Enabled = True
+        End If
+
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+        If Not IsNumeric(txtSPALinDensity.Text) Then
+            MessageBox.Show("SPA Card Linear Density is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtCOREAssemX.Text) Then
+            MessageBox.Show("Number of Assemblies in x-direction is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtCOREAssemY.Text) Then
+            MessageBox.Show("Number of Assemblies in y-direction is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtCOREAssemIndex.Text) Then
+            MessageBox.Show("Fuel Assembly Index is not a number", "Error")
+            Exit Sub
+        End If
 
         Dim LINK(2) As Boolean
         LINK(0) = chkLINK_OPTION.Checked
         LINK(1) = chkLINK_MAT.Checked
         LINK(2) = chkLINK_FA.Checked
         saveFile.setLINK(LINK)
-
-        If Not IsNumeric(txtSPALinDensity.Text) Then
-            MessageBox.Show("SPA Card Linear Density is not a number.")
-            Exit Sub
-        End If
 
         Dim SPA(2) As String
         SPA(0) = txtSPACoolant.Text
@@ -270,9 +316,9 @@
         saveFile.setSPA(SPA)
 
         Dim CORE(2) As String
-        CORE(0) = txtCOREAssemX.Text
-        CORE(1) = txtCOREAssemY.Text
-        CORE(2) = txtCOREAssemIndex.Text
+        CORE(0) = CStr(CInt(txtCOREAssemX.Text))
+        CORE(1) = CStr(CInt(txtCOREAssemY.Text))
+        CORE(2) = CStr(CInt(txtCOREAssemIndex.Text))
         saveFile.setCORE(CORE)
 
         If fileIndex = -1 Then

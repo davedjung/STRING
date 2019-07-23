@@ -38,6 +38,11 @@
 
     Private Sub BtnCreateFA_Click(sender As Object, e As EventArgs) Handles btnCreateFA.Click
 
+        If Not IsNumeric(txtPinNo.Text) Then
+            MessageBox.Show("# of Pins in x-direction is not a number", "Error")
+            Exit Sub
+        End If
+
         dimension = CInt(txtPinNo.Text)
         txtPinNoCalc.Text = txtPinNo.Text
         txtPinPitchCalc.Text = txtPinPitch.Text
@@ -325,6 +330,19 @@
     End Sub
 
     Private Sub BtnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
+
+        If Not IsNumeric(txtAssemPitchCalc.Text) Then
+            MessageBox.Show("Assembly Pitch is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtPinNoCalc.Text) Then
+            MessageBox.Show("# of Pins is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtPinPitchCalc.Text) Then
+            MessageBox.Show("Pin Pitch is not a number", "Error")
+            Exit Sub
+        End If
 
         txtHalfAssemGap.Text = Format((CDbl(txtAssemPitchCalc.Text) - CDbl(txtPinNoCalc.Text) * CDbl(txtPinPitchCalc.Text)) * 0.5, "0.00000")
 

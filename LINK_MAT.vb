@@ -76,7 +76,7 @@ Public Class LINK_MAT
 
     Private Sub BtnMATGenerateMaterial_Click(sender As Object, e As EventArgs) Handles btnMATGenerateMaterial.Click
 
-        If txtMATOption1.Enabled And Not IsNumeric(txtMATOption1.Text) Then
+        If txtMATOption1.Enabled And Not IsNumeric(txtMATOption1.Text) And cbxMATMaterialList.SelectedIndex <> 1 Then
             MessageBox.Show("Inappropriate value detected", "Error")
             Exit Sub
         End If

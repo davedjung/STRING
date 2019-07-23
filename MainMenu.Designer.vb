@@ -82,7 +82,7 @@ Partial Class MainMenu
         Me.lblVersionInfo.Name = "lblVersionInfo"
         Me.lblVersionInfo.Size = New System.Drawing.Size(95, 14)
         Me.lblVersionInfo.TabIndex = 2
-        Me.lblVersionInfo.Text = "version 0.1 [alpha]"
+        Me.lblVersionInfo.Text = "version 0.2 [alpha]"
         '
         'lblLabInfo
         '

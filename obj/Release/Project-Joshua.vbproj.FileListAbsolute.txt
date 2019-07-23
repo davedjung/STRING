@@ -1,0 +1,16 @@
+C:\Users\daved\Documents\STRING\bin\Release\Project-Joshua.exe.config
+C:\Users\daved\Documents\STRING\bin\Release\Project-Joshua.exe
+C:\Users\daved\Documents\STRING\bin\Release\Project-Joshua.pdb
+C:\Users\daved\Documents\STRING\bin\Release\Project-Joshua.xml
+C:\Users\daved\Documents\STRING\obj\Release\Project-Joshua.vbprojAssemblyReference.cache
+C:\Users\daved\Documents\STRING\obj\Release\Project_Joshua.Assem.resources
+C:\Users\daved\Documents\STRING\obj\Release\Project_Joshua.MainMenu.resources
+C:\Users\daved\Documents\STRING\obj\Release\Project_Joshua.LINK_FA.resources
+C:\Users\daved\Documents\STRING\obj\Release\Project_Joshua.LINK_MAT.resources
+C:\Users\daved\Documents\STRING\obj\Release\Project_Joshua.LINK_OPTION.resources
+C:\Users\daved\Documents\STRING\obj\Release\Project_Joshua.Resources.resources
+C:\Users\daved\Documents\STRING\obj\Release\Project-Joshua.vbproj.GenerateResource.cache
+C:\Users\daved\Documents\STRING\obj\Release\Project-Joshua.vbproj.CoreCompileInputs.cache
+C:\Users\daved\Documents\STRING\obj\Release\Project-Joshua.exe
+C:\Users\daved\Documents\STRING\obj\Release\Project-Joshua.xml
+C:\Users\daved\Documents\STRING\obj\Release\Project-Joshua.pdb

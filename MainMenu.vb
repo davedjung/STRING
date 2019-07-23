@@ -119,7 +119,7 @@
                 LINK_MAT.Show()
             Case 2
                 Assem.setFileIndex(fileIndex)
-                LINK_MAT.Show()
+                Assem.Show()
             Case 3
                 LINK_FA.setFileIndex(fileIndex)
                 LINK_FA.Show()
@@ -130,6 +130,27 @@
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
+        If lbxFileList.SelectedIndex = -1 Then
+            MessageBox.Show("No file selected", "Error")
+            Exit Sub
+        End If
+
+        Dim index = lbxFileList.SelectedIndex
+        Dim fileCount = fileList.Length()
+        For i = index To fileCount - 2 Step 1
+            fileList(i) = fileList(i + 1)
+        Next
+
+        Dim newFileList(fileCount - 2) As File
+        For i = 0 To fileCount - 2 Step 1
+            newFileList(i) = fileList(i)
+        Next
+        fileList = newFileList
+
+        lbxFileList.Items.Clear()
+        For i = 0 To fileCount - 2 Step 1
+            lbxFileList.Items.Add(fileList(i).getFileName())
+        Next
 
     End Sub
 
