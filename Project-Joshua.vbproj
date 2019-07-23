@@ -234,8 +234,5 @@
   <ItemGroup>
     <None Include="Resources\icon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="new.ico" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
