@@ -293,6 +293,12 @@
         Array.Sort(radii)
         Array.Reverse(radii)
 
+        Dim large As Boolean
+        If radii(0) > 0.75 Then
+            large = True
+        Else
+            large = False
+        End If
         For i = 0 To pinMaterialCount - 1 Step 1
             Select Case i
                 Case 0
@@ -318,7 +324,11 @@
             End Select
 
             Dim reference As Double
-            reference = 0.75
+            If large = True Then
+                reference = 1.5
+            Else
+                reference = 0.75
+            End If
             Dim scale As Double
             scale = pbxPin.Size.Width / reference * radii(i)
 

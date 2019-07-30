@@ -81,6 +81,12 @@
         Array.Sort(allRadii)
         Array.Reverse(allRadii)
 
+        Dim large As Boolean
+        If allRadii(0) > 0.75 Then
+            large = True
+        Else
+            large = False
+        End If
         For i = 0 To allPinMaterial.Length() - 1 Step 1
             Select Case i
                 Case 0
@@ -106,7 +112,11 @@
             End Select
 
             Dim reference As Double
-            reference = 0.75
+            If large = True Then
+                reference = 1.5
+            Else
+                reference = 0.75
+            End If
             Dim scale As Double
             scale = pbxPreview.Size.Width / reference * allRadii(i)
 
