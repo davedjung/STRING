@@ -61,6 +61,7 @@
         btnConfAssem.Text = "Configure [Reactor Code]_&Assem_" & assemCount & ".dat"
 
 
+
     End Sub
 
     Private Sub RdbCreateNew_CheckedChanged(sender As Object, e As EventArgs) Handles rdbCreateNew.CheckedChanged
@@ -77,7 +78,7 @@
 
     Private Sub RdbChoosePreset_CheckedChanged(sender As Object, e As EventArgs) Handles rdbChoosePreset.CheckedChanged
 
-        If rdbCreateNew.Checked = False Then
+        If rdbChoosePreset.Checked = False Then
             txtReactorID.Enabled = True
             cbxPreset.Enabled = False
         Else

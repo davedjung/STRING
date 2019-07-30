@@ -44,7 +44,6 @@ Partial Class MainMenu
         Me.lblLinkOption = New System.Windows.Forms.Label()
         Me.lbxFileList = New System.Windows.Forms.ListBox()
         Me.gbpOverview = New System.Windows.Forms.GroupBox()
-        Me.btnDuplicate = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.lblFileList = New System.Windows.Forms.Label()
@@ -124,7 +123,6 @@ Partial Class MainMenu
         'rdbChoosePreset
         '
         Me.rdbChoosePreset.AutoSize = True
-        Me.rdbChoosePreset.Enabled = False
         Me.rdbChoosePreset.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rdbChoosePreset.Location = New System.Drawing.Point(271, 46)
         Me.rdbChoosePreset.Name = "rdbChoosePreset"
@@ -277,7 +275,6 @@ Partial Class MainMenu
         '
         'gbpOverview
         '
-        Me.gbpOverview.Controls.Add(Me.btnDuplicate)
         Me.gbpOverview.Controls.Add(Me.btnEdit)
         Me.gbpOverview.Controls.Add(Me.btnDelete)
         Me.gbpOverview.Controls.Add(Me.lblFileList)
@@ -289,16 +286,6 @@ Partial Class MainMenu
         Me.gbpOverview.TabIndex = 2
         Me.gbpOverview.TabStop = False
         Me.gbpOverview.Text = "Overview"
-        '
-        'btnDuplicate
-        '
-        Me.btnDuplicate.Enabled = False
-        Me.btnDuplicate.Location = New System.Drawing.Point(289, 135)
-        Me.btnDuplicate.Name = "btnDuplicate"
-        Me.btnDuplicate.Size = New System.Drawing.Size(87, 29)
-        Me.btnDuplicate.TabIndex = 1
-        Me.btnDuplicate.Text = "D&uplicate"
-        Me.btnDuplicate.UseVisualStyleBackColor = True
         '
         'btnEdit
         '
@@ -387,7 +374,6 @@ Partial Class MainMenu
     Friend WithEvents lblLinkOption As Label
     Friend WithEvents lbxFileList As ListBox
     Friend WithEvents gbpOverview As GroupBox
-    Friend WithEvents btnDuplicate As Button
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents lblFileList As Label
