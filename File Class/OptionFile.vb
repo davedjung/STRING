@@ -120,7 +120,8 @@ Public Class OptionFile
         output = output & "H2O " & Me.H2OTemp & " " & Me.H2OBoron & vbNewLine
         output = output & "DEP " & Me.DEPPower & " -" & Me.DEPBurnup
 
-        My.Computer.FileSystem.WriteAllText(filePath, output, False)
+        Dim UTFwithoutBOM As New System.Text.UTF8Encoding(False)
+        My.Computer.FileSystem.WriteAllText(filePath, output, False, UTFwithoutBOM)
 
     End Sub
 

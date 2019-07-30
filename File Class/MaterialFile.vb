@@ -103,17 +103,19 @@ Public Class MaterialFile
             Next
         End If
 
-        If IsNothing(homogeneous(0)) Then Exit Sub
-        For i = 0 To homogeneous.Length() - 1 Step 1
-            output = output & "HOMO " & homogeneous(i).getName() & vbNewLine
-            Dim compositionList() = homogeneous(i).getAllComposition()
-            For j = 0 To compositionList.Length() - 1 Step 1
-                output = output & compositionList(j) & vbNewLine
+        If Not IsNothing(homogeneous(0)) Then
+            For i = 0 To homogeneous.Length() - 1 Step 1
+                output = output & "HOMO " & homogeneous(i).getName() & vbNewLine
+                Dim compositionList() = homogeneous(i).getAllComposition()
+                For j = 0 To compositionList.Length() - 1 Step 1
+                    output = output & compositionList(j) & vbNewLine
+                Next
+                output = output & vbNewLine
             Next
-            output = output & vbNewLine
-        Next
+        End If
 
-        My.Computer.FileSystem.WriteAllText(filePath, output, False)
+        Dim UTFwithoutBOM As New System.Text.UTF8Encoding(False)
+        My.Computer.FileSystem.WriteAllText(filePath, output, False, UTFwithoutBOM)
 
 
     End Sub

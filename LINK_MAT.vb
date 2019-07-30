@@ -91,11 +91,10 @@ Public Class LINK_MAT
 
         Dim materialName As String
         Dim identifier As String
-        materialName = txtMATMaterialName.Text
+        materialName = cbxMATMaterialList.SelectedText()
+        identifier = txtMATMaterialName.Text
         If txtMATMaterialName.Text = "UO2" Then
             identifier = txtMATMaterialName.Text & "_" & txtMATOption2.Text
-        Else
-            identifier = materialName
         End If
 
         Dim newMaterial = New PrefabMaterial(materialName, identifier)

@@ -3,40 +3,18 @@
     Private path As String
     Private ReactorCode As String
     Private assemCount As Integer
-    Private fileList(0) As File
+    Private fileList(255) As File
+    Private fileListIndex As Integer
 
-    Private Sub BtnConfLinkFa_Click(sender As Object, e As EventArgs) Handles btnConfLinkFa.Click
-
-        LINK_FA.setFileIndex(-1)
-        LINK_FA.Show()
-
+    Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        initialize()
     End Sub
-
-    Private Sub BtnConfLinkOption_Click(sender As Object, e As EventArgs) Handles btnConfLinkOption.Click
-
-        LINK_OPTION.setFileIndex(-1)
-        LINK_OPTION.Show()
-
+    Private Sub TxtPath_TextChanged(sender As Object, e As EventArgs) Handles txtPath.TextChanged
+        path = txtPath.Text
     End Sub
-
-    Private Sub BtnConfLinkMat_Click(sender As Object, e As EventArgs) Handles btnConfLinkMat.Click
-
-        LINK_MAT.setFileIndex(-1)
-        LINK_MAT.Show()
-
-    End Sub
-
-    Private Sub BtnConfAssem_Click(sender As Object, e As EventArgs) Handles btnConfAssem.Click
-
-        Assem.setFileIndex(-1)
-        Assem.Show()
-
-    End Sub
-
     Private Sub txtReactorID_MouseDown(sender As Object, e As MouseEventArgs) Handles txtReactorID.MouseDown
         txtReactorID.Text = ""
     End Sub
-
     Private Sub TxtReactorID_TextChanged(sender As Object, e As EventArgs) Handles txtReactorID.TextChanged
         ReactorCode = txtReactorID.Text
 
@@ -50,61 +28,30 @@
         btnConfLinkFa.Text = "Configure LINK_&FA_" & ReactorCode & ".dat"
 
     End Sub
+    Private Sub BtnConfLinkOption_Click(sender As Object, e As EventArgs) Handles btnConfLinkOption.Click
 
-    Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        path = My.Computer.FileSystem.SpecialDirectories.Desktop & "\STREAM"
-        txtPath.Text = path
-        ReactorCode = ""
-        assemCount = 1
-        lblAssem.Text = "3. [Reactor Code]_Assem_" & assemCount & ".dat"
-        btnConfAssem.Text = "Configure [Reactor Code]_&Assem_" & assemCount & ".dat"
-
-
+        LINK_OPTION.setFileIndex(-1)
+        LINK_OPTION.Show()
 
     End Sub
+    Private Sub BtnConfLinkMat_Click(sender As Object, e As EventArgs) Handles btnConfLinkMat.Click
 
-    Private Sub RdbCreateNew_CheckedChanged(sender As Object, e As EventArgs) Handles rdbCreateNew.CheckedChanged
-
-        If rdbCreateNew.Checked = True Then
-            txtReactorID.Enabled = True
-            cbxPreset.Enabled = False
-        Else
-            txtReactorID.Enabled = False
-            cbxPreset.Enabled = True
-        End If
+        LINK_MAT.setFileIndex(-1)
+        LINK_MAT.Show()
 
     End Sub
+    Private Sub BtnConfAssem_Click(sender As Object, e As EventArgs) Handles btnConfAssem.Click
 
-    Private Sub RdbChoosePreset_CheckedChanged(sender As Object, e As EventArgs) Handles rdbChoosePreset.CheckedChanged
-
-        If rdbChoosePreset.Checked = False Then
-            txtReactorID.Enabled = True
-            cbxPreset.Enabled = False
-        Else
-            txtReactorID.Enabled = False
-            cbxPreset.Enabled = True
-        End If
+        Assem.setFileIndex(-1)
+        Assem.Show()
 
     End Sub
+    Private Sub BtnConfLinkFa_Click(sender As Object, e As EventArgs) Handles btnConfLinkFa.Click
 
-    Private Sub BtnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-
-        Dim fileCount As Integer
-        fileCount = fileList.Length()
-        If fileCount = 0 Then
-            MessageBox.Show("No file to generate.", "Error")
-            Exit Sub
-        End If
-        For i = 0 To fileCount - 1 Step 1
-            fileList(i).generateFile()
-        Next
-
-        MessageBox.Show("Files generated.", "Result")
+        LINK_FA.setFileIndex(-1)
+        LINK_FA.Show()
 
     End Sub
-
-
     Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
 
         Dim fileIndex As Integer
@@ -128,7 +75,6 @@
 
 
     End Sub
-
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
         If lbxFileList.SelectedIndex = -1 Then
@@ -136,37 +82,42 @@
             Exit Sub
         End If
 
-        Dim index = lbxFileList.SelectedIndex
-        Dim fileCount = fileList.Length()
-        For i = index To fileCount - 2 Step 1
+        Dim fileIndex = lbxFileList.SelectedIndex
+        For i = fileIndex To fileListIndex - 1 Step 1
             fileList(i) = fileList(i + 1)
         Next
 
-        Dim newFileList(fileCount - 2) As File
-        For i = 0 To fileCount - 2 Step 1
-            newFileList(i) = fileList(i)
-        Next
-        fileList = newFileList
+        fileListIndex = fileListIndex - 1
 
         lbxFileList.Items.Clear()
-        For i = 0 To fileCount - 2 Step 1
+        For i = 0 To fileListIndex Step 1
             lbxFileList.Items.Add(fileList(i).getFileName())
         Next
 
     End Sub
+    Private Sub BtnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
 
-    Private Sub TxtPath_TextChanged(sender As Object, e As EventArgs) Handles txtPath.TextChanged
-        path = txtPath.Text
+        If fileListIndex = -1 Then
+            MessageBox.Show("No file to generate.", "Error")
+            Exit Sub
+        End If
+        For i = 0 To fileListIndex Step 1
+            fileList(i).generateFile()
+        Next
+
+        MessageBox.Show("Files generated.", "Result")
+
     End Sub
 
-
-
-
-
-
-
-
-
+    Public Sub initialize()
+        path = My.Computer.FileSystem.SpecialDirectories.Desktop & "\STREAM"
+        txtPath.Text = path
+        ReactorCode = ""
+        assemCount = 1
+        lblAssem.Text = "3. [Reactor Code]_Assem_" & assemCount & ".dat"
+        btnConfAssem.Text = "Configure [Reactor Code]_&Assem_" & assemCount & ".dat"
+        fileListIndex = -1
+    End Sub
     Public Function getPath() As String
         Return Me.path
     End Function
@@ -180,28 +131,22 @@
         Return Me.fileList(index)
     End Function
     Public Function getAllFile() As File()
-        Return Me.fileList
+        Dim compactFileList(fileListIndex) As File
+        For i = 0 To fileListIndex Step 1
+            compactFileList(i) = Me.fileList(i)
+        Next
+        Return compactFileList
     End Function
     Public Sub saveFile(file As File, index As Integer)
         fileList(index) = file
     End Sub
     Public Sub addFile(file As File)
 
-        Dim fileCount As Integer
-        If IsNothing(fileList(0)) Then
-            fileCount = 0
-        Else
-            fileCount = fileList.Length()
-        End If
-        Dim newFileList(fileCount) As File
-        For i = 0 To fileCount - 1 Step 1
-            newFileList(i) = fileList(i)
-        Next
-        newFileList(fileCount) = file
-        fileList = newFileList
+        fileListIndex = fileListIndex + 1
+        fileList(fileListIndex) = file
 
         lbxFileList.Items.Clear()
-        For i = 0 To fileCount Step 1
+        For i = 0 To fileListIndex Step 1
             lbxFileList.Items.Add(fileList(i).getFileName())
         Next
 

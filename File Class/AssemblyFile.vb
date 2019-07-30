@@ -97,7 +97,8 @@ Public Class AssemblyFile
         output = output & "CORE " & CORE(0) & " " & CORE(1) & vbNewLine
         output = output & CORE(2)
 
-        My.Computer.FileSystem.WriteAllText(filePath, output, False)
+        Dim UTFwithoutBOM As New System.Text.UTF8Encoding(False)
+        My.Computer.FileSystem.WriteAllText(filePath, output, False, UTFwithoutBOM)
 
     End Sub
 

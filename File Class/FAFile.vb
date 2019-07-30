@@ -49,7 +49,8 @@ Public Class FAFile
             output = output & vbNewLine
         Next
 
-        My.Computer.FileSystem.WriteAllText(filePath, output, False)
+        Dim UTFwithoutBOM As New System.Text.UTF8Encoding(False)
+        My.Computer.FileSystem.WriteAllText(filePath, output, False, UTFwithoutBOM)
 
     End Sub
 

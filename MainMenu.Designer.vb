@@ -28,9 +28,6 @@ Partial Class MainMenu
         Me.lblLabInfo = New System.Windows.Forms.Label()
         Me.gbxEssential = New System.Windows.Forms.GroupBox()
         Me.txtReactorID = New System.Windows.Forms.TextBox()
-        Me.rdbChoosePreset = New System.Windows.Forms.RadioButton()
-        Me.rdbCreateNew = New System.Windows.Forms.RadioButton()
-        Me.cbxPreset = New System.Windows.Forms.ComboBox()
         Me.txtPath = New System.Windows.Forms.TextBox()
         Me.lblPath = New System.Windows.Forms.Label()
         Me.gbxCheckList = New System.Windows.Forms.GroupBox()
@@ -48,6 +45,8 @@ Partial Class MainMenu
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.lblFileList = New System.Windows.Forms.Label()
         Me.btnGenerate = New System.Windows.Forms.Button()
+        Me.lblReactorID = New System.Windows.Forms.Label()
+        Me.lblReactorIDExample = New System.Windows.Forms.Label()
         Me.gbxEssential.SuspendLayout()
         Me.gbxCheckList.SuspendLayout()
         Me.gbpOverview.SuspendLayout()
@@ -95,10 +94,9 @@ Partial Class MainMenu
         '
         'gbxEssential
         '
+        Me.gbxEssential.Controls.Add(Me.lblReactorIDExample)
+        Me.gbxEssential.Controls.Add(Me.lblReactorID)
         Me.gbxEssential.Controls.Add(Me.txtReactorID)
-        Me.gbxEssential.Controls.Add(Me.rdbChoosePreset)
-        Me.gbxEssential.Controls.Add(Me.rdbCreateNew)
-        Me.gbxEssential.Controls.Add(Me.cbxPreset)
         Me.gbxEssential.Controls.Add(Me.txtPath)
         Me.gbxEssential.Controls.Add(Me.lblPath)
         Me.gbxEssential.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -111,48 +109,12 @@ Partial Class MainMenu
         '
         'txtReactorID
         '
-        Me.txtReactorID.Enabled = False
         Me.txtReactorID.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtReactorID.Location = New System.Drawing.Point(98, 45)
+        Me.txtReactorID.Location = New System.Drawing.Point(152, 45)
         Me.txtReactorID.Name = "txtReactorID"
-        Me.txtReactorID.Size = New System.Drawing.Size(164, 21)
+        Me.txtReactorID.Size = New System.Drawing.Size(135, 21)
         Me.txtReactorID.TabIndex = 2
-        Me.txtReactorID.Text = "Reactor Identification Code"
         Me.txtReactorID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'rdbChoosePreset
-        '
-        Me.rdbChoosePreset.AutoSize = True
-        Me.rdbChoosePreset.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdbChoosePreset.Location = New System.Drawing.Point(271, 46)
-        Me.rdbChoosePreset.Name = "rdbChoosePreset"
-        Me.rdbChoosePreset.Size = New System.Drawing.Size(120, 19)
-        Me.rdbChoosePreset.TabIndex = 3
-        Me.rdbChoosePreset.TabStop = True
-        Me.rdbChoosePreset.Text = "Choose from &Preset"
-        Me.rdbChoosePreset.UseVisualStyleBackColor = True
-        '
-        'rdbCreateNew
-        '
-        Me.rdbCreateNew.AutoSize = True
-        Me.rdbCreateNew.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdbCreateNew.Location = New System.Drawing.Point(10, 46)
-        Me.rdbCreateNew.Name = "rdbCreateNew"
-        Me.rdbCreateNew.Size = New System.Drawing.Size(82, 19)
-        Me.rdbCreateNew.TabIndex = 1
-        Me.rdbCreateNew.TabStop = True
-        Me.rdbCreateNew.Text = "Create &New"
-        Me.rdbCreateNew.UseVisualStyleBackColor = True
-        '
-        'cbxPreset
-        '
-        Me.cbxPreset.Enabled = False
-        Me.cbxPreset.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxPreset.FormattingEnabled = True
-        Me.cbxPreset.Location = New System.Drawing.Point(397, 45)
-        Me.cbxPreset.Name = "cbxPreset"
-        Me.cbxPreset.Size = New System.Drawing.Size(165, 23)
-        Me.cbxPreset.TabIndex = 4
         '
         'txtPath
         '
@@ -325,6 +287,24 @@ Partial Class MainMenu
         Me.btnGenerate.Text = "&Generate Input File(s)"
         Me.btnGenerate.UseVisualStyleBackColor = True
         '
+        'lblReactorID
+        '
+        Me.lblReactorID.AutoSize = True
+        Me.lblReactorID.Location = New System.Drawing.Point(7, 48)
+        Me.lblReactorID.Name = "lblReactorID"
+        Me.lblReactorID.Size = New System.Drawing.Size(139, 15)
+        Me.lblReactorID.TabIndex = 3
+        Me.lblReactorID.Text = "Reactor Identification Code"
+        '
+        'lblReactorIDExample
+        '
+        Me.lblReactorIDExample.AutoSize = True
+        Me.lblReactorIDExample.Location = New System.Drawing.Point(293, 48)
+        Me.lblReactorIDExample.Name = "lblReactorIDExample"
+        Me.lblReactorIDExample.Size = New System.Drawing.Size(110, 15)
+        Me.lblReactorIDExample.TabIndex = 4
+        Me.lblReactorIDExample.Text = "eg.) KORI, YGN3, ..."
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -359,10 +339,7 @@ Partial Class MainMenu
     Friend WithEvents gbxEssential As GroupBox
     Friend WithEvents txtPath As TextBox
     Friend WithEvents lblPath As Label
-    Friend WithEvents cbxPreset As ComboBox
     Friend WithEvents txtReactorID As TextBox
-    Friend WithEvents rdbCreateNew As RadioButton
-    Friend WithEvents rdbChoosePreset As RadioButton
     Friend WithEvents gbxCheckList As GroupBox
     Friend WithEvents btnConfAssem As Button
     Friend WithEvents lblAssem As Label
@@ -378,4 +355,6 @@ Partial Class MainMenu
     Friend WithEvents btnDelete As Button
     Friend WithEvents lblFileList As Label
     Friend WithEvents btnGenerate As Button
+    Friend WithEvents lblReactorIDExample As Label
+    Friend WithEvents lblReactorID As Label
 End Class
