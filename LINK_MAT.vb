@@ -91,7 +91,7 @@ Public Class LINK_MAT
 
         Dim materialName As String
         Dim identifier As String
-        materialName = cbxMATMaterialList.SelectedText()
+        materialName = cbxMATMaterialList.SelectedItem.ToString()
         identifier = txtMATMaterialName.Text
         If txtMATMaterialName.Text = "UO2" Then
             identifier = txtMATMaterialName.Text & "_" & txtMATOption2.Text
@@ -606,16 +606,16 @@ Public Class LINK_MAT
             End If
         End If
 
-            Dim databaseFile As String = My.Resources.MAT_DATA
-        Dim line As String
-        Dim reader As TextReader = New StringReader(databaseFile)
-        line = reader.ReadLine
-        Do While line <> "END OF FILE"
-            cbxMATMaterialList.Items.Add(line)
-            line = reader.ReadLine
-            line = reader.ReadLine
-            line = reader.ReadLine
-        Loop
+        'Dim databaseFile As String = My.Resources.MAT_DATA
+        'Dim line As String
+        'Dim reader As TextReader = New StringReader(databaseFile)
+        'line = reader.ReadLine
+        'Do While line <> "END OF FILE"
+        'cbxMATMaterialList.Items.Add(line)
+        'line = reader.ReadLine
+        'line = reader.ReadLine
+        'line = reader.ReadLine
+        'Loop
 
         If lbxMAT.Items.Count = 0 Then
             btnMATRemoveMaterial.Enabled = False
