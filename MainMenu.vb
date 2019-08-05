@@ -97,6 +97,10 @@
     End Sub
     Private Sub BtnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
 
+        'Dim inputFile As String
+        'inputFile = "YGN3_Assem_1.inp"
+        'Process.Start("CMD", "/K cd " & path & "&&stream.exe " & inputFile)
+
         If fileListIndex = -1 Then
             MessageBox.Show("No file to generate.", "Error")
             Exit Sub
