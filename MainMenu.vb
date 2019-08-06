@@ -156,4 +156,7 @@
 
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles pbxExit.Click
+        Me.Close()
+    End Sub
 End Class

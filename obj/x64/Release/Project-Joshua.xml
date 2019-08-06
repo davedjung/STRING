@@ -22,6 +22,21 @@ Project-Joshua
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Project_Joshua.My.Resources.Resources._exit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Project_Joshua.My.Resources.Resources.icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:Project_Joshua.My.Resources.Resources.logo">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Project_Joshua.My.Resources.Resources.MAT_DATA">
 <summary>
   Looks up a localized string similar to UO2

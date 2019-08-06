@@ -70,8 +70,10 @@ Partial Class LINK_MAT
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.pbxExit = New System.Windows.Forms.PictureBox()
         Me.gbxMAT.SuspendLayout()
         Me.gbxHOMO.SuspendLayout()
+        CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitle
@@ -117,6 +119,7 @@ Partial Class LINK_MAT
         Me.gbxMAT.Controls.Add(Me.lblMATMaterial)
         Me.gbxMAT.Controls.Add(Me.lblMATNumberDensityUnit)
         Me.gbxMAT.Controls.Add(Me.txtMATMassNumber)
+        Me.gbxMAT.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxMAT.Location = New System.Drawing.Point(17, 37)
         Me.gbxMAT.Name = "gbxMAT"
         Me.gbxMAT.Size = New System.Drawing.Size(430, 519)
@@ -126,79 +129,94 @@ Partial Class LINK_MAT
         '
         'txtMATNumberDensityE
         '
-        Me.txtMATNumberDensityE.Location = New System.Drawing.Point(233, 343)
+        Me.txtMATNumberDensityE.Location = New System.Drawing.Point(224, 343)
         Me.txtMATNumberDensityE.Name = "txtMATNumberDensityE"
-        Me.txtMATNumberDensityE.Size = New System.Drawing.Size(45, 21)
+        Me.txtMATNumberDensityE.Size = New System.Drawing.Size(45, 20)
         Me.txtMATNumberDensityE.TabIndex = 13
         '
         'lblE
         '
         Me.lblE.AutoSize = True
-        Me.lblE.Location = New System.Drawing.Point(216, 346)
+        Me.lblE.Location = New System.Drawing.Point(206, 347)
         Me.lblE.Name = "lblE"
-        Me.lblE.Size = New System.Drawing.Size(14, 15)
+        Me.lblE.Size = New System.Drawing.Size(12, 12)
         Me.lblE.TabIndex = 34
         Me.lblE.Text = "E"
         '
         'btnMATRemoveMaterial
         '
+        Me.btnMATRemoveMaterial.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnMATRemoveMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMATRemoveMaterial.ForeColor = System.Drawing.Color.White
         Me.btnMATRemoveMaterial.Location = New System.Drawing.Point(188, 157)
         Me.btnMATRemoveMaterial.Name = "btnMATRemoveMaterial"
         Me.btnMATRemoveMaterial.Size = New System.Drawing.Size(113, 23)
         Me.btnMATRemoveMaterial.TabIndex = 5
         Me.btnMATRemoveMaterial.Text = "Remove Material"
-        Me.btnMATRemoveMaterial.UseVisualStyleBackColor = True
+        Me.btnMATRemoveMaterial.UseVisualStyleBackColor = False
         '
         'btnMATRemoveElement
         '
+        Me.btnMATRemoveElement.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnMATRemoveElement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMATRemoveElement.ForeColor = System.Drawing.Color.White
         Me.btnMATRemoveElement.Location = New System.Drawing.Point(154, 484)
         Me.btnMATRemoveElement.Name = "btnMATRemoveElement"
         Me.btnMATRemoveElement.Size = New System.Drawing.Size(110, 23)
         Me.btnMATRemoveElement.TabIndex = 16
         Me.btnMATRemoveElement.Text = "Remove Element"
-        Me.btnMATRemoveElement.UseVisualStyleBackColor = True
+        Me.btnMATRemoveElement.UseVisualStyleBackColor = False
         '
         'btnMATGenerateCustomMaterial
         '
+        Me.btnMATGenerateCustomMaterial.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnMATGenerateCustomMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMATGenerateCustomMaterial.ForeColor = System.Drawing.Color.White
         Me.btnMATGenerateCustomMaterial.Location = New System.Drawing.Point(270, 484)
         Me.btnMATGenerateCustomMaterial.Name = "btnMATGenerateCustomMaterial"
         Me.btnMATGenerateCustomMaterial.Size = New System.Drawing.Size(150, 23)
         Me.btnMATGenerateCustomMaterial.TabIndex = 17
         Me.btnMATGenerateCustomMaterial.Text = "Generate Custom Material"
-        Me.btnMATGenerateCustomMaterial.UseVisualStyleBackColor = True
+        Me.btnMATGenerateCustomMaterial.UseVisualStyleBackColor = False
         '
         'lbxMATCustom
         '
         Me.lbxMATCustom.FormattingEnabled = True
-        Me.lbxMATCustom.ItemHeight = 15
+        Me.lbxMATCustom.ItemHeight = 12
         Me.lbxMATCustom.Location = New System.Drawing.Point(6, 369)
         Me.lbxMATCustom.Name = "lbxMATCustom"
-        Me.lbxMATCustom.Size = New System.Drawing.Size(414, 109)
+        Me.lbxMATCustom.Size = New System.Drawing.Size(414, 100)
         Me.lbxMATCustom.TabIndex = 15
         '
         'btnMATAddCustomElement
         '
+        Me.btnMATAddCustomElement.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnMATAddCustomElement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMATAddCustomElement.ForeColor = System.Drawing.Color.White
         Me.btnMATAddCustomElement.Location = New System.Drawing.Point(336, 342)
         Me.btnMATAddCustomElement.Name = "btnMATAddCustomElement"
         Me.btnMATAddCustomElement.Size = New System.Drawing.Size(84, 23)
         Me.btnMATAddCustomElement.TabIndex = 14
         Me.btnMATAddCustomElement.Text = "Add Element"
-        Me.btnMATAddCustomElement.UseVisualStyleBackColor = True
+        Me.btnMATAddCustomElement.UseVisualStyleBackColor = False
         '
         'btnMATGenerateMaterial
         '
+        Me.btnMATGenerateMaterial.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnMATGenerateMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMATGenerateMaterial.ForeColor = System.Drawing.Color.White
         Me.btnMATGenerateMaterial.Location = New System.Drawing.Point(307, 157)
         Me.btnMATGenerateMaterial.Name = "btnMATGenerateMaterial"
         Me.btnMATGenerateMaterial.Size = New System.Drawing.Size(113, 23)
         Me.btnMATGenerateMaterial.TabIndex = 6
         Me.btnMATGenerateMaterial.Text = "Generate Material"
-        Me.btnMATGenerateMaterial.UseVisualStyleBackColor = True
+        Me.btnMATGenerateMaterial.UseVisualStyleBackColor = False
         '
         'txtMATOption2
         '
         Me.txtMATOption2.Location = New System.Drawing.Point(169, 103)
         Me.txtMATOption2.Name = "txtMATOption2"
-        Me.txtMATOption2.Size = New System.Drawing.Size(251, 21)
+        Me.txtMATOption2.Size = New System.Drawing.Size(251, 20)
         Me.txtMATOption2.TabIndex = 3
         '
         'lblCreateCustom
@@ -206,17 +224,17 @@ Partial Class LINK_MAT
         Me.lblCreateCustom.AutoSize = True
         Me.lblCreateCustom.Location = New System.Drawing.Point(6, 272)
         Me.lblCreateCustom.Name = "lblCreateCustom"
-        Me.lblCreateCustom.Size = New System.Drawing.Size(79, 15)
+        Me.lblCreateCustom.Size = New System.Drawing.Size(81, 12)
         Me.lblCreateCustom.TabIndex = 4
         Me.lblCreateCustom.Text = "Create Custom"
         '
         'lbxMAT
         '
         Me.lbxMAT.FormattingEnabled = True
-        Me.lbxMAT.ItemHeight = 15
+        Me.lbxMAT.ItemHeight = 12
         Me.lbxMAT.Location = New System.Drawing.Point(6, 186)
         Me.lbxMAT.Name = "lbxMAT"
-        Me.lbxMAT.Size = New System.Drawing.Size(414, 79)
+        Me.lbxMAT.Size = New System.Drawing.Size(414, 76)
         Me.lbxMAT.TabIndex = 7
         '
         'chkMATMaterialBURN
@@ -224,7 +242,7 @@ Partial Class LINK_MAT
         Me.chkMATMaterialBURN.AutoSize = True
         Me.chkMATMaterialBURN.Location = New System.Drawing.Point(307, 292)
         Me.chkMATMaterialBURN.Name = "chkMATMaterialBURN"
-        Me.chkMATMaterialBURN.Size = New System.Drawing.Size(113, 19)
+        Me.chkMATMaterialBURN.Size = New System.Drawing.Size(117, 16)
         Me.chkMATMaterialBURN.TabIndex = 9
         Me.chkMATMaterialBURN.Text = "Burnable Material"
         Me.chkMATMaterialBURN.UseVisualStyleBackColor = True
@@ -234,7 +252,7 @@ Partial Class LINK_MAT
         Me.lblMATMaterialNameCustom.AutoSize = True
         Me.lblMATMaterialNameCustom.Location = New System.Drawing.Point(6, 293)
         Me.lblMATMaterialNameCustom.Name = "lblMATMaterialNameCustom"
-        Me.lblMATMaterialNameCustom.Size = New System.Drawing.Size(79, 15)
+        Me.lblMATMaterialNameCustom.Size = New System.Drawing.Size(80, 12)
         Me.lblMATMaterialNameCustom.TabIndex = 5
         Me.lblMATMaterialNameCustom.Text = "Material Name"
         '
@@ -243,7 +261,7 @@ Partial Class LINK_MAT
         Me.lblMATOption2.AutoSize = True
         Me.lblMATOption2.Location = New System.Drawing.Point(6, 106)
         Me.lblMATOption2.Name = "lblMATOption2"
-        Me.lblMATOption2.Size = New System.Drawing.Size(51, 15)
+        Me.lblMATOption2.Size = New System.Drawing.Size(50, 12)
         Me.lblMATOption2.TabIndex = 26
         Me.lblMATOption2.Text = "Option 2"
         '
@@ -251,14 +269,14 @@ Partial Class LINK_MAT
         '
         Me.txtMATMaterialNameCustom.Location = New System.Drawing.Point(91, 290)
         Me.txtMATMaterialNameCustom.Name = "txtMATMaterialNameCustom"
-        Me.txtMATMaterialNameCustom.Size = New System.Drawing.Size(210, 21)
+        Me.txtMATMaterialNameCustom.Size = New System.Drawing.Size(210, 20)
         Me.txtMATMaterialNameCustom.TabIndex = 8
         '
         'txtMATOption3
         '
         Me.txtMATOption3.Location = New System.Drawing.Point(169, 130)
         Me.txtMATOption3.Name = "txtMATOption3"
-        Me.txtMATOption3.Size = New System.Drawing.Size(251, 21)
+        Me.txtMATOption3.Size = New System.Drawing.Size(251, 20)
         Me.txtMATOption3.TabIndex = 4
         '
         'lblMATAtomicNumber
@@ -266,7 +284,7 @@ Partial Class LINK_MAT
         Me.lblMATAtomicNumber.AutoSize = True
         Me.lblMATAtomicNumber.Location = New System.Drawing.Point(6, 319)
         Me.lblMATAtomicNumber.Name = "lblMATAtomicNumber"
-        Me.lblMATAtomicNumber.Size = New System.Drawing.Size(85, 15)
+        Me.lblMATAtomicNumber.Size = New System.Drawing.Size(87, 12)
         Me.lblMATAtomicNumber.TabIndex = 7
         Me.lblMATAtomicNumber.Text = "Atomic Number"
         '
@@ -275,7 +293,7 @@ Partial Class LINK_MAT
         Me.lblMATOption3.AutoSize = True
         Me.lblMATOption3.Location = New System.Drawing.Point(6, 133)
         Me.lblMATOption3.Name = "lblMATOption3"
-        Me.lblMATOption3.Size = New System.Drawing.Size(51, 15)
+        Me.lblMATOption3.Size = New System.Drawing.Size(50, 12)
         Me.lblMATOption3.TabIndex = 24
         Me.lblMATOption3.Text = "Option 3"
         '
@@ -283,14 +301,14 @@ Partial Class LINK_MAT
         '
         Me.txtMATAtomicNumber.Location = New System.Drawing.Point(97, 316)
         Me.txtMATAtomicNumber.Name = "txtMATAtomicNumber"
-        Me.txtMATAtomicNumber.Size = New System.Drawing.Size(58, 21)
+        Me.txtMATAtomicNumber.Size = New System.Drawing.Size(58, 20)
         Me.txtMATAtomicNumber.TabIndex = 10
         '
         'txtMATOption1
         '
         Me.txtMATOption1.Location = New System.Drawing.Point(169, 76)
         Me.txtMATOption1.Name = "txtMATOption1"
-        Me.txtMATOption1.Size = New System.Drawing.Size(251, 21)
+        Me.txtMATOption1.Size = New System.Drawing.Size(251, 20)
         Me.txtMATOption1.TabIndex = 2
         '
         'lblMATOption1
@@ -298,7 +316,7 @@ Partial Class LINK_MAT
         Me.lblMATOption1.AutoSize = True
         Me.lblMATOption1.Location = New System.Drawing.Point(6, 79)
         Me.lblMATOption1.Name = "lblMATOption1"
-        Me.lblMATOption1.Size = New System.Drawing.Size(51, 15)
+        Me.lblMATOption1.Size = New System.Drawing.Size(50, 12)
         Me.lblMATOption1.TabIndex = 22
         Me.lblMATOption1.Text = "Option 1"
         '
@@ -307,7 +325,7 @@ Partial Class LINK_MAT
         Me.lblMATMassNumber.AutoSize = True
         Me.lblMATMassNumber.Location = New System.Drawing.Point(166, 319)
         Me.lblMATMassNumber.Name = "lblMATMassNumber"
-        Me.lblMATMassNumber.Size = New System.Drawing.Size(76, 15)
+        Me.lblMATMassNumber.Size = New System.Drawing.Size(76, 12)
         Me.lblMATMassNumber.TabIndex = 9
         Me.lblMATMassNumber.Text = "Mass Number"
         '
@@ -315,7 +333,7 @@ Partial Class LINK_MAT
         '
         Me.txtMATMaterialName.Location = New System.Drawing.Point(169, 49)
         Me.txtMATMaterialName.Name = "txtMATMaterialName"
-        Me.txtMATMaterialName.Size = New System.Drawing.Size(251, 21)
+        Me.txtMATMaterialName.Size = New System.Drawing.Size(251, 20)
         Me.txtMATMaterialName.TabIndex = 1
         '
         'lblMATMaterialName
@@ -323,16 +341,16 @@ Partial Class LINK_MAT
         Me.lblMATMaterialName.AutoSize = True
         Me.lblMATMaterialName.Location = New System.Drawing.Point(6, 52)
         Me.lblMATMaterialName.Name = "lblMATMaterialName"
-        Me.lblMATMaterialName.Size = New System.Drawing.Size(79, 15)
+        Me.lblMATMaterialName.Size = New System.Drawing.Size(80, 12)
         Me.lblMATMaterialName.TabIndex = 20
         Me.lblMATMaterialName.Text = "Material Name"
         '
         'lblMATNumberDensity
         '
         Me.lblMATNumberDensity.AutoSize = True
-        Me.lblMATNumberDensity.Location = New System.Drawing.Point(6, 346)
+        Me.lblMATNumberDensity.Location = New System.Drawing.Point(6, 347)
         Me.lblMATNumberDensity.Name = "lblMATNumberDensity"
-        Me.lblMATNumberDensity.Size = New System.Drawing.Size(88, 15)
+        Me.lblMATNumberDensity.Size = New System.Drawing.Size(90, 12)
         Me.lblMATNumberDensity.TabIndex = 11
         Me.lblMATNumberDensity.Text = "Number Density"
         '
@@ -341,14 +359,14 @@ Partial Class LINK_MAT
         Me.cbxMATMaterialList.FormattingEnabled = True
         Me.cbxMATMaterialList.Location = New System.Drawing.Point(60, 20)
         Me.cbxMATMaterialList.Name = "cbxMATMaterialList"
-        Me.cbxMATMaterialList.Size = New System.Drawing.Size(360, 23)
+        Me.cbxMATMaterialList.Size = New System.Drawing.Size(360, 20)
         Me.cbxMATMaterialList.TabIndex = 0
         '
         'txtMATNumberDensity
         '
         Me.txtMATNumberDensity.Location = New System.Drawing.Point(100, 343)
         Me.txtMATNumberDensity.Name = "txtMATNumberDensity"
-        Me.txtMATNumberDensity.Size = New System.Drawing.Size(110, 21)
+        Me.txtMATNumberDensity.Size = New System.Drawing.Size(100, 20)
         Me.txtMATNumberDensity.TabIndex = 12
         '
         'lblMATMaterial
@@ -356,16 +374,16 @@ Partial Class LINK_MAT
         Me.lblMATMaterial.AutoSize = True
         Me.lblMATMaterial.Location = New System.Drawing.Point(6, 23)
         Me.lblMATMaterial.Name = "lblMATMaterial"
-        Me.lblMATMaterial.Size = New System.Drawing.Size(48, 15)
+        Me.lblMATMaterial.Size = New System.Drawing.Size(47, 12)
         Me.lblMATMaterial.TabIndex = 0
         Me.lblMATMaterial.Text = "Material"
         '
         'lblMATNumberDensityUnit
         '
         Me.lblMATNumberDensityUnit.AutoSize = True
-        Me.lblMATNumberDensityUnit.Location = New System.Drawing.Point(284, 346)
+        Me.lblMATNumberDensityUnit.Location = New System.Drawing.Point(275, 347)
         Me.lblMATNumberDensityUnit.Name = "lblMATNumberDensityUnit"
-        Me.lblMATNumberDensityUnit.Size = New System.Drawing.Size(51, 15)
+        Me.lblMATNumberDensityUnit.Size = New System.Drawing.Size(56, 12)
         Me.lblMATNumberDensityUnit.TabIndex = 15
         Me.lblMATNumberDensityUnit.Text = "/cm*barn"
         '
@@ -373,7 +391,7 @@ Partial Class LINK_MAT
         '
         Me.txtMATMassNumber.Location = New System.Drawing.Point(243, 316)
         Me.txtMATMassNumber.Name = "txtMATMassNumber"
-        Me.txtMATMassNumber.Size = New System.Drawing.Size(58, 21)
+        Me.txtMATMassNumber.Size = New System.Drawing.Size(58, 20)
         Me.txtMATMassNumber.TabIndex = 11
         '
         'gbxHOMO
@@ -390,6 +408,7 @@ Partial Class LINK_MAT
         Me.gbxHOMO.Controls.Add(Me.txtHOMOMaterialName)
         Me.gbxHOMO.Controls.Add(Me.lblHOMOFraction)
         Me.gbxHOMO.Controls.Add(Me.txtHOMOFraction)
+        Me.gbxHOMO.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxHOMO.Location = New System.Drawing.Point(453, 37)
         Me.gbxHOMO.Name = "gbxHOMO"
         Me.gbxHOMO.Size = New System.Drawing.Size(430, 441)
@@ -399,26 +418,32 @@ Partial Class LINK_MAT
         '
         'btnHOMORemoveHomoMaterial
         '
-        Me.btnHOMORemoveHomoMaterial.Location = New System.Drawing.Point(66, 220)
+        Me.btnHOMORemoveHomoMaterial.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnHOMORemoveHomoMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHOMORemoveHomoMaterial.ForeColor = System.Drawing.Color.White
+        Me.btnHOMORemoveHomoMaterial.Location = New System.Drawing.Point(50, 220)
         Me.btnHOMORemoveHomoMaterial.Name = "btnHOMORemoveHomoMaterial"
         Me.btnHOMORemoveHomoMaterial.Size = New System.Drawing.Size(176, 23)
         Me.btnHOMORemoveHomoMaterial.TabIndex = 6
         Me.btnHOMORemoveHomoMaterial.Text = "Remove Homogeneous Material"
-        Me.btnHOMORemoveHomoMaterial.UseVisualStyleBackColor = True
+        Me.btnHOMORemoveHomoMaterial.UseVisualStyleBackColor = False
         '
         'btnHOMORemoveMaterial
         '
+        Me.btnHOMORemoveMaterial.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnHOMORemoveMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHOMORemoveMaterial.ForeColor = System.Drawing.Color.White
         Me.btnHOMORemoveMaterial.Location = New System.Drawing.Point(235, 76)
         Me.btnHOMORemoveMaterial.Name = "btnHOMORemoveMaterial"
         Me.btnHOMORemoveMaterial.Size = New System.Drawing.Size(103, 23)
         Me.btnHOMORemoveMaterial.TabIndex = 3
         Me.btnHOMORemoveMaterial.Text = "Remove Material"
-        Me.btnHOMORemoveMaterial.UseVisualStyleBackColor = True
+        Me.btnHOMORemoveMaterial.UseVisualStyleBackColor = False
         '
         'lbxHOMOHomoMaterial
         '
         Me.lbxHOMOHomoMaterial.FormattingEnabled = True
-        Me.lbxHOMOHomoMaterial.ItemHeight = 15
+        Me.lbxHOMOHomoMaterial.ItemHeight = 12
         Me.lbxHOMOHomoMaterial.Location = New System.Drawing.Point(10, 249)
         Me.lbxHOMOHomoMaterial.Name = "lbxHOMOHomoMaterial"
         Me.lbxHOMOHomoMaterial.Size = New System.Drawing.Size(414, 184)
@@ -426,45 +451,51 @@ Partial Class LINK_MAT
         '
         'btnHOMOGenerateHomoMaterial
         '
-        Me.btnHOMOGenerateHomoMaterial.Location = New System.Drawing.Point(248, 220)
+        Me.btnHOMOGenerateHomoMaterial.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnHOMOGenerateHomoMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHOMOGenerateHomoMaterial.ForeColor = System.Drawing.Color.White
+        Me.btnHOMOGenerateHomoMaterial.Location = New System.Drawing.Point(234, 220)
         Me.btnHOMOGenerateHomoMaterial.Name = "btnHOMOGenerateHomoMaterial"
-        Me.btnHOMOGenerateHomoMaterial.Size = New System.Drawing.Size(176, 23)
+        Me.btnHOMOGenerateHomoMaterial.Size = New System.Drawing.Size(190, 23)
         Me.btnHOMOGenerateHomoMaterial.TabIndex = 7
         Me.btnHOMOGenerateHomoMaterial.Text = "Generate Homogeneous Material"
-        Me.btnHOMOGenerateHomoMaterial.UseVisualStyleBackColor = True
+        Me.btnHOMOGenerateHomoMaterial.UseVisualStyleBackColor = False
         '
         'lbxHOMOMaterial
         '
         Me.lbxHOMOMaterial.FormattingEnabled = True
-        Me.lbxHOMOMaterial.ItemHeight = 15
+        Me.lbxHOMOMaterial.ItemHeight = 12
         Me.lbxHOMOMaterial.Location = New System.Drawing.Point(10, 105)
         Me.lbxHOMOMaterial.Name = "lbxHOMOMaterial"
-        Me.lbxHOMOMaterial.Size = New System.Drawing.Size(414, 109)
+        Me.lbxHOMOMaterial.Size = New System.Drawing.Size(414, 100)
         Me.lbxHOMOMaterial.TabIndex = 5
         '
         'btnHOMOAddMaterial
         '
+        Me.btnHOMOAddMaterial.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnHOMOAddMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHOMOAddMaterial.ForeColor = System.Drawing.Color.White
         Me.btnHOMOAddMaterial.Location = New System.Drawing.Point(344, 76)
         Me.btnHOMOAddMaterial.Name = "btnHOMOAddMaterial"
         Me.btnHOMOAddMaterial.Size = New System.Drawing.Size(80, 23)
         Me.btnHOMOAddMaterial.TabIndex = 4
         Me.btnHOMOAddMaterial.Text = "Add Material"
-        Me.btnHOMOAddMaterial.UseVisualStyleBackColor = True
+        Me.btnHOMOAddMaterial.UseVisualStyleBackColor = False
         '
         'lblHOMOHomoMaterialName
         '
         Me.lblHOMOHomoMaterialName.AutoSize = True
         Me.lblHOMOHomoMaterialName.Location = New System.Drawing.Point(10, 22)
         Me.lblHOMOHomoMaterialName.Name = "lblHOMOHomoMaterialName"
-        Me.lblHOMOHomoMaterialName.Size = New System.Drawing.Size(150, 15)
+        Me.lblHOMOHomoMaterialName.Size = New System.Drawing.Size(157, 12)
         Me.lblHOMOHomoMaterialName.TabIndex = 5
         Me.lblHOMOHomoMaterialName.Text = "Homogeneous Material Name"
         '
         'txtHOMOHomoMaterialName
         '
-        Me.txtHOMOHomoMaterialName.Location = New System.Drawing.Point(166, 17)
+        Me.txtHOMOHomoMaterialName.Location = New System.Drawing.Point(173, 17)
         Me.txtHOMOHomoMaterialName.Name = "txtHOMOHomoMaterialName"
-        Me.txtHOMOHomoMaterialName.Size = New System.Drawing.Size(258, 21)
+        Me.txtHOMOHomoMaterialName.Size = New System.Drawing.Size(251, 20)
         Me.txtHOMOHomoMaterialName.TabIndex = 0
         '
         'lblHOMOMaterialName
@@ -472,7 +503,7 @@ Partial Class LINK_MAT
         Me.lblHOMOMaterialName.AutoSize = True
         Me.lblHOMOMaterialName.Location = New System.Drawing.Point(10, 48)
         Me.lblHOMOMaterialName.Name = "lblHOMOMaterialName"
-        Me.lblHOMOMaterialName.Size = New System.Drawing.Size(79, 15)
+        Me.lblHOMOMaterialName.Size = New System.Drawing.Size(80, 12)
         Me.lblHOMOMaterialName.TabIndex = 7
         Me.lblHOMOMaterialName.Text = "Material Name"
         '
@@ -480,7 +511,7 @@ Partial Class LINK_MAT
         '
         Me.txtHOMOMaterialName.Location = New System.Drawing.Point(95, 46)
         Me.txtHOMOMaterialName.Name = "txtHOMOMaterialName"
-        Me.txtHOMOMaterialName.Size = New System.Drawing.Size(131, 21)
+        Me.txtHOMOMaterialName.Size = New System.Drawing.Size(131, 20)
         Me.txtHOMOMaterialName.TabIndex = 1
         '
         'lblHOMOFraction
@@ -488,7 +519,7 @@ Partial Class LINK_MAT
         Me.lblHOMOFraction.AutoSize = True
         Me.lblHOMOFraction.Location = New System.Drawing.Point(232, 48)
         Me.lblHOMOFraction.Name = "lblHOMOFraction"
-        Me.lblHOMOFraction.Size = New System.Drawing.Size(106, 15)
+        Me.lblHOMOFraction.Size = New System.Drawing.Size(109, 12)
         Me.lblHOMOFraction.TabIndex = 9
         Me.lblHOMOFraction.Text = "Fraction for Mixture"
         '
@@ -496,41 +527,66 @@ Partial Class LINK_MAT
         '
         Me.txtHOMOFraction.Location = New System.Drawing.Point(344, 46)
         Me.txtHOMOFraction.Name = "txtHOMOFraction"
-        Me.txtHOMOFraction.Size = New System.Drawing.Size(80, 21)
+        Me.txtHOMOFraction.Size = New System.Drawing.Size(80, 20)
         Me.txtHOMOFraction.TabIndex = 2
         '
         'btnReset
         '
+        Me.btnReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReset.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReset.ForeColor = System.Drawing.Color.White
         Me.btnReset.Location = New System.Drawing.Point(449, 484)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(93, 72)
         Me.btnReset.TabIndex = 2
         Me.btnReset.Text = "&Reset"
-        Me.btnReset.UseVisualStyleBackColor = True
+        Me.btnReset.UseVisualStyleBackColor = False
         '
         'btnSave
         '
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Location = New System.Drawing.Point(671, 484)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(212, 72)
         Me.btnSave.TabIndex = 4
         Me.btnSave.Text = "&Save"
-        Me.btnSave.UseVisualStyleBackColor = True
+        Me.btnSave.UseVisualStyleBackColor = False
         '
         'btnClose
         '
+        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.ForeColor = System.Drawing.Color.White
         Me.btnClose.Location = New System.Drawing.Point(548, 484)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(117, 72)
         Me.btnClose.TabIndex = 3
         Me.btnClose.Text = "&Close without Saving"
-        Me.btnClose.UseVisualStyleBackColor = True
+        Me.btnClose.UseVisualStyleBackColor = False
+        '
+        'pbxExit
+        '
+        Me.pbxExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pbxExit.Image = Global.Project_Joshua.My.Resources.Resources._exit
+        Me.pbxExit.InitialImage = Nothing
+        Me.pbxExit.Location = New System.Drawing.Point(879, 2)
+        Me.pbxExit.Name = "pbxExit"
+        Me.pbxExit.Size = New System.Drawing.Size(20, 20)
+        Me.pbxExit.TabIndex = 5
+        Me.pbxExit.TabStop = False
         '
         'LINK_MAT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(902, 573)
+        Me.Controls.Add(Me.pbxExit)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnReset)
@@ -538,12 +594,14 @@ Partial Class LINK_MAT
         Me.Controls.Add(Me.gbxMAT)
         Me.Controls.Add(Me.lblTitle)
         Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "LINK_MAT"
         Me.Text = "Configure LINK_MAT_[Reactor Code].dat"
         Me.gbxMAT.ResumeLayout(False)
         Me.gbxMAT.PerformLayout()
         Me.gbxHOMO.ResumeLayout(False)
         Me.gbxHOMO.PerformLayout()
+        CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -596,4 +654,5 @@ Partial Class LINK_MAT
     Friend WithEvents txtMATNumberDensityE As TextBox
     Friend WithEvents lblE As Label
     Friend WithEvents btnClose As Button
+    Friend WithEvents pbxExit As PictureBox
 End Class
