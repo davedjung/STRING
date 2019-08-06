@@ -407,7 +407,7 @@
 
         Dim allFile() = MainMenu.getAllFile()
         Dim fileCount As Integer
-        If IsNothing(allFile(0)) Then
+        If allFile.Length() = 0 Then
             Exit Sub
         Else
             fileCount = allFile.Length()

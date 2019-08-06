@@ -37,6 +37,11 @@ Project-Joshua
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Project_Joshua.My.Resources.Resources.logo_small">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Project_Joshua.My.Resources.Resources.MAT_DATA">
 <summary>
   Looks up a localized string similar to UO2
