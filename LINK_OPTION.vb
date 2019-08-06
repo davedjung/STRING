@@ -209,4 +209,7 @@ Public Class LINK_OPTION
 
     End Sub
 
+    Private Sub PbxExit_Click(sender As Object, e As EventArgs) Handles pbxExit.Click
+        Me.Close()
+    End Sub
 End Class
