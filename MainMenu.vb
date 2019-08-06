@@ -167,4 +167,12 @@
         End If
         Pos = Control.MousePosition
     End Sub
+
+    Private Sub PbxMinimize_Click(sender As Object, e As EventArgs) Handles pbxMinimize.Click
+        Me.WindowState = WindowState.Minimized
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles pbxLegacy.Click
+        Legacy.Show()
+    End Sub
 End Class

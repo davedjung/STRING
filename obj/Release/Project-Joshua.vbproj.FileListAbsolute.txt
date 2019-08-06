@@ -14,3 +14,4 @@ C:\Users\daved\Documents\STRING\obj\Release\Project-Joshua.vbproj.CoreCompileInp
 C:\Users\daved\Documents\STRING\obj\Release\Project-Joshua.exe
 C:\Users\daved\Documents\STRING\obj\Release\Project-Joshua.xml
 C:\Users\daved\Documents\STRING\obj\Release\Project-Joshua.pdb
+C:\Users\daved\Documents\STRING\obj\Release\Project_Joshua.Legacy.resources

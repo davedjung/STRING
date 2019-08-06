@@ -67,6 +67,7 @@ Partial Class LINK_FA
         Me.btnClose = New System.Windows.Forms.Button()
         Me.pbxExit = New System.Windows.Forms.PictureBox()
         Me.pnlTop = New System.Windows.Forms.Panel()
+        Me.pbxMinimize = New System.Windows.Forms.PictureBox()
         Me.gbxHeader.SuspendLayout()
         Me.gbxFAOverview.SuspendLayout()
         CType(Me.pbxFA, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,15 +76,16 @@ Partial Class LINK_FA
         Me.gbxAssemblyGap.SuspendLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTop.SuspendLayout()
+        CType(Me.pbxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.Location = New System.Drawing.Point(12, 31)
+        Me.lblTitle.Font = New System.Drawing.Font("Georgia", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.Location = New System.Drawing.Point(12, 23)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(416, 25)
+        Me.lblTitle.Size = New System.Drawing.Size(470, 29)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "LINK_FA_[Reactor Core].dat Configurator"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -100,10 +102,10 @@ Partial Class LINK_FA
         Me.gbxHeader.Controls.Add(Me.lblPinNo)
         Me.gbxHeader.Controls.Add(Me.lblFAIndex)
         Me.gbxHeader.Controls.Add(Me.txtFAIndex)
-        Me.gbxHeader.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxHeader.Location = New System.Drawing.Point(17, 59)
+        Me.gbxHeader.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxHeader.Location = New System.Drawing.Point(12, 55)
         Me.gbxHeader.Name = "gbxHeader"
-        Me.gbxHeader.Size = New System.Drawing.Size(622, 78)
+        Me.gbxHeader.Size = New System.Drawing.Size(622, 70)
         Me.gbxHeader.TabIndex = 0
         Me.gbxHeader.TabStop = False
         Me.gbxHeader.Text = "Header"
@@ -111,85 +113,85 @@ Partial Class LINK_FA
         'lblMaterialTemp
         '
         Me.lblMaterialTemp.AutoSize = True
-        Me.lblMaterialTemp.Location = New System.Drawing.Point(282, 50)
+        Me.lblMaterialTemp.Location = New System.Drawing.Point(282, 44)
         Me.lblMaterialTemp.Name = "lblMaterialTemp"
-        Me.lblMaterialTemp.Size = New System.Drawing.Size(123, 12)
+        Me.lblMaterialTemp.Size = New System.Drawing.Size(124, 15)
         Me.lblMaterialTemp.TabIndex = 10
         Me.lblMaterialTemp.Text = "Material Inlet Temp (K)"
         '
         'txtMaterialTemp
         '
-        Me.txtMaterialTemp.Location = New System.Drawing.Point(412, 47)
+        Me.txtMaterialTemp.Location = New System.Drawing.Point(412, 41)
         Me.txtMaterialTemp.Name = "txtMaterialTemp"
-        Me.txtMaterialTemp.Size = New System.Drawing.Size(199, 20)
+        Me.txtMaterialTemp.Size = New System.Drawing.Size(204, 21)
         Me.txtMaterialTemp.TabIndex = 4
         Me.txtMaterialTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblFAMaterial
         '
         Me.lblFAMaterial.AutoSize = True
-        Me.lblFAMaterial.Location = New System.Drawing.Point(6, 50)
+        Me.lblFAMaterial.Location = New System.Drawing.Point(6, 44)
         Me.lblFAMaterial.Name = "lblFAMaterial"
-        Me.lblFAMaterial.Size = New System.Drawing.Size(107, 12)
+        Me.lblFAMaterial.Size = New System.Drawing.Size(108, 15)
         Me.lblFAMaterial.TabIndex = 8
         Me.lblFAMaterial.Text = "Material Filled in FA"
         '
         'txtFAMaterial
         '
-        Me.txtFAMaterial.Location = New System.Drawing.Point(120, 47)
+        Me.txtFAMaterial.Location = New System.Drawing.Point(120, 41)
         Me.txtFAMaterial.Name = "txtFAMaterial"
-        Me.txtFAMaterial.Size = New System.Drawing.Size(156, 20)
+        Me.txtFAMaterial.Size = New System.Drawing.Size(156, 21)
         Me.txtFAMaterial.TabIndex = 3
         Me.txtFAMaterial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPinPitch
         '
         Me.lblPinPitch.AutoSize = True
-        Me.lblPinPitch.Location = New System.Drawing.Point(412, 23)
+        Me.lblPinPitch.Location = New System.Drawing.Point(411, 17)
         Me.lblPinPitch.Name = "lblPinPitch"
-        Me.lblPinPitch.Size = New System.Drawing.Size(79, 12)
+        Me.lblPinPitch.Size = New System.Drawing.Size(76, 15)
         Me.lblPinPitch.TabIndex = 6
         Me.lblPinPitch.Text = "Pin Pitch (cm)"
         '
         'txtPinPitch
         '
-        Me.txtPinPitch.Location = New System.Drawing.Point(494, 20)
+        Me.txtPinPitch.Location = New System.Drawing.Point(493, 14)
         Me.txtPinPitch.Name = "txtPinPitch"
-        Me.txtPinPitch.Size = New System.Drawing.Size(117, 20)
+        Me.txtPinPitch.Size = New System.Drawing.Size(123, 21)
         Me.txtPinPitch.TabIndex = 2
         Me.txtPinPitch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtPinNo
         '
-        Me.txtPinNo.Location = New System.Drawing.Point(333, 20)
+        Me.txtPinNo.Location = New System.Drawing.Point(332, 14)
         Me.txtPinNo.Name = "txtPinNo"
-        Me.txtPinNo.Size = New System.Drawing.Size(73, 20)
+        Me.txtPinNo.Size = New System.Drawing.Size(73, 21)
         Me.txtPinNo.TabIndex = 1
         Me.txtPinNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPinNo
         '
         Me.lblPinNo.AutoSize = True
-        Me.lblPinNo.Location = New System.Drawing.Point(210, 23)
+        Me.lblPinNo.Location = New System.Drawing.Point(210, 17)
         Me.lblPinNo.Name = "lblPinNo"
-        Me.lblPinNo.Size = New System.Drawing.Size(124, 12)
+        Me.lblPinNo.Size = New System.Drawing.Size(116, 15)
         Me.lblPinNo.TabIndex = 2
         Me.lblPinNo.Text = "# of Pins in x-direction"
         '
         'lblFAIndex
         '
         Me.lblFAIndex.AutoSize = True
-        Me.lblFAIndex.Location = New System.Drawing.Point(6, 23)
+        Me.lblFAIndex.Location = New System.Drawing.Point(6, 17)
         Me.lblFAIndex.Name = "lblFAIndex"
-        Me.lblFAIndex.Size = New System.Drawing.Size(121, 12)
+        Me.lblFAIndex.Size = New System.Drawing.Size(117, 15)
         Me.lblFAIndex.TabIndex = 0
         Me.lblFAIndex.Text = "Fuel Assembly Index #"
         '
         'txtFAIndex
         '
-        Me.txtFAIndex.Location = New System.Drawing.Point(129, 20)
+        Me.txtFAIndex.Location = New System.Drawing.Point(129, 14)
         Me.txtFAIndex.Name = "txtFAIndex"
-        Me.txtFAIndex.Size = New System.Drawing.Size(75, 20)
+        Me.txtFAIndex.Size = New System.Drawing.Size(75, 21)
         Me.txtFAIndex.TabIndex = 0
         Me.txtFAIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -203,8 +205,8 @@ Partial Class LINK_FA
         Me.gbxFAOverview.Controls.Add(Me.btnSetPin)
         Me.gbxFAOverview.Controls.Add(Me.pbxFA)
         Me.gbxFAOverview.Controls.Add(Me.btnClearSelection)
-        Me.gbxFAOverview.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxFAOverview.Location = New System.Drawing.Point(17, 143)
+        Me.gbxFAOverview.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxFAOverview.Location = New System.Drawing.Point(12, 131)
         Me.gbxFAOverview.Name = "gbxFAOverview"
         Me.gbxFAOverview.Size = New System.Drawing.Size(622, 532)
         Me.gbxFAOverview.TabIndex = 1
@@ -215,10 +217,11 @@ Partial Class LINK_FA
         '
         Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.White
-        Me.btnAdd.Location = New System.Drawing.Point(516, 299)
+        Me.btnAdd.Location = New System.Drawing.Point(516, 296)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(95, 40)
+        Me.btnAdd.Size = New System.Drawing.Size(100, 40)
         Me.btnAdd.TabIndex = 6
         Me.btnAdd.Text = "Add to &List"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -227,10 +230,11 @@ Partial Class LINK_FA
         '
         Me.btnErase.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnErase.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnErase.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnErase.ForeColor = System.Drawing.Color.White
-        Me.btnErase.Location = New System.Drawing.Point(516, 207)
+        Me.btnErase.Location = New System.Drawing.Point(516, 204)
         Me.btnErase.Name = "btnErase"
-        Me.btnErase.Size = New System.Drawing.Size(95, 40)
+        Me.btnErase.Size = New System.Drawing.Size(100, 40)
         Me.btnErase.TabIndex = 4
         Me.btnErase.Text = "&Erase"
         Me.btnErase.UseVisualStyleBackColor = False
@@ -239,10 +243,11 @@ Partial Class LINK_FA
         '
         Me.btnSelectAll.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnSelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSelectAll.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSelectAll.ForeColor = System.Drawing.Color.White
-        Me.btnSelectAll.Location = New System.Drawing.Point(516, 115)
+        Me.btnSelectAll.Location = New System.Drawing.Point(516, 112)
         Me.btnSelectAll.Name = "btnSelectAll"
-        Me.btnSelectAll.Size = New System.Drawing.Size(95, 40)
+        Me.btnSelectAll.Size = New System.Drawing.Size(100, 40)
         Me.btnSelectAll.TabIndex = 2
         Me.btnSelectAll.Text = "Select &All"
         Me.btnSelectAll.UseVisualStyleBackColor = False
@@ -251,10 +256,11 @@ Partial Class LINK_FA
         '
         Me.btnCreateFA.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnCreateFA.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCreateFA.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCreateFA.ForeColor = System.Drawing.Color.White
-        Me.btnCreateFA.Location = New System.Drawing.Point(516, 23)
+        Me.btnCreateFA.Location = New System.Drawing.Point(516, 20)
         Me.btnCreateFA.Name = "btnCreateFA"
-        Me.btnCreateFA.Size = New System.Drawing.Size(95, 40)
+        Me.btnCreateFA.Size = New System.Drawing.Size(100, 40)
         Me.btnCreateFA.TabIndex = 0
         Me.btnCreateFA.Text = "Create &FA"
         Me.btnCreateFA.UseVisualStyleBackColor = False
@@ -263,10 +269,11 @@ Partial Class LINK_FA
         '
         Me.btnEraseAll.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnEraseAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEraseAll.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEraseAll.ForeColor = System.Drawing.Color.White
-        Me.btnEraseAll.Location = New System.Drawing.Point(516, 253)
+        Me.btnEraseAll.Location = New System.Drawing.Point(516, 250)
         Me.btnEraseAll.Name = "btnEraseAll"
-        Me.btnEraseAll.Size = New System.Drawing.Size(95, 40)
+        Me.btnEraseAll.Size = New System.Drawing.Size(100, 40)
         Me.btnEraseAll.TabIndex = 5
         Me.btnEraseAll.Text = "Erase All"
         Me.btnEraseAll.UseVisualStyleBackColor = False
@@ -275,10 +282,11 @@ Partial Class LINK_FA
         '
         Me.btnSetPin.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnSetPin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSetPin.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSetPin.ForeColor = System.Drawing.Color.White
-        Me.btnSetPin.Location = New System.Drawing.Point(516, 69)
+        Me.btnSetPin.Location = New System.Drawing.Point(516, 66)
         Me.btnSetPin.Name = "btnSetPin"
-        Me.btnSetPin.Size = New System.Drawing.Size(95, 40)
+        Me.btnSetPin.Size = New System.Drawing.Size(100, 40)
         Me.btnSetPin.TabIndex = 1
         Me.btnSetPin.Text = "Set &Pin #"
         Me.btnSetPin.UseVisualStyleBackColor = False
@@ -296,22 +304,23 @@ Partial Class LINK_FA
         '
         Me.btnClearSelection.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnClearSelection.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClearSelection.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearSelection.ForeColor = System.Drawing.Color.White
-        Me.btnClearSelection.Location = New System.Drawing.Point(516, 161)
+        Me.btnClearSelection.Location = New System.Drawing.Point(516, 158)
         Me.btnClearSelection.Name = "btnClearSelection"
-        Me.btnClearSelection.Size = New System.Drawing.Size(95, 40)
+        Me.btnClearSelection.Size = New System.Drawing.Size(100, 40)
         Me.btnClearSelection.TabIndex = 3
         Me.btnClearSelection.Text = "Clear Selection"
         Me.btnClearSelection.UseVisualStyleBackColor = False
         '
         'lbxFAList
         '
-        Me.lbxFAList.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbxFAList.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbxFAList.FormattingEnabled = True
-        Me.lbxFAList.ItemHeight = 12
-        Me.lbxFAList.Location = New System.Drawing.Point(18, 739)
+        Me.lbxFAList.ItemHeight = 15
+        Me.lbxFAList.Location = New System.Drawing.Point(12, 720)
         Me.lbxFAList.Name = "lbxFAList"
-        Me.lbxFAList.Size = New System.Drawing.Size(621, 88)
+        Me.lbxFAList.Size = New System.Drawing.Size(621, 79)
         Me.lbxFAList.TabIndex = 4
         '
         'gbxPinInfo
@@ -322,8 +331,8 @@ Partial Class LINK_FA
         Me.gbxPinInfo.Controls.Add(Me.lbxPinList)
         Me.gbxPinInfo.Controls.Add(Me.cbxAssemFile)
         Me.gbxPinInfo.Controls.Add(Me.lblAssemFile)
-        Me.gbxPinInfo.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxPinInfo.Location = New System.Drawing.Point(645, 143)
+        Me.gbxPinInfo.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxPinInfo.Location = New System.Drawing.Point(640, 131)
         Me.gbxPinInfo.Name = "gbxPinInfo"
         Me.gbxPinInfo.Size = New System.Drawing.Size(429, 532)
         Me.gbxPinInfo.TabIndex = 2
@@ -333,53 +342,53 @@ Partial Class LINK_FA
         'lbxPinInfo
         '
         Me.lbxPinInfo.FormattingEnabled = True
-        Me.lbxPinInfo.ItemHeight = 12
-        Me.lbxPinInfo.Location = New System.Drawing.Point(6, 446)
+        Me.lbxPinInfo.ItemHeight = 15
+        Me.lbxPinInfo.Location = New System.Drawing.Point(6, 462)
         Me.lbxPinInfo.Name = "lbxPinInfo"
-        Me.lbxPinInfo.Size = New System.Drawing.Size(417, 76)
+        Me.lbxPinInfo.Size = New System.Drawing.Size(417, 64)
         Me.lbxPinInfo.TabIndex = 5
         '
         'pbxPin
         '
         Me.pbxPin.BackColor = System.Drawing.Color.White
-        Me.pbxPin.Location = New System.Drawing.Point(62, 119)
+        Me.pbxPin.Location = New System.Drawing.Point(35, 98)
         Me.pbxPin.Name = "pbxPin"
-        Me.pbxPin.Size = New System.Drawing.Size(315, 315)
+        Me.pbxPin.Size = New System.Drawing.Size(355, 355)
         Me.pbxPin.TabIndex = 4
         Me.pbxPin.TabStop = False
         '
         'lblPinList
         '
         Me.lblPinList.AutoSize = True
-        Me.lblPinList.Location = New System.Drawing.Point(6, 66)
+        Me.lblPinList.Location = New System.Drawing.Point(6, 58)
         Me.lblPinList.Name = "lblPinList"
-        Me.lblPinList.Size = New System.Drawing.Size(113, 12)
+        Me.lblPinList.Size = New System.Drawing.Size(112, 15)
         Me.lblPinList.TabIndex = 3
         Me.lblPinList.Text = "List of Pin(s) Defined"
         '
         'lbxPinList
         '
         Me.lbxPinList.FormattingEnabled = True
-        Me.lbxPinList.ItemHeight = 12
-        Me.lbxPinList.Location = New System.Drawing.Point(214, 49)
+        Me.lbxPinList.ItemHeight = 15
+        Me.lbxPinList.Location = New System.Drawing.Point(214, 43)
         Me.lbxPinList.Name = "lbxPinList"
-        Me.lbxPinList.Size = New System.Drawing.Size(209, 64)
+        Me.lbxPinList.Size = New System.Drawing.Size(209, 49)
         Me.lbxPinList.TabIndex = 2
         '
         'cbxAssemFile
         '
         Me.cbxAssemFile.FormattingEnabled = True
-        Me.cbxAssemFile.Location = New System.Drawing.Point(214, 20)
+        Me.cbxAssemFile.Location = New System.Drawing.Point(214, 14)
         Me.cbxAssemFile.Name = "cbxAssemFile"
-        Me.cbxAssemFile.Size = New System.Drawing.Size(209, 20)
+        Me.cbxAssemFile.Size = New System.Drawing.Size(209, 23)
         Me.cbxAssemFile.TabIndex = 0
         '
         'lblAssemFile
         '
         Me.lblAssemFile.AutoSize = True
-        Me.lblAssemFile.Location = New System.Drawing.Point(6, 23)
+        Me.lblAssemFile.Location = New System.Drawing.Point(6, 17)
         Me.lblAssemFile.Name = "lblAssemFile"
-        Me.lblAssemFile.Size = New System.Drawing.Size(210, 12)
+        Me.lblAssemFile.Size = New System.Drawing.Size(202, 15)
         Me.lblAssemFile.TabIndex = 0
         Me.lblAssemFile.Text = "Select [Reactor Code]_Assem_#.inp File"
         '
@@ -387,11 +396,11 @@ Partial Class LINK_FA
         '
         Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(878, 739)
+        Me.btnSave.Location = New System.Drawing.Point(897, 720)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(196, 94)
+        Me.btnSave.Size = New System.Drawing.Size(172, 79)
         Me.btnSave.TabIndex = 7
         Me.btnSave.Text = "&Save"
         Me.btnSave.UseVisualStyleBackColor = False
@@ -408,10 +417,10 @@ Partial Class LINK_FA
         Me.gbxAssemblyGap.Controls.Add(Me.lblCalculator)
         Me.gbxAssemblyGap.Controls.Add(Me.txtHalfAssemGap)
         Me.gbxAssemblyGap.Controls.Add(Me.lblHalfAssemGap)
-        Me.gbxAssemblyGap.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxAssemblyGap.Location = New System.Drawing.Point(17, 681)
+        Me.gbxAssemblyGap.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxAssemblyGap.Location = New System.Drawing.Point(12, 669)
         Me.gbxAssemblyGap.Name = "gbxAssemblyGap"
-        Me.gbxAssemblyGap.Size = New System.Drawing.Size(1057, 52)
+        Me.gbxAssemblyGap.Size = New System.Drawing.Size(1057, 45)
         Me.gbxAssemblyGap.TabIndex = 3
         Me.gbxAssemblyGap.TabStop = False
         Me.gbxAssemblyGap.Text = "Assembly Gap"
@@ -420,88 +429,89 @@ Partial Class LINK_FA
         '
         Me.btnCalculate.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalculate.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCalculate.ForeColor = System.Drawing.Color.White
-        Me.btnCalculate.Location = New System.Drawing.Point(942, 15)
+        Me.btnCalculate.Location = New System.Drawing.Point(928, 13)
         Me.btnCalculate.Name = "btnCalculate"
-        Me.btnCalculate.Size = New System.Drawing.Size(106, 23)
+        Me.btnCalculate.Size = New System.Drawing.Size(123, 23)
         Me.btnCalculate.TabIndex = 4
         Me.btnCalculate.Text = "Calculate"
         Me.btnCalculate.UseVisualStyleBackColor = False
         '
         'txtPinPitchCalc
         '
-        Me.txtPinPitchCalc.Location = New System.Drawing.Point(822, 17)
+        Me.txtPinPitchCalc.Location = New System.Drawing.Point(822, 14)
         Me.txtPinPitchCalc.Name = "txtPinPitchCalc"
-        Me.txtPinPitchCalc.Size = New System.Drawing.Size(100, 20)
+        Me.txtPinPitchCalc.Size = New System.Drawing.Size(100, 21)
         Me.txtPinPitchCalc.TabIndex = 3
         Me.txtPinPitchCalc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtPinNoCalc
         '
-        Me.txtPinNoCalc.Location = New System.Drawing.Point(634, 17)
+        Me.txtPinNoCalc.Location = New System.Drawing.Point(634, 14)
         Me.txtPinNoCalc.Name = "txtPinNoCalc"
-        Me.txtPinNoCalc.Size = New System.Drawing.Size(100, 20)
+        Me.txtPinNoCalc.Size = New System.Drawing.Size(100, 21)
         Me.txtPinNoCalc.TabIndex = 2
         Me.txtPinNoCalc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtAssemPitchCalc
         '
-        Me.txtAssemPitchCalc.Location = New System.Drawing.Point(472, 17)
+        Me.txtAssemPitchCalc.Location = New System.Drawing.Point(472, 14)
         Me.txtAssemPitchCalc.Name = "txtAssemPitchCalc"
-        Me.txtAssemPitchCalc.Size = New System.Drawing.Size(100, 20)
+        Me.txtAssemPitchCalc.Size = New System.Drawing.Size(100, 21)
         Me.txtAssemPitchCalc.TabIndex = 1
         Me.txtAssemPitchCalc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPinNoCalc
         '
         Me.lblPinNoCalc.AutoSize = True
-        Me.lblPinNoCalc.Location = New System.Drawing.Point(578, 20)
+        Me.lblPinNoCalc.Location = New System.Drawing.Point(578, 17)
         Me.lblPinNoCalc.Name = "lblPinNoCalc"
-        Me.lblPinNoCalc.Size = New System.Drawing.Size(50, 12)
+        Me.lblPinNoCalc.Size = New System.Drawing.Size(50, 15)
         Me.lblPinNoCalc.TabIndex = 5
         Me.lblPinNoCalc.Text = "# of Pins"
         '
         'lblPinPitchCalc
         '
         Me.lblPinPitchCalc.AutoSize = True
-        Me.lblPinPitchCalc.Location = New System.Drawing.Point(740, 20)
+        Me.lblPinPitchCalc.Location = New System.Drawing.Point(740, 17)
         Me.lblPinPitchCalc.Name = "lblPinPitchCalc"
-        Me.lblPinPitchCalc.Size = New System.Drawing.Size(79, 12)
+        Me.lblPinPitchCalc.Size = New System.Drawing.Size(76, 15)
         Me.lblPinPitchCalc.TabIndex = 4
         Me.lblPinPitchCalc.Text = "Pin Pitch (cm)"
         '
         'lblAssemPitchCalc
         '
         Me.lblAssemPitchCalc.AutoSize = True
-        Me.lblAssemPitchCalc.Location = New System.Drawing.Point(357, 20)
+        Me.lblAssemPitchCalc.Location = New System.Drawing.Point(357, 17)
         Me.lblAssemPitchCalc.Name = "lblAssemPitchCalc"
-        Me.lblAssemPitchCalc.Size = New System.Drawing.Size(111, 12)
+        Me.lblAssemPitchCalc.Size = New System.Drawing.Size(109, 15)
         Me.lblAssemPitchCalc.TabIndex = 3
         Me.lblAssemPitchCalc.Text = "Assembly Pitch (cm)"
         '
         'lblCalculator
         '
         Me.lblCalculator.AutoSize = True
-        Me.lblCalculator.Location = New System.Drawing.Point(295, 20)
+        Me.lblCalculator.Location = New System.Drawing.Point(289, 17)
         Me.lblCalculator.Name = "lblCalculator"
-        Me.lblCalculator.Size = New System.Drawing.Size(65, 12)
+        Me.lblCalculator.Size = New System.Drawing.Size(62, 15)
         Me.lblCalculator.TabIndex = 2
         Me.lblCalculator.Text = "Calculator: "
         '
         'txtHalfAssemGap
         '
-        Me.txtHalfAssemGap.Location = New System.Drawing.Point(153, 17)
+        Me.txtHalfAssemGap.Location = New System.Drawing.Point(153, 14)
         Me.txtHalfAssemGap.Name = "txtHalfAssemGap"
-        Me.txtHalfAssemGap.Size = New System.Drawing.Size(100, 20)
+        Me.txtHalfAssemGap.Size = New System.Drawing.Size(100, 21)
         Me.txtHalfAssemGap.TabIndex = 0
         Me.txtHalfAssemGap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblHalfAssemGap
         '
         Me.lblHalfAssemGap.AutoSize = True
-        Me.lblHalfAssemGap.Location = New System.Drawing.Point(6, 23)
+        Me.lblHalfAssemGap.Location = New System.Drawing.Point(6, 17)
         Me.lblHalfAssemGap.Name = "lblHalfAssemGap"
-        Me.lblHalfAssemGap.Size = New System.Drawing.Size(141, 12)
+        Me.lblHalfAssemGap.Size = New System.Drawing.Size(141, 15)
         Me.lblHalfAssemGap.TabIndex = 0
         Me.lblHalfAssemGap.Text = "Half of Assembly Gap (cm)"
         '
@@ -509,11 +519,11 @@ Partial Class LINK_FA
         '
         Me.btnReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReset.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReset.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReset.ForeColor = System.Drawing.Color.White
-        Me.btnReset.Location = New System.Drawing.Point(651, 739)
+        Me.btnReset.Location = New System.Drawing.Point(640, 720)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(91, 94)
+        Me.btnReset.Size = New System.Drawing.Size(64, 79)
         Me.btnReset.TabIndex = 5
         Me.btnReset.Text = "&Reset"
         Me.btnReset.UseVisualStyleBackColor = False
@@ -522,11 +532,11 @@ Partial Class LINK_FA
         '
         Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(748, 739)
+        Me.btnClose.Location = New System.Drawing.Point(710, 720)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(124, 94)
+        Me.btnClose.Size = New System.Drawing.Size(181, 79)
         Me.btnClose.TabIndex = 6
         Me.btnClose.Text = "&Close without Saving"
         Me.btnClose.UseVisualStyleBackColor = False
@@ -536,7 +546,7 @@ Partial Class LINK_FA
         Me.pbxExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pbxExit.Image = Global.Project_Joshua.My.Resources.Resources._exit
         Me.pbxExit.InitialImage = Nothing
-        Me.pbxExit.Location = New System.Drawing.Point(1066, 0)
+        Me.pbxExit.Location = New System.Drawing.Point(1063, 0)
         Me.pbxExit.Name = "pbxExit"
         Me.pbxExit.Size = New System.Drawing.Size(20, 20)
         Me.pbxExit.TabIndex = 8
@@ -545,19 +555,32 @@ Partial Class LINK_FA
         'pnlTop
         '
         Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.pnlTop.Controls.Add(Me.pbxMinimize)
         Me.pnlTop.Controls.Add(Me.pbxExit)
         Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTop.Location = New System.Drawing.Point(0, 0)
         Me.pnlTop.Name = "pnlTop"
-        Me.pnlTop.Size = New System.Drawing.Size(1086, 20)
+        Me.pnlTop.Size = New System.Drawing.Size(1083, 20)
         Me.pnlTop.TabIndex = 9
+        '
+        'pbxMinimize
+        '
+        Me.pbxMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pbxMinimize.Image = Global.Project_Joshua.My.Resources.Resources.minimize
+        Me.pbxMinimize.InitialImage = Nothing
+        Me.pbxMinimize.Location = New System.Drawing.Point(1044, 0)
+        Me.pbxMinimize.Name = "pbxMinimize"
+        Me.pbxMinimize.Size = New System.Drawing.Size(20, 20)
+        Me.pbxMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbxMinimize.TabIndex = 10
+        Me.pbxMinimize.TabStop = False
         '
         'LINK_FA
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1086, 847)
+        Me.ClientSize = New System.Drawing.Size(1083, 813)
         Me.Controls.Add(Me.pnlTop)
         Me.Controls.Add(Me.lbxFAList)
         Me.Controls.Add(Me.btnClose)
@@ -583,6 +606,7 @@ Partial Class LINK_FA
         Me.gbxAssemblyGap.PerformLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTop.ResumeLayout(False)
+        CType(Me.pbxMinimize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -633,4 +657,5 @@ Partial Class LINK_FA
     Friend WithEvents btnAdd As Button
     Friend WithEvents pbxExit As PictureBox
     Friend WithEvents pnlTop As Panel
+    Friend WithEvents pbxMinimize As PictureBox
 End Class

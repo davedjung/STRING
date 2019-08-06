@@ -658,4 +658,8 @@ Public Class LINK_MAT
         End If
         Pos = Control.MousePosition
     End Sub
+
+    Private Sub PbxMinimize_Click(sender As Object, e As EventArgs) Handles pbxMinimize.Click
+        Me.WindowState = WindowState.Minimized
+    End Sub
 End Class

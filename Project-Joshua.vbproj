@@ -123,6 +123,12 @@
     <Compile Include="File Class\AssemblyFile.vb" />
     <Compile Include="File Class\FAFile.vb" />
     <Compile Include="Fuel Assembly Class\FuelAssembly.vb" />
+    <Compile Include="Legacy.Designer.vb">
+      <DependentUpon>Legacy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Legacy.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Material Class\CustomMaterial.vb" />
     <Compile Include="Material Class\Element.vb" />
     <Compile Include="File Class\File.vb" />
@@ -177,6 +183,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Assem.resx">
       <DependentUpon>Assem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Legacy.resx">
+      <DependentUpon>Legacy.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
@@ -241,6 +250,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

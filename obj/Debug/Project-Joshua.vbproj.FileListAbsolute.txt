@@ -46,3 +46,4 @@ C:\Users\daved\Documents\STRING\obj\Debug\Project-Joshua.vbproj.CoreCompileInput
 C:\Users\daved\Documents\STRING\obj\Debug\Project-Joshua.exe
 C:\Users\daved\Documents\STRING\obj\Debug\Project-Joshua.xml
 C:\Users\daved\Documents\STRING\obj\Debug\Project-Joshua.pdb
+C:\Users\daved\Documents\STRING\obj\Debug\Project_Joshua.Legacy.resources

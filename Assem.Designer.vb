@@ -67,6 +67,7 @@ Partial Class Assem
         Me.btnClose = New System.Windows.Forms.Button()
         Me.pbxExit = New System.Windows.Forms.PictureBox()
         Me.pnlTop = New System.Windows.Forms.Panel()
+        Me.pbxMinimize = New System.Windows.Forms.PictureBox()
         Me.gbxLINK.SuspendLayout()
         Me.gbxSPA.SuspendLayout()
         Me.gbxPIN.SuspendLayout()
@@ -74,15 +75,16 @@ Partial Class Assem
         Me.gbxCORE.SuspendLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTop.SuspendLayout()
+        CType(Me.pbxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.Location = New System.Drawing.Point(10, 29)
+        Me.lblTitle.Font = New System.Drawing.Font("Georgia", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.Location = New System.Drawing.Point(12, 23)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(412, 25)
+        Me.lblTitle.Size = New System.Drawing.Size(467, 29)
         Me.lblTitle.TabIndex = 4
         Me.lblTitle.Text = "[Reactor Core]_Assem_#.inp Configurator"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -92,10 +94,10 @@ Partial Class Assem
         Me.gbxLINK.Controls.Add(Me.chkLINK_FA)
         Me.gbxLINK.Controls.Add(Me.chkLINK_MAT)
         Me.gbxLINK.Controls.Add(Me.chkLINK_OPTION)
-        Me.gbxLINK.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxLINK.Location = New System.Drawing.Point(15, 57)
+        Me.gbxLINK.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxLINK.Location = New System.Drawing.Point(12, 55)
         Me.gbxLINK.Name = "gbxLINK"
-        Me.gbxLINK.Size = New System.Drawing.Size(407, 69)
+        Me.gbxLINK.Size = New System.Drawing.Size(407, 70)
         Me.gbxLINK.TabIndex = 0
         Me.gbxLINK.TabStop = False
         Me.gbxLINK.Text = "LINK Header"
@@ -105,9 +107,9 @@ Partial Class Assem
         Me.chkLINK_FA.AutoSize = True
         Me.chkLINK_FA.Checked = True
         Me.chkLINK_FA.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkLINK_FA.Location = New System.Drawing.Point(203, 45)
+        Me.chkLINK_FA.Location = New System.Drawing.Point(228, 45)
         Me.chkLINK_FA.Name = "chkLINK_FA"
-        Me.chkLINK_FA.Size = New System.Drawing.Size(170, 16)
+        Me.chkLINK_FA.Size = New System.Drawing.Size(173, 19)
         Me.chkLINK_FA.TabIndex = 2
         Me.chkLINK_FA.Text = "LINK_FA_[Reactor Code].dat"
         Me.chkLINK_FA.UseVisualStyleBackColor = True
@@ -119,7 +121,7 @@ Partial Class Assem
         Me.chkLINK_MAT.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkLINK_MAT.Location = New System.Drawing.Point(6, 45)
         Me.chkLINK_MAT.Name = "chkLINK_MAT"
-        Me.chkLINK_MAT.Size = New System.Drawing.Size(179, 16)
+        Me.chkLINK_MAT.Size = New System.Drawing.Size(186, 19)
         Me.chkLINK_MAT.TabIndex = 1
         Me.chkLINK_MAT.Text = "LINK_MAT_[Reactor Code].dat"
         Me.chkLINK_MAT.UseVisualStyleBackColor = True
@@ -131,7 +133,7 @@ Partial Class Assem
         Me.chkLINK_OPTION.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkLINK_OPTION.Location = New System.Drawing.Point(6, 20)
         Me.chkLINK_OPTION.Name = "chkLINK_OPTION"
-        Me.chkLINK_OPTION.Size = New System.Drawing.Size(197, 16)
+        Me.chkLINK_OPTION.Size = New System.Drawing.Size(204, 19)
         Me.chkLINK_OPTION.TabIndex = 0
         Me.chkLINK_OPTION.Text = "LINK_OPTION_[Reactor Code].dat"
         Me.chkLINK_OPTION.UseVisualStyleBackColor = True
@@ -144,10 +146,10 @@ Partial Class Assem
         Me.gbxSPA.Controls.Add(Me.lblSPACoolant)
         Me.gbxSPA.Controls.Add(Me.txtSPASpacerGrid)
         Me.gbxSPA.Controls.Add(Me.txtSPACoolant)
-        Me.gbxSPA.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxSPA.Location = New System.Drawing.Point(428, 57)
+        Me.gbxSPA.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxSPA.Location = New System.Drawing.Point(425, 55)
         Me.gbxSPA.Name = "gbxSPA"
-        Me.gbxSPA.Size = New System.Drawing.Size(407, 69)
+        Me.gbxSPA.Size = New System.Drawing.Size(407, 70)
         Me.gbxSPA.TabIndex = 1
         Me.gbxSPA.TabStop = False
         Me.gbxSPA.Text = "SPA Card"
@@ -155,49 +157,49 @@ Partial Class Assem
         'lblSPALinDensity
         '
         Me.lblSPALinDensity.AutoSize = True
-        Me.lblSPALinDensity.Location = New System.Drawing.Point(196, 46)
+        Me.lblSPALinDensity.Location = New System.Drawing.Point(196, 44)
         Me.lblSPALinDensity.Name = "lblSPALinDensity"
-        Me.lblSPALinDensity.Size = New System.Drawing.Size(119, 12)
+        Me.lblSPALinDensity.Size = New System.Drawing.Size(112, 15)
         Me.lblSPALinDensity.TabIndex = 5
         Me.lblSPALinDensity.Text = "Linear Density (g/cm)"
         '
         'txtSPALinDensity
         '
-        Me.txtSPALinDensity.Location = New System.Drawing.Point(321, 43)
+        Me.txtSPALinDensity.Location = New System.Drawing.Point(314, 41)
         Me.txtSPALinDensity.Name = "txtSPALinDensity"
-        Me.txtSPALinDensity.Size = New System.Drawing.Size(80, 20)
+        Me.txtSPALinDensity.Size = New System.Drawing.Size(87, 21)
         Me.txtSPALinDensity.TabIndex = 2
         '
         'lblSPASpacerGrid
         '
         Me.lblSPASpacerGrid.AutoSize = True
-        Me.lblSPASpacerGrid.Location = New System.Drawing.Point(6, 46)
+        Me.lblSPASpacerGrid.Location = New System.Drawing.Point(6, 44)
         Me.lblSPASpacerGrid.Name = "lblSPASpacerGrid"
-        Me.lblSPASpacerGrid.Size = New System.Drawing.Size(112, 12)
+        Me.lblSPASpacerGrid.Size = New System.Drawing.Size(108, 15)
         Me.lblSPASpacerGrid.TabIndex = 3
         Me.lblSPASpacerGrid.Text = "Spacer Grid Material"
         '
         'lblSPACoolant
         '
         Me.lblSPACoolant.AutoSize = True
-        Me.lblSPACoolant.Location = New System.Drawing.Point(6, 21)
+        Me.lblSPACoolant.Location = New System.Drawing.Point(6, 17)
         Me.lblSPACoolant.Name = "lblSPACoolant"
-        Me.lblSPACoolant.Size = New System.Drawing.Size(89, 12)
+        Me.lblSPACoolant.Size = New System.Drawing.Size(89, 15)
         Me.lblSPACoolant.TabIndex = 1
         Me.lblSPACoolant.Text = "Coolant Material"
         '
         'txtSPASpacerGrid
         '
-        Me.txtSPASpacerGrid.Location = New System.Drawing.Point(120, 43)
+        Me.txtSPASpacerGrid.Location = New System.Drawing.Point(120, 41)
         Me.txtSPASpacerGrid.Name = "txtSPASpacerGrid"
-        Me.txtSPASpacerGrid.Size = New System.Drawing.Size(70, 20)
+        Me.txtSPASpacerGrid.Size = New System.Drawing.Size(70, 21)
         Me.txtSPASpacerGrid.TabIndex = 1
         '
         'txtSPACoolant
         '
-        Me.txtSPACoolant.Location = New System.Drawing.Point(101, 18)
+        Me.txtSPACoolant.Location = New System.Drawing.Point(101, 14)
         Me.txtSPACoolant.Name = "txtSPACoolant"
-        Me.txtSPACoolant.Size = New System.Drawing.Size(70, 20)
+        Me.txtSPACoolant.Size = New System.Drawing.Size(70, 21)
         Me.txtSPACoolant.TabIndex = 0
         '
         'gbxPIN
@@ -222,10 +224,10 @@ Partial Class Assem
         Me.gbxPIN.Controls.Add(Me.lblSector)
         Me.gbxPIN.Controls.Add(Me.txtPinID)
         Me.gbxPIN.Controls.Add(Me.lblPinID)
-        Me.gbxPIN.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxPIN.Location = New System.Drawing.Point(15, 132)
+        Me.gbxPIN.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxPIN.Location = New System.Drawing.Point(12, 131)
         Me.gbxPIN.Name = "gbxPIN"
-        Me.gbxPIN.Size = New System.Drawing.Size(820, 433)
+        Me.gbxPIN.Size = New System.Drawing.Size(820, 430)
         Me.gbxPIN.TabIndex = 2
         Me.gbxPIN.TabStop = False
         Me.gbxPIN.Text = "PIN Card"
@@ -234,10 +236,11 @@ Partial Class Assem
         '
         Me.btnRemove.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRemove.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRemove.ForeColor = System.Drawing.Color.White
-        Me.btnRemove.Location = New System.Drawing.Point(9, 285)
+        Me.btnRemove.Location = New System.Drawing.Point(6, 279)
         Me.btnRemove.Name = "btnRemove"
-        Me.btnRemove.Size = New System.Drawing.Size(188, 23)
+        Me.btnRemove.Size = New System.Drawing.Size(190, 23)
         Me.btnRemove.TabIndex = 9
         Me.btnRemove.Text = "Remove Pin"
         Me.btnRemove.UseVisualStyleBackColor = False
@@ -253,20 +256,21 @@ Partial Class Assem
         'lbxPinList
         '
         Me.lbxPinList.FormattingEnabled = True
-        Me.lbxPinList.ItemHeight = 12
-        Me.lbxPinList.Location = New System.Drawing.Point(9, 314)
+        Me.lbxPinList.ItemHeight = 15
+        Me.lbxPinList.Location = New System.Drawing.Point(6, 308)
         Me.lbxPinList.Name = "lbxPinList"
-        Me.lbxPinList.Size = New System.Drawing.Size(382, 100)
+        Me.lbxPinList.Size = New System.Drawing.Size(392, 109)
         Me.lbxPinList.TabIndex = 11
         '
         'btnGenerate
         '
         Me.btnGenerate.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGenerate.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGenerate.ForeColor = System.Drawing.Color.White
-        Me.btnGenerate.Location = New System.Drawing.Point(203, 285)
+        Me.btnGenerate.Location = New System.Drawing.Point(208, 279)
         Me.btnGenerate.Name = "btnGenerate"
-        Me.btnGenerate.Size = New System.Drawing.Size(188, 23)
+        Me.btnGenerate.Size = New System.Drawing.Size(190, 23)
         Me.btnGenerate.TabIndex = 10
         Me.btnGenerate.Text = "&Generate"
         Me.btnGenerate.UseVisualStyleBackColor = False
@@ -276,133 +280,134 @@ Partial Class Assem
         Me.lbxPinInfo.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbxPinInfo.FormattingEnabled = True
         Me.lbxPinInfo.ItemHeight = 15
-        Me.lbxPinInfo.Location = New System.Drawing.Point(9, 155)
+        Me.lbxPinInfo.Location = New System.Drawing.Point(6, 149)
         Me.lbxPinInfo.Name = "lbxPinInfo"
-        Me.lbxPinInfo.Size = New System.Drawing.Size(382, 124)
+        Me.lbxPinInfo.Size = New System.Drawing.Size(392, 124)
         Me.lbxPinInfo.TabIndex = 8
         '
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.White
-        Me.btnAdd.Location = New System.Drawing.Point(203, 126)
+        Me.btnAdd.Location = New System.Drawing.Point(190, 121)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(188, 23)
+        Me.btnAdd.Size = New System.Drawing.Size(208, 23)
         Me.btnAdd.TabIndex = 7
         Me.btnAdd.Text = "&Add"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'txtTemperature
         '
-        Me.txtTemperature.Location = New System.Drawing.Point(100, 128)
+        Me.txtTemperature.Location = New System.Drawing.Point(100, 122)
         Me.txtTemperature.Name = "txtTemperature"
-        Me.txtTemperature.Size = New System.Drawing.Size(84, 20)
+        Me.txtTemperature.Size = New System.Drawing.Size(84, 21)
         Me.txtTemperature.TabIndex = 6
         '
         'lblTemperature
         '
         Me.lblTemperature.AutoSize = True
-        Me.lblTemperature.Location = New System.Drawing.Point(6, 131)
+        Me.lblTemperature.Location = New System.Drawing.Point(6, 125)
         Me.lblTemperature.Name = "lblTemperature"
-        Me.lblTemperature.Size = New System.Drawing.Size(91, 12)
+        Me.lblTemperature.Size = New System.Drawing.Size(88, 15)
         Me.lblTemperature.TabIndex = 12
         Me.lblTemperature.Text = "Temperature (K)"
         '
         'cbxMaterial
         '
         Me.cbxMaterial.FormattingEnabled = True
-        Me.cbxMaterial.Location = New System.Drawing.Point(255, 101)
+        Me.cbxMaterial.Location = New System.Drawing.Point(252, 95)
         Me.cbxMaterial.Name = "cbxMaterial"
-        Me.cbxMaterial.Size = New System.Drawing.Size(136, 20)
+        Me.cbxMaterial.Size = New System.Drawing.Size(146, 23)
         Me.cbxMaterial.TabIndex = 5
         '
         'lblPinMaterial
         '
         Me.lblPinMaterial.AutoSize = True
-        Me.lblPinMaterial.Location = New System.Drawing.Point(198, 104)
+        Me.lblPinMaterial.Location = New System.Drawing.Point(198, 98)
         Me.lblPinMaterial.Name = "lblPinMaterial"
-        Me.lblPinMaterial.Size = New System.Drawing.Size(47, 12)
+        Me.lblPinMaterial.Size = New System.Drawing.Size(48, 15)
         Me.lblPinMaterial.TabIndex = 10
         Me.lblPinMaterial.Text = "Material"
         '
         'txtOuterRadius
         '
-        Me.txtOuterRadius.Location = New System.Drawing.Point(108, 101)
+        Me.txtOuterRadius.Location = New System.Drawing.Point(108, 95)
         Me.txtOuterRadius.Name = "txtOuterRadius"
-        Me.txtOuterRadius.Size = New System.Drawing.Size(84, 20)
+        Me.txtOuterRadius.Size = New System.Drawing.Size(84, 21)
         Me.txtOuterRadius.TabIndex = 4
         '
         'lblOuterRadius
         '
         Me.lblOuterRadius.AutoSize = True
-        Me.lblOuterRadius.Location = New System.Drawing.Point(6, 104)
+        Me.lblOuterRadius.Location = New System.Drawing.Point(6, 98)
         Me.lblOuterRadius.Name = "lblOuterRadius"
-        Me.lblOuterRadius.Size = New System.Drawing.Size(100, 12)
+        Me.lblOuterRadius.Size = New System.Drawing.Size(96, 15)
         Me.lblOuterRadius.TabIndex = 8
         Me.lblOuterRadius.Text = "Outer Radius (cm)"
         '
         'txtOuterSubdivision
         '
-        Me.txtOuterSubdivision.Location = New System.Drawing.Point(300, 74)
+        Me.txtOuterSubdivision.Location = New System.Drawing.Point(284, 68)
         Me.txtOuterSubdivision.Name = "txtOuterSubdivision"
-        Me.txtOuterSubdivision.Size = New System.Drawing.Size(91, 20)
+        Me.txtOuterSubdivision.Size = New System.Drawing.Size(91, 21)
         Me.txtOuterSubdivision.TabIndex = 3
         '
         'lblOuterSubdivision
         '
         Me.lblOuterSubdivision.AutoSize = True
-        Me.lblOuterSubdivision.Location = New System.Drawing.Point(6, 77)
+        Me.lblOuterSubdivision.Location = New System.Drawing.Point(6, 71)
         Me.lblOuterSubdivision.Name = "lblOuterSubdivision"
-        Me.lblOuterSubdivision.Size = New System.Drawing.Size(290, 12)
+        Me.lblOuterSubdivision.Size = New System.Drawing.Size(272, 15)
         Me.lblOuterSubdivision.TabIndex = 6
         Me.lblOuterSubdivision.Text = "Number of Radial Subdivision in the Outermost Region"
         '
         'txtInnerSubdivision
         '
-        Me.txtInnerSubdivision.Location = New System.Drawing.Point(300, 47)
+        Me.txtInnerSubdivision.Location = New System.Drawing.Point(281, 41)
         Me.txtInnerSubdivision.Name = "txtInnerSubdivision"
-        Me.txtInnerSubdivision.Size = New System.Drawing.Size(91, 20)
+        Me.txtInnerSubdivision.Size = New System.Drawing.Size(91, 21)
         Me.txtInnerSubdivision.TabIndex = 2
         '
         'lblInnerSubdivision
         '
         Me.lblInnerSubdivision.AutoSize = True
-        Me.lblInnerSubdivision.Location = New System.Drawing.Point(6, 50)
+        Me.lblInnerSubdivision.Location = New System.Drawing.Point(6, 44)
         Me.lblInnerSubdivision.Name = "lblInnerSubdivision"
-        Me.lblInnerSubdivision.Size = New System.Drawing.Size(288, 12)
+        Me.lblInnerSubdivision.Size = New System.Drawing.Size(269, 15)
         Me.lblInnerSubdivision.TabIndex = 4
         Me.lblInnerSubdivision.Text = "Number of Radial Subdivision in the Innermost Region"
         '
         'txtSector
         '
-        Me.txtSector.Location = New System.Drawing.Point(212, 20)
+        Me.txtSector.Location = New System.Drawing.Point(212, 14)
         Me.txtSector.Name = "txtSector"
-        Me.txtSector.Size = New System.Drawing.Size(70, 20)
+        Me.txtSector.Size = New System.Drawing.Size(70, 21)
         Me.txtSector.TabIndex = 1
         '
         'lblSector
         '
         Me.lblSector.AutoSize = True
-        Me.lblSector.Location = New System.Drawing.Point(109, 23)
+        Me.lblSector.Location = New System.Drawing.Point(109, 17)
         Me.lblSector.Name = "lblSector"
-        Me.lblSector.Size = New System.Drawing.Size(103, 12)
+        Me.lblSector.Size = New System.Drawing.Size(97, 15)
         Me.lblSector.TabIndex = 2
         Me.lblSector.Text = "Number of Sectors"
         '
         'txtPinID
         '
-        Me.txtPinID.Location = New System.Drawing.Point(44, 20)
+        Me.txtPinID.Location = New System.Drawing.Point(44, 14)
         Me.txtPinID.Name = "txtPinID"
-        Me.txtPinID.Size = New System.Drawing.Size(59, 20)
+        Me.txtPinID.Size = New System.Drawing.Size(59, 21)
         Me.txtPinID.TabIndex = 0
         '
         'lblPinID
         '
         Me.lblPinID.AutoSize = True
-        Me.lblPinID.Location = New System.Drawing.Point(6, 23)
+        Me.lblPinID.Location = New System.Drawing.Point(6, 17)
         Me.lblPinID.Name = "lblPinID"
-        Me.lblPinID.Size = New System.Drawing.Size(32, 12)
+        Me.lblPinID.Size = New System.Drawing.Size(32, 15)
         Me.lblPinID.TabIndex = 0
         Me.lblPinID.Text = "Pin #"
         '
@@ -414,59 +419,59 @@ Partial Class Assem
         Me.gbxCORE.Controls.Add(Me.lblCOREAssemY)
         Me.gbxCORE.Controls.Add(Me.txtCOREAssemX)
         Me.gbxCORE.Controls.Add(Me.lblCOREAssemX)
-        Me.gbxCORE.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxCORE.Location = New System.Drawing.Point(15, 571)
+        Me.gbxCORE.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxCORE.Location = New System.Drawing.Point(12, 567)
         Me.gbxCORE.Name = "gbxCORE"
-        Me.gbxCORE.Size = New System.Drawing.Size(407, 105)
+        Me.gbxCORE.Size = New System.Drawing.Size(407, 100)
         Me.gbxCORE.TabIndex = 3
         Me.gbxCORE.TabStop = False
         Me.gbxCORE.Text = "CORE Card"
         '
         'txtCOREAssemIndex
         '
-        Me.txtCOREAssemIndex.Location = New System.Drawing.Point(212, 74)
+        Me.txtCOREAssemIndex.Location = New System.Drawing.Point(212, 68)
         Me.txtCOREAssemIndex.Name = "txtCOREAssemIndex"
-        Me.txtCOREAssemIndex.Size = New System.Drawing.Size(189, 20)
+        Me.txtCOREAssemIndex.Size = New System.Drawing.Size(189, 21)
         Me.txtCOREAssemIndex.TabIndex = 2
         '
         'lblCOREAssemIndex
         '
         Me.lblCOREAssemIndex.AutoSize = True
-        Me.lblCOREAssemIndex.Location = New System.Drawing.Point(6, 77)
+        Me.lblCOREAssemIndex.Location = New System.Drawing.Point(6, 71)
         Me.lblCOREAssemIndex.Name = "lblCOREAssemIndex"
-        Me.lblCOREAssemIndex.Size = New System.Drawing.Size(111, 12)
+        Me.lblCOREAssemIndex.Size = New System.Drawing.Size(108, 15)
         Me.lblCOREAssemIndex.TabIndex = 4
         Me.lblCOREAssemIndex.Text = "Fuel Assembly Index"
         '
         'txtCOREAssemY
         '
-        Me.txtCOREAssemY.Location = New System.Drawing.Point(212, 47)
+        Me.txtCOREAssemY.Location = New System.Drawing.Point(212, 41)
         Me.txtCOREAssemY.Name = "txtCOREAssemY"
-        Me.txtCOREAssemY.Size = New System.Drawing.Size(189, 20)
+        Me.txtCOREAssemY.Size = New System.Drawing.Size(189, 21)
         Me.txtCOREAssemY.TabIndex = 1
         '
         'lblCOREAssemY
         '
         Me.lblCOREAssemY.AutoSize = True
-        Me.lblCOREAssemY.Location = New System.Drawing.Point(6, 50)
+        Me.lblCOREAssemY.Location = New System.Drawing.Point(6, 44)
         Me.lblCOREAssemY.Name = "lblCOREAssemY"
-        Me.lblCOREAssemY.Size = New System.Drawing.Size(195, 12)
+        Me.lblCOREAssemY.Size = New System.Drawing.Size(184, 15)
         Me.lblCOREAssemY.TabIndex = 2
         Me.lblCOREAssemY.Text = "Number of Assemblies in y-direction"
         '
         'txtCOREAssemX
         '
-        Me.txtCOREAssemX.Location = New System.Drawing.Point(212, 20)
+        Me.txtCOREAssemX.Location = New System.Drawing.Point(212, 14)
         Me.txtCOREAssemX.Name = "txtCOREAssemX"
-        Me.txtCOREAssemX.Size = New System.Drawing.Size(189, 20)
+        Me.txtCOREAssemX.Size = New System.Drawing.Size(189, 21)
         Me.txtCOREAssemX.TabIndex = 0
         '
         'lblCOREAssemX
         '
         Me.lblCOREAssemX.AutoSize = True
-        Me.lblCOREAssemX.Location = New System.Drawing.Point(6, 23)
+        Me.lblCOREAssemX.Location = New System.Drawing.Point(6, 17)
         Me.lblCOREAssemX.Name = "lblCOREAssemX"
-        Me.lblCOREAssemX.Size = New System.Drawing.Size(195, 12)
+        Me.lblCOREAssemX.Size = New System.Drawing.Size(182, 15)
         Me.lblCOREAssemX.TabIndex = 0
         Me.lblCOREAssemX.Text = "Number of Assemblies in x-direction"
         '
@@ -474,11 +479,11 @@ Partial Class Assem
         '
         Me.btnReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReset.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReset.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReset.ForeColor = System.Drawing.Color.White
-        Me.btnReset.Location = New System.Drawing.Point(428, 571)
+        Me.btnReset.Location = New System.Drawing.Point(425, 567)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(67, 105)
+        Me.btnReset.Size = New System.Drawing.Size(67, 100)
         Me.btnReset.TabIndex = 4
         Me.btnReset.Text = "&Reset"
         Me.btnReset.UseVisualStyleBackColor = False
@@ -487,11 +492,11 @@ Partial Class Assem
         '
         Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(638, 571)
+        Me.btnSave.Location = New System.Drawing.Point(686, 567)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(197, 105)
+        Me.btnSave.Size = New System.Drawing.Size(146, 100)
         Me.btnSave.TabIndex = 6
         Me.btnSave.Text = "&Save"
         Me.btnSave.UseVisualStyleBackColor = False
@@ -500,11 +505,11 @@ Partial Class Assem
         '
         Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(501, 571)
+        Me.btnClose.Location = New System.Drawing.Point(498, 567)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(131, 105)
+        Me.btnClose.Size = New System.Drawing.Size(182, 100)
         Me.btnClose.TabIndex = 5
         Me.btnClose.Text = "&Close without Saving"
         Me.btnClose.UseVisualStyleBackColor = False
@@ -514,7 +519,7 @@ Partial Class Assem
         Me.pbxExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pbxExit.Image = Global.Project_Joshua.My.Resources.Resources._exit
         Me.pbxExit.InitialImage = Nothing
-        Me.pbxExit.Location = New System.Drawing.Point(836, 0)
+        Me.pbxExit.Location = New System.Drawing.Point(823, 0)
         Me.pbxExit.Name = "pbxExit"
         Me.pbxExit.Size = New System.Drawing.Size(20, 20)
         Me.pbxExit.TabIndex = 7
@@ -523,19 +528,32 @@ Partial Class Assem
         'pnlTop
         '
         Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.pnlTop.Controls.Add(Me.pbxMinimize)
         Me.pnlTop.Controls.Add(Me.pbxExit)
         Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTop.Location = New System.Drawing.Point(0, 0)
         Me.pnlTop.Name = "pnlTop"
-        Me.pnlTop.Size = New System.Drawing.Size(856, 20)
+        Me.pnlTop.Size = New System.Drawing.Size(843, 20)
         Me.pnlTop.TabIndex = 8
+        '
+        'pbxMinimize
+        '
+        Me.pbxMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pbxMinimize.Image = Global.Project_Joshua.My.Resources.Resources.minimize
+        Me.pbxMinimize.InitialImage = Nothing
+        Me.pbxMinimize.Location = New System.Drawing.Point(804, 0)
+        Me.pbxMinimize.Name = "pbxMinimize"
+        Me.pbxMinimize.Size = New System.Drawing.Size(20, 20)
+        Me.pbxMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbxMinimize.TabIndex = 9
+        Me.pbxMinimize.TabStop = False
         '
         'Assem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(856, 696)
+        Me.ClientSize = New System.Drawing.Size(843, 678)
         Me.Controls.Add(Me.pnlTop)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnSave)
@@ -560,6 +578,7 @@ Partial Class Assem
         Me.gbxCORE.PerformLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTop.ResumeLayout(False)
+        CType(Me.pbxMinimize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -610,4 +629,5 @@ Partial Class Assem
     Friend WithEvents btnRemove As Button
     Friend WithEvents pbxExit As PictureBox
     Friend WithEvents pnlTop As Panel
+    Friend WithEvents pbxMinimize As PictureBox
 End Class

@@ -72,6 +72,11 @@ ZIRLO
  [rest of string was truncated]&quot;;.
 </summary>
 </member>
+<member name="P:Project_Joshua.My.Resources.Resources.minimize">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Project_Joshua.My.Resources.Resources.OPTION_DATA">
 <summary>
   Looks up a localized string similar to XSLIB
