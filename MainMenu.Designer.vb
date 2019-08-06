@@ -49,11 +49,14 @@ Partial Class MainMenu
         Me.btnGenerate = New System.Windows.Forms.Button()
         Me.pbxExit = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pnlTop = New System.Windows.Forms.Panel()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.gbxEssential.SuspendLayout()
         Me.gbxCheckList.SuspendLayout()
         Me.gbpOverview.SuspendLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlTop.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitle
@@ -61,7 +64,7 @@ Partial Class MainMenu
         Me.lblTitle.AutoSize = True
         Me.lblTitle.Font = New System.Drawing.Font("Georgia", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.lblTitle.Location = New System.Drawing.Point(96, 25)
+        Me.lblTitle.Location = New System.Drawing.Point(96, 43)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(501, 31)
         Me.lblTitle.TabIndex = 0
@@ -71,7 +74,7 @@ Partial Class MainMenu
         '
         Me.lblCredit.AutoSize = True
         Me.lblCredit.Font = New System.Drawing.Font("NanumSquare Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCredit.Location = New System.Drawing.Point(453, 71)
+        Me.lblCredit.Location = New System.Drawing.Point(453, 89)
         Me.lblCredit.Name = "lblCredit"
         Me.lblCredit.Size = New System.Drawing.Size(144, 14)
         Me.lblCredit.TabIndex = 1
@@ -81,7 +84,7 @@ Partial Class MainMenu
         '
         Me.lblVersionInfo.AutoSize = True
         Me.lblVersionInfo.Font = New System.Drawing.Font("NanumSquare Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVersionInfo.Location = New System.Drawing.Point(32, 71)
+        Me.lblVersionInfo.Location = New System.Drawing.Point(32, 89)
         Me.lblVersionInfo.Name = "lblVersionInfo"
         Me.lblVersionInfo.Size = New System.Drawing.Size(120, 14)
         Me.lblVersionInfo.TabIndex = 2
@@ -91,7 +94,7 @@ Partial Class MainMenu
         '
         Me.lblLabInfo.AutoSize = True
         Me.lblLabInfo.Font = New System.Drawing.Font("NanumSquare Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLabInfo.Location = New System.Drawing.Point(292, 71)
+        Me.lblLabInfo.Location = New System.Drawing.Point(292, 89)
         Me.lblLabInfo.Name = "lblLabInfo"
         Me.lblLabInfo.Size = New System.Drawing.Size(62, 14)
         Me.lblLabInfo.TabIndex = 3
@@ -105,7 +108,7 @@ Partial Class MainMenu
         Me.gbxEssential.Controls.Add(Me.txtPath)
         Me.gbxEssential.Controls.Add(Me.lblPath)
         Me.gbxEssential.Font = New System.Drawing.Font("NanumSquare Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxEssential.Location = New System.Drawing.Point(29, 89)
+        Me.gbxEssential.Location = New System.Drawing.Point(29, 107)
         Me.gbxEssential.Name = "gbxEssential"
         Me.gbxEssential.Size = New System.Drawing.Size(568, 68)
         Me.gbxEssential.TabIndex = 0
@@ -169,7 +172,7 @@ Partial Class MainMenu
         Me.gbxCheckList.Controls.Add(Me.btnConfLinkOption)
         Me.gbxCheckList.Controls.Add(Me.lblLinkOption)
         Me.gbxCheckList.Font = New System.Drawing.Font("NanumSquare Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxCheckList.Location = New System.Drawing.Point(29, 162)
+        Me.gbxCheckList.Location = New System.Drawing.Point(29, 180)
         Me.gbxCheckList.Name = "gbxCheckList"
         Me.gbxCheckList.Size = New System.Drawing.Size(568, 149)
         Me.gbxCheckList.TabIndex = 1
@@ -281,7 +284,7 @@ Partial Class MainMenu
         Me.gbpOverview.Controls.Add(Me.lblFileList)
         Me.gbpOverview.Controls.Add(Me.lbxFileList)
         Me.gbpOverview.Font = New System.Drawing.Font("NanumSquare Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbpOverview.Location = New System.Drawing.Point(29, 316)
+        Me.gbpOverview.Location = New System.Drawing.Point(29, 334)
         Me.gbpOverview.Name = "gbpOverview"
         Me.gbpOverview.Size = New System.Drawing.Size(568, 148)
         Me.gbpOverview.TabIndex = 2
@@ -330,7 +333,7 @@ Partial Class MainMenu
         Me.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGenerate.Font = New System.Drawing.Font("NanumSquare Bold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGenerate.ForeColor = System.Drawing.Color.White
-        Me.btnGenerate.Location = New System.Drawing.Point(29, 470)
+        Me.btnGenerate.Location = New System.Drawing.Point(29, 488)
         Me.btnGenerate.Name = "btnGenerate"
         Me.btnGenerate.Size = New System.Drawing.Size(568, 61)
         Me.btnGenerate.TabIndex = 3
@@ -342,30 +345,41 @@ Partial Class MainMenu
         Me.pbxExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pbxExit.Image = Global.Project_Joshua.My.Resources.Resources._exit
         Me.pbxExit.InitialImage = Nothing
-        Me.pbxExit.Location = New System.Drawing.Point(605, 3)
+        Me.pbxExit.Location = New System.Drawing.Point(608, 0)
         Me.pbxExit.Name = "pbxExit"
         Me.pbxExit.Size = New System.Drawing.Size(20, 20)
+        Me.pbxExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.pbxExit.TabIndex = 4
         Me.pbxExit.TabStop = False
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Project_Joshua.My.Resources.Resources.logo_small
-        Me.PictureBox1.Location = New System.Drawing.Point(30, 8)
+        Me.PictureBox1.Location = New System.Drawing.Point(30, 26)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(60, 60)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
+        'pnlTop
+        '
+        Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.pnlTop.Controls.Add(Me.pbxExit)
+        Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlTop.Location = New System.Drawing.Point(0, 0)
+        Me.pnlTop.Name = "pnlTop"
+        Me.pnlTop.Size = New System.Drawing.Size(628, 20)
+        Me.pnlTop.TabIndex = 6
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(628, 561)
+        Me.ClientSize = New System.Drawing.Size(628, 577)
+        Me.Controls.Add(Me.pnlTop)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.pbxExit)
         Me.Controls.Add(Me.btnGenerate)
         Me.Controls.Add(Me.gbpOverview)
         Me.Controls.Add(Me.gbxCheckList)
@@ -386,6 +400,8 @@ Partial Class MainMenu
         Me.gbpOverview.PerformLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlTop.ResumeLayout(False)
+        Me.pnlTop.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -418,4 +434,6 @@ Partial Class MainMenu
     Friend WithEvents lblReactorID As Label
     Friend WithEvents pbxExit As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pnlTop As Panel
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

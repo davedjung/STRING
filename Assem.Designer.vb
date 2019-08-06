@@ -66,19 +66,21 @@ Partial Class Assem
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.pbxExit = New System.Windows.Forms.PictureBox()
+        Me.pnlTop = New System.Windows.Forms.Panel()
         Me.gbxLINK.SuspendLayout()
         Me.gbxSPA.SuspendLayout()
         Me.gbxPIN.SuspendLayout()
         CType(Me.pbxPreview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxCORE.SuspendLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlTop.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
         Me.lblTitle.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.Location = New System.Drawing.Point(12, 9)
+        Me.lblTitle.Location = New System.Drawing.Point(10, 29)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(412, 25)
         Me.lblTitle.TabIndex = 4
@@ -91,7 +93,7 @@ Partial Class Assem
         Me.gbxLINK.Controls.Add(Me.chkLINK_MAT)
         Me.gbxLINK.Controls.Add(Me.chkLINK_OPTION)
         Me.gbxLINK.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxLINK.Location = New System.Drawing.Point(17, 37)
+        Me.gbxLINK.Location = New System.Drawing.Point(15, 57)
         Me.gbxLINK.Name = "gbxLINK"
         Me.gbxLINK.Size = New System.Drawing.Size(407, 69)
         Me.gbxLINK.TabIndex = 0
@@ -143,7 +145,7 @@ Partial Class Assem
         Me.gbxSPA.Controls.Add(Me.txtSPASpacerGrid)
         Me.gbxSPA.Controls.Add(Me.txtSPACoolant)
         Me.gbxSPA.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxSPA.Location = New System.Drawing.Point(430, 37)
+        Me.gbxSPA.Location = New System.Drawing.Point(428, 57)
         Me.gbxSPA.Name = "gbxSPA"
         Me.gbxSPA.Size = New System.Drawing.Size(407, 69)
         Me.gbxSPA.TabIndex = 1
@@ -221,7 +223,7 @@ Partial Class Assem
         Me.gbxPIN.Controls.Add(Me.txtPinID)
         Me.gbxPIN.Controls.Add(Me.lblPinID)
         Me.gbxPIN.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxPIN.Location = New System.Drawing.Point(17, 112)
+        Me.gbxPIN.Location = New System.Drawing.Point(15, 132)
         Me.gbxPIN.Name = "gbxPIN"
         Me.gbxPIN.Size = New System.Drawing.Size(820, 433)
         Me.gbxPIN.TabIndex = 2
@@ -342,9 +344,9 @@ Partial Class Assem
         '
         'txtOuterSubdivision
         '
-        Me.txtOuterSubdivision.Location = New System.Drawing.Point(281, 74)
+        Me.txtOuterSubdivision.Location = New System.Drawing.Point(300, 74)
         Me.txtOuterSubdivision.Name = "txtOuterSubdivision"
-        Me.txtOuterSubdivision.Size = New System.Drawing.Size(110, 20)
+        Me.txtOuterSubdivision.Size = New System.Drawing.Size(91, 20)
         Me.txtOuterSubdivision.TabIndex = 3
         '
         'lblOuterSubdivision
@@ -358,9 +360,9 @@ Partial Class Assem
         '
         'txtInnerSubdivision
         '
-        Me.txtInnerSubdivision.Location = New System.Drawing.Point(281, 47)
+        Me.txtInnerSubdivision.Location = New System.Drawing.Point(300, 47)
         Me.txtInnerSubdivision.Name = "txtInnerSubdivision"
-        Me.txtInnerSubdivision.Size = New System.Drawing.Size(110, 20)
+        Me.txtInnerSubdivision.Size = New System.Drawing.Size(91, 20)
         Me.txtInnerSubdivision.TabIndex = 2
         '
         'lblInnerSubdivision
@@ -413,7 +415,7 @@ Partial Class Assem
         Me.gbxCORE.Controls.Add(Me.txtCOREAssemX)
         Me.gbxCORE.Controls.Add(Me.lblCOREAssemX)
         Me.gbxCORE.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxCORE.Location = New System.Drawing.Point(17, 551)
+        Me.gbxCORE.Location = New System.Drawing.Point(15, 571)
         Me.gbxCORE.Name = "gbxCORE"
         Me.gbxCORE.Size = New System.Drawing.Size(407, 105)
         Me.gbxCORE.TabIndex = 3
@@ -474,7 +476,7 @@ Partial Class Assem
         Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReset.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReset.ForeColor = System.Drawing.Color.White
-        Me.btnReset.Location = New System.Drawing.Point(430, 551)
+        Me.btnReset.Location = New System.Drawing.Point(428, 571)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(67, 105)
         Me.btnReset.TabIndex = 4
@@ -487,7 +489,7 @@ Partial Class Assem
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(640, 551)
+        Me.btnSave.Location = New System.Drawing.Point(638, 571)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(197, 105)
         Me.btnSave.TabIndex = 6
@@ -500,7 +502,7 @@ Partial Class Assem
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(503, 551)
+        Me.btnClose.Location = New System.Drawing.Point(501, 571)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(131, 105)
         Me.btnClose.TabIndex = 5
@@ -512,19 +514,29 @@ Partial Class Assem
         Me.pbxExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pbxExit.Image = Global.Project_Joshua.My.Resources.Resources._exit
         Me.pbxExit.InitialImage = Nothing
-        Me.pbxExit.Location = New System.Drawing.Point(833, 2)
+        Me.pbxExit.Location = New System.Drawing.Point(836, 0)
         Me.pbxExit.Name = "pbxExit"
         Me.pbxExit.Size = New System.Drawing.Size(20, 20)
         Me.pbxExit.TabIndex = 7
         Me.pbxExit.TabStop = False
+        '
+        'pnlTop
+        '
+        Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.pnlTop.Controls.Add(Me.pbxExit)
+        Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlTop.Location = New System.Drawing.Point(0, 0)
+        Me.pnlTop.Name = "pnlTop"
+        Me.pnlTop.Size = New System.Drawing.Size(856, 20)
+        Me.pnlTop.TabIndex = 8
         '
         'Assem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(856, 673)
-        Me.Controls.Add(Me.pbxExit)
+        Me.ClientSize = New System.Drawing.Size(856, 696)
+        Me.Controls.Add(Me.pnlTop)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnReset)
@@ -547,6 +559,7 @@ Partial Class Assem
         Me.gbxCORE.ResumeLayout(False)
         Me.gbxCORE.PerformLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlTop.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -596,4 +609,5 @@ Partial Class Assem
     Friend WithEvents btnClose As Button
     Friend WithEvents btnRemove As Button
     Friend WithEvents pbxExit As PictureBox
+    Friend WithEvents pnlTop As Panel
 End Class

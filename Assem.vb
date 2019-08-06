@@ -344,4 +344,13 @@
     Private Sub PbxExit_Click(sender As Object, e As EventArgs) Handles pbxExit.Click
         Me.Close()
     End Sub
+
+
+    Dim Pos As Point
+    Private Sub pnlTop_MouseMove(sender As Object, e As MouseEventArgs) Handles pnlTop.MouseMove
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            Me.Location += Control.MousePosition - Pos
+        End If
+        Pos = Control.MousePosition
+    End Sub
 End Class

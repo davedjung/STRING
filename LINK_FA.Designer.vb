@@ -66,6 +66,7 @@ Partial Class LINK_FA
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.pbxExit = New System.Windows.Forms.PictureBox()
+        Me.pnlTop = New System.Windows.Forms.Panel()
         Me.gbxHeader.SuspendLayout()
         Me.gbxFAOverview.SuspendLayout()
         CType(Me.pbxFA, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,13 +74,14 @@ Partial Class LINK_FA
         CType(Me.pbxPin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxAssemblyGap.SuspendLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlTop.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
         Me.lblTitle.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.Location = New System.Drawing.Point(12, 9)
+        Me.lblTitle.Location = New System.Drawing.Point(12, 31)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(416, 25)
         Me.lblTitle.TabIndex = 0
@@ -99,7 +101,7 @@ Partial Class LINK_FA
         Me.gbxHeader.Controls.Add(Me.lblFAIndex)
         Me.gbxHeader.Controls.Add(Me.txtFAIndex)
         Me.gbxHeader.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxHeader.Location = New System.Drawing.Point(17, 37)
+        Me.gbxHeader.Location = New System.Drawing.Point(17, 59)
         Me.gbxHeader.Name = "gbxHeader"
         Me.gbxHeader.Size = New System.Drawing.Size(622, 78)
         Me.gbxHeader.TabIndex = 0
@@ -202,7 +204,7 @@ Partial Class LINK_FA
         Me.gbxFAOverview.Controls.Add(Me.pbxFA)
         Me.gbxFAOverview.Controls.Add(Me.btnClearSelection)
         Me.gbxFAOverview.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxFAOverview.Location = New System.Drawing.Point(17, 121)
+        Me.gbxFAOverview.Location = New System.Drawing.Point(17, 143)
         Me.gbxFAOverview.Name = "gbxFAOverview"
         Me.gbxFAOverview.Size = New System.Drawing.Size(622, 532)
         Me.gbxFAOverview.TabIndex = 1
@@ -307,7 +309,7 @@ Partial Class LINK_FA
         Me.lbxFAList.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbxFAList.FormattingEnabled = True
         Me.lbxFAList.ItemHeight = 12
-        Me.lbxFAList.Location = New System.Drawing.Point(18, 717)
+        Me.lbxFAList.Location = New System.Drawing.Point(18, 739)
         Me.lbxFAList.Name = "lbxFAList"
         Me.lbxFAList.Size = New System.Drawing.Size(621, 88)
         Me.lbxFAList.TabIndex = 4
@@ -321,7 +323,7 @@ Partial Class LINK_FA
         Me.gbxPinInfo.Controls.Add(Me.cbxAssemFile)
         Me.gbxPinInfo.Controls.Add(Me.lblAssemFile)
         Me.gbxPinInfo.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxPinInfo.Location = New System.Drawing.Point(645, 121)
+        Me.gbxPinInfo.Location = New System.Drawing.Point(645, 143)
         Me.gbxPinInfo.Name = "gbxPinInfo"
         Me.gbxPinInfo.Size = New System.Drawing.Size(429, 532)
         Me.gbxPinInfo.TabIndex = 2
@@ -387,7 +389,7 @@ Partial Class LINK_FA
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(878, 717)
+        Me.btnSave.Location = New System.Drawing.Point(878, 739)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(196, 94)
         Me.btnSave.TabIndex = 7
@@ -407,7 +409,7 @@ Partial Class LINK_FA
         Me.gbxAssemblyGap.Controls.Add(Me.txtHalfAssemGap)
         Me.gbxAssemblyGap.Controls.Add(Me.lblHalfAssemGap)
         Me.gbxAssemblyGap.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxAssemblyGap.Location = New System.Drawing.Point(17, 659)
+        Me.gbxAssemblyGap.Location = New System.Drawing.Point(17, 681)
         Me.gbxAssemblyGap.Name = "gbxAssemblyGap"
         Me.gbxAssemblyGap.Size = New System.Drawing.Size(1057, 52)
         Me.gbxAssemblyGap.TabIndex = 3
@@ -509,7 +511,7 @@ Partial Class LINK_FA
         Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReset.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReset.ForeColor = System.Drawing.Color.White
-        Me.btnReset.Location = New System.Drawing.Point(651, 717)
+        Me.btnReset.Location = New System.Drawing.Point(651, 739)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(91, 94)
         Me.btnReset.TabIndex = 5
@@ -522,7 +524,7 @@ Partial Class LINK_FA
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(748, 717)
+        Me.btnClose.Location = New System.Drawing.Point(748, 739)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(124, 94)
         Me.btnClose.TabIndex = 6
@@ -534,19 +536,29 @@ Partial Class LINK_FA
         Me.pbxExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pbxExit.Image = Global.Project_Joshua.My.Resources.Resources._exit
         Me.pbxExit.InitialImage = Nothing
-        Me.pbxExit.Location = New System.Drawing.Point(1064, 1)
+        Me.pbxExit.Location = New System.Drawing.Point(1066, 0)
         Me.pbxExit.Name = "pbxExit"
         Me.pbxExit.Size = New System.Drawing.Size(20, 20)
         Me.pbxExit.TabIndex = 8
         Me.pbxExit.TabStop = False
+        '
+        'pnlTop
+        '
+        Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.pnlTop.Controls.Add(Me.pbxExit)
+        Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlTop.Location = New System.Drawing.Point(0, 0)
+        Me.pnlTop.Name = "pnlTop"
+        Me.pnlTop.Size = New System.Drawing.Size(1086, 20)
+        Me.pnlTop.TabIndex = 9
         '
         'LINK_FA
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1086, 826)
-        Me.Controls.Add(Me.pbxExit)
+        Me.ClientSize = New System.Drawing.Size(1086, 847)
+        Me.Controls.Add(Me.pnlTop)
         Me.Controls.Add(Me.lbxFAList)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnReset)
@@ -570,6 +582,7 @@ Partial Class LINK_FA
         Me.gbxAssemblyGap.ResumeLayout(False)
         Me.gbxAssemblyGap.PerformLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlTop.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -619,4 +632,5 @@ Partial Class LINK_FA
     Friend WithEvents lbxFAList As ListBox
     Friend WithEvents btnAdd As Button
     Friend WithEvents pbxExit As PictureBox
+    Friend WithEvents pnlTop As Panel
 End Class

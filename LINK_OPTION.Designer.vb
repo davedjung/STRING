@@ -65,6 +65,7 @@ Partial Class LINK_OPTION
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.pbxExit = New System.Windows.Forms.PictureBox()
+        Me.pnlTop = New System.Windows.Forms.Panel()
         Me.gbxXSLIB.SuspendLayout()
         Me.gbxDEPLIB.SuspendLayout()
         Me.gbxKAPPALIB.SuspendLayout()
@@ -75,6 +76,7 @@ Partial Class LINK_OPTION
         Me.gbxH2O.SuspendLayout()
         Me.gbxDEP.SuspendLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlTop.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxXSLIB
@@ -82,7 +84,7 @@ Partial Class LINK_OPTION
         Me.gbxXSLIB.Controls.Add(Me.cbxXSLIB)
         Me.gbxXSLIB.Controls.Add(Me.lblXSLIB)
         Me.gbxXSLIB.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxXSLIB.Location = New System.Drawing.Point(17, 37)
+        Me.gbxXSLIB.Location = New System.Drawing.Point(17, 64)
         Me.gbxXSLIB.Name = "gbxXSLIB"
         Me.gbxXSLIB.Size = New System.Drawing.Size(466, 58)
         Me.gbxXSLIB.TabIndex = 0
@@ -110,7 +112,7 @@ Partial Class LINK_OPTION
         '
         Me.lblTitle.AutoSize = True
         Me.lblTitle.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.Location = New System.Drawing.Point(12, 9)
+        Me.lblTitle.Location = New System.Drawing.Point(12, 36)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(471, 25)
         Me.lblTitle.TabIndex = 2
@@ -122,7 +124,7 @@ Partial Class LINK_OPTION
         Me.gbxDEPLIB.Controls.Add(Me.cbxDEPLIB)
         Me.gbxDEPLIB.Controls.Add(Me.lblDEPLIB)
         Me.gbxDEPLIB.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxDEPLIB.Location = New System.Drawing.Point(17, 101)
+        Me.gbxDEPLIB.Location = New System.Drawing.Point(17, 128)
         Me.gbxDEPLIB.Name = "gbxDEPLIB"
         Me.gbxDEPLIB.Size = New System.Drawing.Size(466, 58)
         Me.gbxDEPLIB.TabIndex = 1
@@ -151,7 +153,7 @@ Partial Class LINK_OPTION
         Me.gbxKAPPALIB.Controls.Add(Me.cbxKAPPALIB)
         Me.gbxKAPPALIB.Controls.Add(Me.lblKAPPALIB)
         Me.gbxKAPPALIB.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxKAPPALIB.Location = New System.Drawing.Point(17, 165)
+        Me.gbxKAPPALIB.Location = New System.Drawing.Point(17, 192)
         Me.gbxKAPPALIB.Name = "gbxKAPPALIB"
         Me.gbxKAPPALIB.Size = New System.Drawing.Size(466, 58)
         Me.gbxKAPPALIB.TabIndex = 2
@@ -180,7 +182,7 @@ Partial Class LINK_OPTION
         Me.gbxDET.Controls.Add(Me.cbxDET)
         Me.gbxDET.Controls.Add(Me.lblDET)
         Me.gbxDET.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxDET.Location = New System.Drawing.Point(17, 229)
+        Me.gbxDET.Location = New System.Drawing.Point(17, 256)
         Me.gbxDET.Name = "gbxDET"
         Me.gbxDET.Size = New System.Drawing.Size(466, 58)
         Me.gbxDET.TabIndex = 3
@@ -214,7 +216,7 @@ Partial Class LINK_OPTION
         Me.gbxON.Controls.Add(Me.chkRUP)
         Me.gbxON.Controls.Add(Me.lblON)
         Me.gbxON.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxON.Location = New System.Drawing.Point(17, 293)
+        Me.gbxON.Location = New System.Drawing.Point(17, 320)
         Me.gbxON.Name = "gbxON"
         Me.gbxON.Size = New System.Drawing.Size(466, 100)
         Me.gbxON.TabIndex = 4
@@ -295,7 +297,7 @@ Partial Class LINK_OPTION
         Me.gbxCRI.Controls.Add(Me.cbxCRI)
         Me.gbxCRI.Controls.Add(Me.lblCRI)
         Me.gbxCRI.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxCRI.Location = New System.Drawing.Point(489, 37)
+        Me.gbxCRI.Location = New System.Drawing.Point(489, 64)
         Me.gbxCRI.Name = "gbxCRI"
         Me.gbxCRI.Size = New System.Drawing.Size(466, 58)
         Me.gbxCRI.TabIndex = 5
@@ -325,7 +327,7 @@ Partial Class LINK_OPTION
         Me.gbxBRANCH.Controls.Add(Me.cbxBRANCH)
         Me.gbxBRANCH.Controls.Add(Me.lblBRANCH)
         Me.gbxBRANCH.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxBRANCH.Location = New System.Drawing.Point(489, 101)
+        Me.gbxBRANCH.Location = New System.Drawing.Point(489, 128)
         Me.gbxBRANCH.Name = "gbxBRANCH"
         Me.gbxBRANCH.Size = New System.Drawing.Size(466, 58)
         Me.gbxBRANCH.TabIndex = 6
@@ -366,7 +368,7 @@ Partial Class LINK_OPTION
         Me.gbxH2O.Controls.Add(Me.txtH2OTemp)
         Me.gbxH2O.Controls.Add(Me.lblH2OTemp)
         Me.gbxH2O.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxH2O.Location = New System.Drawing.Point(489, 165)
+        Me.gbxH2O.Location = New System.Drawing.Point(489, 192)
         Me.gbxH2O.Name = "gbxH2O"
         Me.gbxH2O.Size = New System.Drawing.Size(466, 85)
         Me.gbxH2O.TabIndex = 7
@@ -413,7 +415,7 @@ Partial Class LINK_OPTION
         Me.gbxDEP.Controls.Add(Me.txtDEPPower)
         Me.gbxDEP.Controls.Add(Me.lblDEPPower)
         Me.gbxDEP.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxDEP.Location = New System.Drawing.Point(489, 256)
+        Me.gbxDEP.Location = New System.Drawing.Point(489, 283)
         Me.gbxDEP.Name = "gbxDEP"
         Me.gbxDEP.Size = New System.Drawing.Size(466, 97)
         Me.gbxDEP.TabIndex = 8
@@ -467,7 +469,7 @@ Partial Class LINK_OPTION
         Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReset.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReset.ForeColor = System.Drawing.Color.White
-        Me.btnReset.Location = New System.Drawing.Point(489, 359)
+        Me.btnReset.Location = New System.Drawing.Point(489, 386)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(99, 34)
         Me.btnReset.TabIndex = 9
@@ -480,7 +482,7 @@ Partial Class LINK_OPTION
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(727, 359)
+        Me.btnSave.Location = New System.Drawing.Point(727, 386)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(228, 34)
         Me.btnSave.TabIndex = 11
@@ -493,7 +495,7 @@ Partial Class LINK_OPTION
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("NanumSquare Bold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(594, 359)
+        Me.btnClose.Location = New System.Drawing.Point(594, 386)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(127, 34)
         Me.btnClose.TabIndex = 10
@@ -505,19 +507,29 @@ Partial Class LINK_OPTION
         Me.pbxExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pbxExit.Image = Global.Project_Joshua.My.Resources.Resources._exit
         Me.pbxExit.InitialImage = Nothing
-        Me.pbxExit.Location = New System.Drawing.Point(954, 2)
+        Me.pbxExit.Location = New System.Drawing.Point(956, 0)
         Me.pbxExit.Name = "pbxExit"
         Me.pbxExit.Size = New System.Drawing.Size(20, 20)
         Me.pbxExit.TabIndex = 5
         Me.pbxExit.TabStop = False
+        '
+        'pnlTop
+        '
+        Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.pnlTop.Controls.Add(Me.pbxExit)
+        Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlTop.Location = New System.Drawing.Point(0, 0)
+        Me.pnlTop.Name = "pnlTop"
+        Me.pnlTop.Size = New System.Drawing.Size(976, 20)
+        Me.pnlTop.TabIndex = 12
         '
         'LINK_OPTION
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(976, 411)
-        Me.Controls.Add(Me.pbxExit)
+        Me.ClientSize = New System.Drawing.Size(976, 433)
+        Me.Controls.Add(Me.pnlTop)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnReset)
@@ -554,6 +566,7 @@ Partial Class LINK_OPTION
         Me.gbxDEP.ResumeLayout(False)
         Me.gbxDEP.PerformLayout()
         CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlTop.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -602,4 +615,5 @@ Partial Class LINK_OPTION
     Friend WithEvents btnBRANCHHelp As Button
     Friend WithEvents btnClose As Button
     Friend WithEvents pbxExit As PictureBox
+    Friend WithEvents pnlTop As Panel
 End Class
