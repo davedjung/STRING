@@ -23,7 +23,11 @@
 
         output = output & "MAT " & Me.identifier & vbNewLine
 
-        output = output & Me.materialName & " "
+        If Me.materialName = "GAP" Then
+            output = output & ""
+        Else
+            output = output & Me.materialName & " "
+        End If
         For i = 0 To options.Length() - 1 Step 1
             output = output & options(i) & " "
         Next
