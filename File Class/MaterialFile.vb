@@ -87,14 +87,16 @@ Public Class MaterialFile
                 If Not material(i).getPrefab() And material(i).getBurnable() Then output = output & " BURN"
                 output = output & vbNewLine
                 If material(i).getPrefab() Then
-                    output = output & material(i).getName() & " "
+                    If material(i).getName() <> "GAP" Then
+                        output = output & material(i).getName() & " "
+                    End If
                     Dim optionList() = DirectCast(material(i), PrefabMaterial).getAllOption()
-                    For j = 0 To optionList.Length() - 1 Step 1
-                        output = output & optionList(j) & " "
-                    Next
-                    output = output & vbNewLine
-                Else
-                    Dim compositionList() = DirectCast(material(i), CustomMaterial).getAllComposition()
+                        For j = 0 To optionList.Length() - 1 Step 1
+                            output = output & optionList(j) & " "
+                        Next
+                        output = output & vbNewLine
+                    Else
+                        Dim compositionList() = DirectCast(material(i), CustomMaterial).getAllComposition()
                     For j = 0 To compositionList.Length() - 1 Step 1
                         output = output & compositionList(j).toString() & vbNewLine
                     Next

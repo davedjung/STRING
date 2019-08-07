@@ -303,11 +303,11 @@ Partial Class Legacy
         'lblPath
         '
         Me.lblPath.AutoSize = True
-        Me.lblPath.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPath.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPath.ForeColor = System.Drawing.Color.Black
         Me.lblPath.Location = New System.Drawing.Point(6, 17)
         Me.lblPath.Name = "lblPath"
-        Me.lblPath.Size = New System.Drawing.Size(134, 15)
+        Me.lblPath.Size = New System.Drawing.Size(126, 15)
         Me.lblPath.TabIndex = 0
         Me.lblPath.Text = "Path to STREAM folder"
         '
