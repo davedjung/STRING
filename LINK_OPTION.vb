@@ -79,6 +79,10 @@ Public Class LINK_OPTION
             MessageBox.Show("Final Burnup is not a number", "Error")
             Exit Sub
         End If
+        If Not IsNumeric("-" + txtDEPBurnup.Text) Then
+            MessageBox.Show("Final Burnup must be non-negative", "Error")
+            Exit Sub
+        End If
 
         saveFile.setXSLIB(cbxXSLIB.SelectedIndex)
         saveFile.setDEPLIB(cbxDEPLIB.SelectedIndex)
