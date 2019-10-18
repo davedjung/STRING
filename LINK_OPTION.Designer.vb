@@ -22,404 +22,349 @@ Partial Class LINK_OPTION
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.gbxXSLIB = New System.Windows.Forms.GroupBox()
-        Me.cbxXSLIB = New System.Windows.Forms.ComboBox()
-        Me.lblXSLIB = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LINK_OPTION))
         Me.lblTitle = New System.Windows.Forms.Label()
+        Me.gbxXSLIB = New System.Windows.Forms.GroupBox()
+        Me.lblXSLIB = New System.Windows.Forms.Label()
+        Me.cbxXSLIB = New System.Windows.Forms.ComboBox()
         Me.gbxDEPLIB = New System.Windows.Forms.GroupBox()
-        Me.cbxDEPLIB = New System.Windows.Forms.ComboBox()
         Me.lblDEPLIB = New System.Windows.Forms.Label()
-        Me.gbxKAPPALIB = New System.Windows.Forms.GroupBox()
-        Me.cbxKAPPALIB = New System.Windows.Forms.ComboBox()
-        Me.lblKAPPALIB = New System.Windows.Forms.Label()
+        Me.cbxDEPLIB = New System.Windows.Forms.ComboBox()
         Me.gbxDET = New System.Windows.Forms.GroupBox()
-        Me.cbxDET = New System.Windows.Forms.ComboBox()
         Me.lblDET = New System.Windows.Forms.Label()
+        Me.cbxDET = New System.Windows.Forms.ComboBox()
         Me.gbxON = New System.Windows.Forms.GroupBox()
-        Me.lblONcf = New System.Windows.Forms.Label()
         Me.chkTHE = New System.Windows.Forms.CheckBox()
-        Me.chkSTN = New System.Windows.Forms.CheckBox()
-        Me.chkRESTART = New System.Windows.Forms.CheckBox()
-        Me.chkHOMADF = New System.Windows.Forms.CheckBox()
-        Me.chkRUP = New System.Windows.Forms.CheckBox()
         Me.lblON = New System.Windows.Forms.Label()
+        Me.chkRUP = New System.Windows.Forms.CheckBox()
+        Me.chkSTN = New System.Windows.Forms.CheckBox()
+        Me.chkHOMADF = New System.Windows.Forms.CheckBox()
+        Me.chkRESTART = New System.Windows.Forms.CheckBox()
         Me.gbxCRI = New System.Windows.Forms.GroupBox()
-        Me.cbxCRI = New System.Windows.Forms.ComboBox()
         Me.lblCRI = New System.Windows.Forms.Label()
+        Me.cbxCRI = New System.Windows.Forms.ComboBox()
         Me.gbxBRANCH = New System.Windows.Forms.GroupBox()
-        Me.btnBRANCHHelp = New System.Windows.Forms.Button()
+        Me.btnHelp = New System.Windows.Forms.Button()
         Me.cbxBRANCH = New System.Windows.Forms.ComboBox()
         Me.lblBRANCH = New System.Windows.Forms.Label()
         Me.gbxH2O = New System.Windows.Forms.GroupBox()
-        Me.txtH2OBoron = New System.Windows.Forms.TextBox()
-        Me.lblH2OBoron = New System.Windows.Forms.Label()
-        Me.txtH2OTemp = New System.Windows.Forms.TextBox()
-        Me.lblH2OTemp = New System.Windows.Forms.Label()
+        Me.lblBoron = New System.Windows.Forms.Label()
+        Me.txtBoron = New System.Windows.Forms.TextBox()
+        Me.txtInletTemp = New System.Windows.Forms.TextBox()
+        Me.lblInletTemp = New System.Windows.Forms.Label()
         Me.gbxDEP = New System.Windows.Forms.GroupBox()
         Me.lblDEP = New System.Windows.Forms.Label()
-        Me.txtDEPBurnup = New System.Windows.Forms.TextBox()
-        Me.lblDEPBurnup = New System.Windows.Forms.Label()
-        Me.txtDEPPower = New System.Windows.Forms.TextBox()
-        Me.lblDEPPower = New System.Windows.Forms.Label()
+        Me.lblBurnup = New System.Windows.Forms.Label()
+        Me.txtBurnup = New System.Windows.Forms.TextBox()
+        Me.txtPower = New System.Windows.Forms.TextBox()
+        Me.lblPower = New System.Windows.Forms.Label()
         Me.btnReset = New System.Windows.Forms.Button()
-        Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.pbxExit = New System.Windows.Forms.PictureBox()
-        Me.pnlTop = New System.Windows.Forms.Panel()
-        Me.pbxMinimize = New System.Windows.Forms.PictureBox()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbxKAPPALIB = New System.Windows.Forms.ComboBox()
         Me.gbxXSLIB.SuspendLayout()
         Me.gbxDEPLIB.SuspendLayout()
-        Me.gbxKAPPALIB.SuspendLayout()
         Me.gbxDET.SuspendLayout()
         Me.gbxON.SuspendLayout()
         Me.gbxCRI.SuspendLayout()
         Me.gbxBRANCH.SuspendLayout()
         Me.gbxH2O.SuspendLayout()
         Me.gbxDEP.SuspendLayout()
-        CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlTop.SuspendLayout()
-        CType(Me.pbxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'gbxXSLIB
-        '
-        Me.gbxXSLIB.Controls.Add(Me.cbxXSLIB)
-        Me.gbxXSLIB.Controls.Add(Me.lblXSLIB)
-        Me.gbxXSLIB.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxXSLIB.Location = New System.Drawing.Point(12, 55)
-        Me.gbxXSLIB.Name = "gbxXSLIB"
-        Me.gbxXSLIB.Size = New System.Drawing.Size(470, 45)
-        Me.gbxXSLIB.TabIndex = 0
-        Me.gbxXSLIB.TabStop = False
-        Me.gbxXSLIB.Text = "XSLIB Card"
-        '
-        'cbxXSLIB
-        '
-        Me.cbxXSLIB.FormattingEnabled = True
-        Me.cbxXSLIB.Location = New System.Drawing.Point(184, 16)
-        Me.cbxXSLIB.Name = "cbxXSLIB"
-        Me.cbxXSLIB.Size = New System.Drawing.Size(280, 23)
-        Me.cbxXSLIB.TabIndex = 0
-        '
-        'lblXSLIB
-        '
-        Me.lblXSLIB.AutoSize = True
-        Me.lblXSLIB.Location = New System.Drawing.Point(6, 17)
-        Me.lblXSLIB.Name = "lblXSLIB"
-        Me.lblXSLIB.Size = New System.Drawing.Size(157, 15)
-        Me.lblXSLIB.TabIndex = 0
-        Me.lblXSLIB.Text = "XSLIB (Cross Section Library)"
         '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Georgia", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.Location = New System.Drawing.Point(12, 23)
+        Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.lblTitle.Location = New System.Drawing.Point(12, 9)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(533, 29)
-        Me.lblTitle.TabIndex = 2
-        Me.lblTitle.Text = "LINK_OPTION_[Reactor Core].dat Configurator"
-        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.lblTitle.Size = New System.Drawing.Size(655, 37)
+        Me.lblTitle.TabIndex = 0
+        Me.lblTitle.Text = "LINK_OPTION_[Reactor].dat Configurator"
+        '
+        'gbxXSLIB
+        '
+        Me.gbxXSLIB.Controls.Add(Me.lblXSLIB)
+        Me.gbxXSLIB.Controls.Add(Me.cbxXSLIB)
+        Me.gbxXSLIB.Location = New System.Drawing.Point(10, 46)
+        Me.gbxXSLIB.Name = "gbxXSLIB"
+        Me.gbxXSLIB.Size = New System.Drawing.Size(844, 79)
+        Me.gbxXSLIB.TabIndex = 0
+        Me.gbxXSLIB.TabStop = False
+        Me.gbxXSLIB.Text = "XSLIB Card"
+        '
+        'lblXSLIB
+        '
+        Me.lblXSLIB.AutoSize = True
+        Me.lblXSLIB.Location = New System.Drawing.Point(5, 37)
+        Me.lblXSLIB.Name = "lblXSLIB"
+        Me.lblXSLIB.Size = New System.Drawing.Size(332, 29)
+        Me.lblXSLIB.TabIndex = 1
+        Me.lblXSLIB.Text = "XSLIB (Cross Section Library)"
+        '
+        'cbxXSLIB
+        '
+        Me.cbxXSLIB.FormattingEnabled = True
+        Me.cbxXSLIB.Location = New System.Drawing.Point(365, 34)
+        Me.cbxXSLIB.Name = "cbxXSLIB"
+        Me.cbxXSLIB.Size = New System.Drawing.Size(473, 37)
+        Me.cbxXSLIB.TabIndex = 0
         '
         'gbxDEPLIB
         '
-        Me.gbxDEPLIB.Controls.Add(Me.cbxDEPLIB)
         Me.gbxDEPLIB.Controls.Add(Me.lblDEPLIB)
-        Me.gbxDEPLIB.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxDEPLIB.Location = New System.Drawing.Point(12, 106)
+        Me.gbxDEPLIB.Controls.Add(Me.cbxDEPLIB)
+        Me.gbxDEPLIB.Location = New System.Drawing.Point(10, 130)
         Me.gbxDEPLIB.Name = "gbxDEPLIB"
-        Me.gbxDEPLIB.Size = New System.Drawing.Size(470, 45)
+        Me.gbxDEPLIB.Size = New System.Drawing.Size(844, 79)
         Me.gbxDEPLIB.TabIndex = 1
         Me.gbxDEPLIB.TabStop = False
         Me.gbxDEPLIB.Text = "DEPLIB Card"
         '
-        'cbxDEPLIB
-        '
-        Me.cbxDEPLIB.FormattingEnabled = True
-        Me.cbxDEPLIB.Location = New System.Drawing.Point(184, 14)
-        Me.cbxDEPLIB.Name = "cbxDEPLIB"
-        Me.cbxDEPLIB.Size = New System.Drawing.Size(280, 23)
-        Me.cbxDEPLIB.TabIndex = 0
-        '
         'lblDEPLIB
         '
         Me.lblDEPLIB.AutoSize = True
-        Me.lblDEPLIB.Location = New System.Drawing.Point(6, 17)
+        Me.lblDEPLIB.Location = New System.Drawing.Point(5, 37)
         Me.lblDEPLIB.Name = "lblDEPLIB"
-        Me.lblDEPLIB.Size = New System.Drawing.Size(147, 15)
-        Me.lblDEPLIB.TabIndex = 0
+        Me.lblDEPLIB.Size = New System.Drawing.Size(302, 29)
+        Me.lblDEPLIB.TabIndex = 1
         Me.lblDEPLIB.Text = "DEPLIB (Depletion Library)"
         '
-        'gbxKAPPALIB
+        'cbxDEPLIB
         '
-        Me.gbxKAPPALIB.Controls.Add(Me.cbxKAPPALIB)
-        Me.gbxKAPPALIB.Controls.Add(Me.lblKAPPALIB)
-        Me.gbxKAPPALIB.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxKAPPALIB.Location = New System.Drawing.Point(12, 157)
-        Me.gbxKAPPALIB.Name = "gbxKAPPALIB"
-        Me.gbxKAPPALIB.Size = New System.Drawing.Size(470, 45)
-        Me.gbxKAPPALIB.TabIndex = 2
-        Me.gbxKAPPALIB.TabStop = False
-        Me.gbxKAPPALIB.Text = "KAPPALIB Card"
-        '
-        'cbxKAPPALIB
-        '
-        Me.cbxKAPPALIB.FormattingEnabled = True
-        Me.cbxKAPPALIB.Location = New System.Drawing.Point(184, 13)
-        Me.cbxKAPPALIB.Name = "cbxKAPPALIB"
-        Me.cbxKAPPALIB.Size = New System.Drawing.Size(280, 23)
-        Me.cbxKAPPALIB.TabIndex = 0
-        '
-        'lblKAPPALIB
-        '
-        Me.lblKAPPALIB.AutoSize = True
-        Me.lblKAPPALIB.Location = New System.Drawing.Point(6, 16)
-        Me.lblKAPPALIB.Name = "lblKAPPALIB"
-        Me.lblKAPPALIB.Size = New System.Drawing.Size(149, 15)
-        Me.lblKAPPALIB.TabIndex = 0
-        Me.lblKAPPALIB.Text = "KAPPALIB (Kappa Library)"
+        Me.cbxDEPLIB.FormattingEnabled = True
+        Me.cbxDEPLIB.Location = New System.Drawing.Point(365, 34)
+        Me.cbxDEPLIB.Name = "cbxDEPLIB"
+        Me.cbxDEPLIB.Size = New System.Drawing.Size(473, 37)
+        Me.cbxDEPLIB.TabIndex = 0
         '
         'gbxDET
         '
-        Me.gbxDET.Controls.Add(Me.cbxDET)
         Me.gbxDET.Controls.Add(Me.lblDET)
-        Me.gbxDET.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxDET.Location = New System.Drawing.Point(12, 208)
+        Me.gbxDET.Controls.Add(Me.cbxDET)
+        Me.gbxDET.Location = New System.Drawing.Point(11, 298)
         Me.gbxDET.Name = "gbxDET"
-        Me.gbxDET.Size = New System.Drawing.Size(470, 45)
+        Me.gbxDET.Size = New System.Drawing.Size(843, 79)
         Me.gbxDET.TabIndex = 3
         Me.gbxDET.TabStop = False
         Me.gbxDET.Text = "DET Card"
         '
-        'cbxDET
-        '
-        Me.cbxDET.FormattingEnabled = True
-        Me.cbxDET.Location = New System.Drawing.Point(184, 14)
-        Me.cbxDET.Name = "cbxDET"
-        Me.cbxDET.Size = New System.Drawing.Size(280, 23)
-        Me.cbxDET.TabIndex = 0
-        '
         'lblDET
         '
         Me.lblDET.AutoSize = True
-        Me.lblDET.Location = New System.Drawing.Point(6, 17)
+        Me.lblDET.Location = New System.Drawing.Point(5, 37)
         Me.lblDET.Name = "lblDET"
-        Me.lblDET.Size = New System.Drawing.Size(31, 15)
-        Me.lblDET.TabIndex = 0
+        Me.lblDET.Size = New System.Drawing.Size(62, 29)
+        Me.lblDET.TabIndex = 1
         Me.lblDET.Text = "DET"
+        '
+        'cbxDET
+        '
+        Me.cbxDET.FormattingEnabled = True
+        Me.cbxDET.Location = New System.Drawing.Point(364, 34)
+        Me.cbxDET.Name = "cbxDET"
+        Me.cbxDET.Size = New System.Drawing.Size(473, 37)
+        Me.cbxDET.TabIndex = 0
         '
         'gbxON
         '
-        Me.gbxON.Controls.Add(Me.lblONcf)
         Me.gbxON.Controls.Add(Me.chkTHE)
-        Me.gbxON.Controls.Add(Me.chkSTN)
         Me.gbxON.Controls.Add(Me.lblON)
         Me.gbxON.Controls.Add(Me.chkRUP)
-        Me.gbxON.Controls.Add(Me.chkRESTART)
+        Me.gbxON.Controls.Add(Me.chkSTN)
         Me.gbxON.Controls.Add(Me.chkHOMADF)
-        Me.gbxON.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxON.Location = New System.Drawing.Point(12, 259)
+        Me.gbxON.Controls.Add(Me.chkRESTART)
+        Me.gbxON.Location = New System.Drawing.Point(11, 383)
         Me.gbxON.Name = "gbxON"
-        Me.gbxON.Size = New System.Drawing.Size(470, 90)
+        Me.gbxON.Size = New System.Drawing.Size(843, 79)
         Me.gbxON.TabIndex = 4
         Me.gbxON.TabStop = False
         Me.gbxON.Text = "ON Card"
         '
-        'lblONcf
-        '
-        Me.lblONcf.AutoSize = True
-        Me.lblONcf.Location = New System.Drawing.Point(6, 38)
-        Me.lblONcf.Name = "lblONcf"
-        Me.lblONcf.Size = New System.Drawing.Size(367, 45)
-        Me.lblONcf.TabIndex = 13
-        Me.lblONcf.Text = "RESTART: restart calculation" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "STN: creation of STN file" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "THE: geometry and materi" &
-    "al density change according to given temperature"
-        '
         'chkTHE
         '
         Me.chkTHE.AutoSize = True
-        Me.chkTHE.Location = New System.Drawing.Point(414, 16)
+        Me.chkTHE.Location = New System.Drawing.Point(756, 36)
         Me.chkTHE.Name = "chkTHE"
-        Me.chkTHE.Size = New System.Drawing.Size(50, 19)
+        Me.chkTHE.Size = New System.Drawing.Size(81, 33)
         Me.chkTHE.TabIndex = 4
         Me.chkTHE.Text = "THE"
         Me.chkTHE.UseVisualStyleBackColor = True
         '
-        'chkSTN
+        'lblON
         '
-        Me.chkSTN.AutoSize = True
-        Me.chkSTN.Location = New System.Drawing.Point(359, 16)
-        Me.chkSTN.Name = "chkSTN"
-        Me.chkSTN.Size = New System.Drawing.Size(49, 19)
-        Me.chkSTN.TabIndex = 3
-        Me.chkSTN.Text = "STN"
-        Me.chkSTN.UseVisualStyleBackColor = True
-        '
-        'chkRESTART
-        '
-        Me.chkRESTART.AutoSize = True
-        Me.chkRESTART.Location = New System.Drawing.Point(275, 16)
-        Me.chkRESTART.Name = "chkRESTART"
-        Me.chkRESTART.Size = New System.Drawing.Size(78, 19)
-        Me.chkRESTART.TabIndex = 2
-        Me.chkRESTART.Text = "RESTART"
-        Me.chkRESTART.UseVisualStyleBackColor = True
-        '
-        'chkHOMADF
-        '
-        Me.chkHOMADF.AutoSize = True
-        Me.chkHOMADF.Location = New System.Drawing.Point(188, 16)
-        Me.chkHOMADF.Name = "chkHOMADF"
-        Me.chkHOMADF.Size = New System.Drawing.Size(81, 19)
-        Me.chkHOMADF.TabIndex = 1
-        Me.chkHOMADF.Text = "HOMADF"
-        Me.chkHOMADF.UseVisualStyleBackColor = True
+        Me.lblON.AutoSize = True
+        Me.lblON.Location = New System.Drawing.Point(5, 37)
+        Me.lblON.Name = "lblON"
+        Me.lblON.Size = New System.Drawing.Size(50, 29)
+        Me.lblON.TabIndex = 1
+        Me.lblON.Text = "ON"
         '
         'chkRUP
         '
         Me.chkRUP.AutoSize = True
-        Me.chkRUP.Location = New System.Drawing.Point(132, 16)
+        Me.chkRUP.Location = New System.Drawing.Point(305, 36)
         Me.chkRUP.Name = "chkRUP"
-        Me.chkRUP.Size = New System.Drawing.Size(50, 19)
+        Me.chkRUP.Size = New System.Drawing.Size(82, 33)
         Me.chkRUP.TabIndex = 0
         Me.chkRUP.Text = "RUP"
         Me.chkRUP.UseVisualStyleBackColor = True
         '
-        'lblON
+        'chkSTN
         '
-        Me.lblON.AutoSize = True
-        Me.lblON.Location = New System.Drawing.Point(6, 17)
-        Me.lblON.Name = "lblON"
-        Me.lblON.Size = New System.Drawing.Size(25, 15)
-        Me.lblON.TabIndex = 0
-        Me.lblON.Text = "ON"
+        Me.chkSTN.AutoSize = True
+        Me.chkSTN.Location = New System.Drawing.Point(674, 36)
+        Me.chkSTN.Name = "chkSTN"
+        Me.chkSTN.Size = New System.Drawing.Size(82, 33)
+        Me.chkSTN.TabIndex = 3
+        Me.chkSTN.Text = "STN"
+        Me.chkSTN.UseVisualStyleBackColor = True
+        '
+        'chkHOMADF
+        '
+        Me.chkHOMADF.AutoSize = True
+        Me.chkHOMADF.Location = New System.Drawing.Point(390, 36)
+        Me.chkHOMADF.Name = "chkHOMADF"
+        Me.chkHOMADF.Size = New System.Drawing.Size(135, 33)
+        Me.chkHOMADF.TabIndex = 1
+        Me.chkHOMADF.Text = "HOMADF"
+        Me.chkHOMADF.UseVisualStyleBackColor = True
+        '
+        'chkRESTART
+        '
+        Me.chkRESTART.AutoSize = True
+        Me.chkRESTART.Location = New System.Drawing.Point(528, 36)
+        Me.chkRESTART.Name = "chkRESTART"
+        Me.chkRESTART.Size = New System.Drawing.Size(145, 33)
+        Me.chkRESTART.TabIndex = 2
+        Me.chkRESTART.Text = "RESTART"
+        Me.chkRESTART.UseVisualStyleBackColor = True
         '
         'gbxCRI
         '
-        Me.gbxCRI.Controls.Add(Me.cbxCRI)
         Me.gbxCRI.Controls.Add(Me.lblCRI)
-        Me.gbxCRI.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxCRI.Location = New System.Drawing.Point(488, 55)
+        Me.gbxCRI.Controls.Add(Me.cbxCRI)
+        Me.gbxCRI.Location = New System.Drawing.Point(11, 467)
         Me.gbxCRI.Name = "gbxCRI"
-        Me.gbxCRI.Size = New System.Drawing.Size(470, 45)
+        Me.gbxCRI.Size = New System.Drawing.Size(843, 79)
         Me.gbxCRI.TabIndex = 5
         Me.gbxCRI.TabStop = False
         Me.gbxCRI.Text = "CRI Card"
         '
-        'cbxCRI
-        '
-        Me.cbxCRI.FormattingEnabled = True
-        Me.cbxCRI.Location = New System.Drawing.Point(184, 14)
-        Me.cbxCRI.Name = "cbxCRI"
-        Me.cbxCRI.Size = New System.Drawing.Size(280, 23)
-        Me.cbxCRI.TabIndex = 0
-        '
         'lblCRI
         '
         Me.lblCRI.AutoSize = True
-        Me.lblCRI.Location = New System.Drawing.Point(6, 17)
+        Me.lblCRI.Location = New System.Drawing.Point(5, 37)
         Me.lblCRI.Name = "lblCRI"
-        Me.lblCRI.Size = New System.Drawing.Size(27, 15)
-        Me.lblCRI.TabIndex = 0
+        Me.lblCRI.Size = New System.Drawing.Size(53, 29)
+        Me.lblCRI.TabIndex = 1
         Me.lblCRI.Text = "CRI"
+        '
+        'cbxCRI
+        '
+        Me.cbxCRI.FormattingEnabled = True
+        Me.cbxCRI.Location = New System.Drawing.Point(364, 34)
+        Me.cbxCRI.Name = "cbxCRI"
+        Me.cbxCRI.Size = New System.Drawing.Size(473, 37)
+        Me.cbxCRI.TabIndex = 0
         '
         'gbxBRANCH
         '
-        Me.gbxBRANCH.Controls.Add(Me.btnBRANCHHelp)
+        Me.gbxBRANCH.Controls.Add(Me.btnHelp)
         Me.gbxBRANCH.Controls.Add(Me.cbxBRANCH)
         Me.gbxBRANCH.Controls.Add(Me.lblBRANCH)
-        Me.gbxBRANCH.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxBRANCH.Location = New System.Drawing.Point(488, 106)
+        Me.gbxBRANCH.Location = New System.Drawing.Point(11, 553)
         Me.gbxBRANCH.Name = "gbxBRANCH"
-        Me.gbxBRANCH.Size = New System.Drawing.Size(470, 45)
+        Me.gbxBRANCH.Size = New System.Drawing.Size(843, 79)
         Me.gbxBRANCH.TabIndex = 6
         Me.gbxBRANCH.TabStop = False
         Me.gbxBRANCH.Text = "BRANCH Card"
         '
-        'btnBRANCHHelp
+        'btnHelp
         '
-        Me.btnBRANCHHelp.Location = New System.Drawing.Point(442, 14)
-        Me.btnBRANCHHelp.Name = "btnBRANCHHelp"
-        Me.btnBRANCHHelp.Size = New System.Drawing.Size(22, 23)
-        Me.btnBRANCHHelp.TabIndex = 0
-        Me.btnBRANCHHelp.TabStop = False
-        Me.btnBRANCHHelp.Text = "&?"
-        Me.btnBRANCHHelp.UseVisualStyleBackColor = True
+        Me.btnHelp.Location = New System.Drawing.Point(800, 33)
+        Me.btnHelp.Name = "btnHelp"
+        Me.btnHelp.Size = New System.Drawing.Size(37, 37)
+        Me.btnHelp.TabIndex = 1
+        Me.btnHelp.Text = "&?"
+        Me.btnHelp.UseVisualStyleBackColor = True
         '
         'cbxBRANCH
         '
         Me.cbxBRANCH.FormattingEnabled = True
-        Me.cbxBRANCH.Location = New System.Drawing.Point(184, 14)
+        Me.cbxBRANCH.Location = New System.Drawing.Point(363, 34)
         Me.cbxBRANCH.Name = "cbxBRANCH"
-        Me.cbxBRANCH.Size = New System.Drawing.Size(252, 23)
+        Me.cbxBRANCH.Size = New System.Drawing.Size(431, 37)
         Me.cbxBRANCH.TabIndex = 0
         '
         'lblBRANCH
         '
         Me.lblBRANCH.AutoSize = True
-        Me.lblBRANCH.Location = New System.Drawing.Point(6, 17)
+        Me.lblBRANCH.Location = New System.Drawing.Point(5, 37)
         Me.lblBRANCH.Name = "lblBRANCH"
-        Me.lblBRANCH.Size = New System.Drawing.Size(160, 15)
-        Me.lblBRANCH.TabIndex = 0
+        Me.lblBRANCH.Size = New System.Drawing.Size(335, 29)
+        Me.lblBRANCH.TabIndex = 1
         Me.lblBRANCH.Text = "BRANCH (Branch Calculation)"
         '
         'gbxH2O
         '
-        Me.gbxH2O.Controls.Add(Me.txtH2OBoron)
-        Me.gbxH2O.Controls.Add(Me.lblH2OBoron)
-        Me.gbxH2O.Controls.Add(Me.lblH2OTemp)
-        Me.gbxH2O.Controls.Add(Me.txtH2OTemp)
-        Me.gbxH2O.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxH2O.Location = New System.Drawing.Point(488, 157)
+        Me.gbxH2O.Controls.Add(Me.lblBoron)
+        Me.gbxH2O.Controls.Add(Me.txtBoron)
+        Me.gbxH2O.Controls.Add(Me.txtInletTemp)
+        Me.gbxH2O.Controls.Add(Me.lblInletTemp)
+        Me.gbxH2O.Location = New System.Drawing.Point(11, 637)
         Me.gbxH2O.Name = "gbxH2O"
-        Me.gbxH2O.Size = New System.Drawing.Size(470, 70)
+        Me.gbxH2O.Size = New System.Drawing.Size(843, 121)
         Me.gbxH2O.TabIndex = 7
         Me.gbxH2O.TabStop = False
         Me.gbxH2O.Text = "H2O Card"
         '
-        'txtH2OBoron
+        'lblBoron
         '
-        Me.txtH2OBoron.Location = New System.Drawing.Point(184, 40)
-        Me.txtH2OBoron.Name = "txtH2OBoron"
-        Me.txtH2OBoron.Size = New System.Drawing.Size(280, 21)
-        Me.txtH2OBoron.TabIndex = 1
+        Me.lblBoron.AutoSize = True
+        Me.lblBoron.Location = New System.Drawing.Point(6, 79)
+        Me.lblBoron.Name = "lblBoron"
+        Me.lblBoron.Size = New System.Drawing.Size(303, 29)
+        Me.lblBoron.TabIndex = 4
+        Me.lblBoron.Text = "Boron Concentration (ppm)"
         '
-        'lblH2OBoron
+        'txtBoron
         '
-        Me.lblH2OBoron.AutoSize = True
-        Me.lblH2OBoron.Location = New System.Drawing.Point(6, 43)
-        Me.lblH2OBoron.Name = "lblH2OBoron"
-        Me.lblH2OBoron.Size = New System.Drawing.Size(142, 15)
-        Me.lblH2OBoron.TabIndex = 2
-        Me.lblH2OBoron.Text = "Boron Concentration (ppm)"
+        Me.txtBoron.Location = New System.Drawing.Point(364, 76)
+        Me.txtBoron.Name = "txtBoron"
+        Me.txtBoron.Size = New System.Drawing.Size(473, 35)
+        Me.txtBoron.TabIndex = 1
         '
-        'txtH2OTemp
+        'txtInletTemp
         '
-        Me.txtH2OTemp.Location = New System.Drawing.Point(184, 13)
-        Me.txtH2OTemp.Name = "txtH2OTemp"
-        Me.txtH2OTemp.Size = New System.Drawing.Size(280, 21)
-        Me.txtH2OTemp.TabIndex = 0
+        Me.txtInletTemp.Location = New System.Drawing.Point(364, 34)
+        Me.txtInletTemp.Name = "txtInletTemp"
+        Me.txtInletTemp.Size = New System.Drawing.Size(473, 35)
+        Me.txtInletTemp.TabIndex = 0
         '
-        'lblH2OTemp
+        'lblInletTemp
         '
-        Me.lblH2OTemp.AutoSize = True
-        Me.lblH2OTemp.Location = New System.Drawing.Point(6, 17)
-        Me.lblH2OTemp.Name = "lblH2OTemp"
-        Me.lblH2OTemp.Size = New System.Drawing.Size(168, 15)
-        Me.lblH2OTemp.TabIndex = 0
-        Me.lblH2OTemp.Text = "Moderator Inlet Temperature (K)"
+        Me.lblInletTemp.AutoSize = True
+        Me.lblInletTemp.Location = New System.Drawing.Point(5, 37)
+        Me.lblInletTemp.Name = "lblInletTemp"
+        Me.lblInletTemp.Size = New System.Drawing.Size(359, 29)
+        Me.lblInletTemp.TabIndex = 1
+        Me.lblInletTemp.Text = "Moderator Inlet Temperature (K)"
         '
         'gbxDEP
         '
         Me.gbxDEP.Controls.Add(Me.lblDEP)
-        Me.gbxDEP.Controls.Add(Me.txtDEPBurnup)
-        Me.gbxDEP.Controls.Add(Me.lblDEPBurnup)
-        Me.gbxDEP.Controls.Add(Me.lblDEPPower)
-        Me.gbxDEP.Controls.Add(Me.txtDEPPower)
-        Me.gbxDEP.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxDEP.Location = New System.Drawing.Point(488, 233)
+        Me.gbxDEP.Controls.Add(Me.lblBurnup)
+        Me.gbxDEP.Controls.Add(Me.txtBurnup)
+        Me.gbxDEP.Controls.Add(Me.txtPower)
+        Me.gbxDEP.Controls.Add(Me.lblPower)
+        Me.gbxDEP.Location = New System.Drawing.Point(11, 763)
         Me.gbxDEP.Name = "gbxDEP"
-        Me.gbxDEP.Size = New System.Drawing.Size(470, 85)
+        Me.gbxDEP.Size = New System.Drawing.Size(843, 149)
         Me.gbxDEP.TabIndex = 8
         Me.gbxDEP.TabStop = False
         Me.gbxDEP.Text = "DEP Card"
@@ -427,126 +372,123 @@ Partial Class LINK_OPTION
         'lblDEP
         '
         Me.lblDEP.AutoSize = True
-        Me.lblDEP.Location = New System.Drawing.Point(6, 17)
+        Me.lblDEP.Location = New System.Drawing.Point(6, 32)
         Me.lblDEP.Name = "lblDEP"
-        Me.lblDEP.Size = New System.Drawing.Size(155, 15)
-        Me.lblDEP.TabIndex = 4
+        Me.lblDEP.Size = New System.Drawing.Size(332, 29)
+        Me.lblDEP.TabIndex = 5
         Me.lblDEP.Text = "Depletion Calculation Options"
         '
-        'txtDEPBurnup
+        'lblBurnup
         '
-        Me.txtDEPBurnup.Location = New System.Drawing.Point(184, 56)
-        Me.txtDEPBurnup.Name = "txtDEPBurnup"
-        Me.txtDEPBurnup.Size = New System.Drawing.Size(280, 21)
-        Me.txtDEPBurnup.TabIndex = 1
+        Me.lblBurnup.AutoSize = True
+        Me.lblBurnup.Location = New System.Drawing.Point(6, 105)
+        Me.lblBurnup.Name = "lblBurnup"
+        Me.lblBurnup.Size = New System.Drawing.Size(297, 29)
+        Me.lblBurnup.TabIndex = 4
+        Me.lblBurnup.Text = "Final Burnup (MWd/kgHM)"
         '
-        'lblDEPBurnup
+        'txtBurnup
         '
-        Me.lblDEPBurnup.AutoSize = True
-        Me.lblDEPBurnup.Location = New System.Drawing.Point(6, 59)
-        Me.lblDEPBurnup.Name = "lblDEPBurnup"
-        Me.lblDEPBurnup.Size = New System.Drawing.Size(146, 15)
-        Me.lblDEPBurnup.TabIndex = 2
-        Me.lblDEPBurnup.Text = "Final Burnup (MWd/kgHM)"
+        Me.txtBurnup.Location = New System.Drawing.Point(364, 102)
+        Me.txtBurnup.Name = "txtBurnup"
+        Me.txtBurnup.Size = New System.Drawing.Size(473, 35)
+        Me.txtBurnup.TabIndex = 1
         '
-        'txtDEPPower
+        'txtPower
         '
-        Me.txtDEPPower.Location = New System.Drawing.Point(184, 29)
-        Me.txtDEPPower.Name = "txtDEPPower"
-        Me.txtDEPPower.Size = New System.Drawing.Size(280, 21)
-        Me.txtDEPPower.TabIndex = 0
+        Me.txtPower.Location = New System.Drawing.Point(364, 61)
+        Me.txtPower.Name = "txtPower"
+        Me.txtPower.Size = New System.Drawing.Size(473, 35)
+        Me.txtPower.TabIndex = 0
         '
-        'lblDEPPower
+        'lblPower
         '
-        Me.lblDEPPower.AutoSize = True
-        Me.lblDEPPower.Location = New System.Drawing.Point(6, 32)
-        Me.lblDEPPower.Name = "lblDEPPower"
-        Me.lblDEPPower.Size = New System.Drawing.Size(131, 15)
-        Me.lblDEPPower.TabIndex = 0
-        Me.lblDEPPower.Text = "Power Density (W/gHM)"
+        Me.lblPower.AutoSize = True
+        Me.lblPower.Location = New System.Drawing.Point(5, 64)
+        Me.lblPower.Name = "lblPower"
+        Me.lblPower.Size = New System.Drawing.Size(270, 29)
+        Me.lblPower.TabIndex = 1
+        Me.lblPower.Text = "Power Density (W/gHM)"
         '
         'btnReset
         '
-        Me.btnReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnReset.FlatAppearance.BorderSize = 2
+        Me.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight
         Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReset.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReset.ForeColor = System.Drawing.Color.White
-        Me.btnReset.Location = New System.Drawing.Point(488, 324)
+        Me.btnReset.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnReset.Location = New System.Drawing.Point(10, 918)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(64, 34)
+        Me.btnReset.Size = New System.Drawing.Size(206, 69)
         Me.btnReset.TabIndex = 9
         Me.btnReset.Text = "&Reset"
-        Me.btnReset.UseVisualStyleBackColor = False
-        '
-        'btnSave
-        '
-        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(746, 324)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(212, 34)
-        Me.btnSave.TabIndex = 11
-        Me.btnSave.Text = "&Save"
-        Me.btnSave.UseVisualStyleBackColor = False
+        Me.btnReset.UseVisualStyleBackColor = True
         '
         'btnClose
         '
-        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnClose.FlatAppearance.BorderSize = 2
+        Me.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(558, 324)
+        Me.btnClose.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnClose.Location = New System.Drawing.Point(222, 918)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(182, 34)
+        Me.btnClose.Size = New System.Drawing.Size(255, 69)
         Me.btnClose.TabIndex = 10
         Me.btnClose.Text = "&Close without Saving"
-        Me.btnClose.UseVisualStyleBackColor = False
+        Me.btnClose.UseVisualStyleBackColor = True
         '
-        'pbxExit
+        'btnSave
         '
-        Me.pbxExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbxExit.Image = Global.Project_Joshua.My.Resources.Resources._exit
-        Me.pbxExit.InitialImage = Nothing
-        Me.pbxExit.Location = New System.Drawing.Point(951, 0)
-        Me.pbxExit.Name = "pbxExit"
-        Me.pbxExit.Size = New System.Drawing.Size(20, 20)
-        Me.pbxExit.TabIndex = 5
-        Me.pbxExit.TabStop = False
+        Me.btnSave.FlatAppearance.BorderSize = 2
+        Me.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnSave.Location = New System.Drawing.Point(482, 918)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(372, 69)
+        Me.btnSave.TabIndex = 11
+        Me.btnSave.Text = "&Save"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
-        'pnlTop
+        'GroupBox1
         '
-        Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pnlTop.Controls.Add(Me.pbxMinimize)
-        Me.pnlTop.Controls.Add(Me.pbxExit)
-        Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlTop.Location = New System.Drawing.Point(0, 0)
-        Me.pnlTop.Name = "pnlTop"
-        Me.pnlTop.Size = New System.Drawing.Size(971, 20)
-        Me.pnlTop.TabIndex = 12
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.cbxKAPPALIB)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 214)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(844, 79)
+        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "KAPPALIB Card"
         '
-        'pbxMinimize
+        'Label1
         '
-        Me.pbxMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbxMinimize.Image = Global.Project_Joshua.My.Resources.Resources.minimize
-        Me.pbxMinimize.InitialImage = Nothing
-        Me.pbxMinimize.Location = New System.Drawing.Point(932, 0)
-        Me.pbxMinimize.Name = "pbxMinimize"
-        Me.pbxMinimize.Size = New System.Drawing.Size(20, 20)
-        Me.pbxMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbxMinimize.TabIndex = 13
-        Me.pbxMinimize.TabStop = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(5, 37)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(297, 29)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "KAPPALIB (Kappa Library)"
+        '
+        'cbxKAPPALIB
+        '
+        Me.cbxKAPPALIB.FormattingEnabled = True
+        Me.cbxKAPPALIB.Location = New System.Drawing.Point(365, 34)
+        Me.cbxKAPPALIB.Name = "cbxKAPPALIB"
+        Me.cbxKAPPALIB.Size = New System.Drawing.Size(473, 37)
+        Me.cbxKAPPALIB.TabIndex = 0
         '
         'LINK_OPTION
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(14.0!, 29.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(971, 371)
-        Me.Controls.Add(Me.pnlTop)
-        Me.Controls.Add(Me.btnClose)
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ClientSize = New System.Drawing.Size(866, 993)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.gbxDEP)
         Me.Controls.Add(Me.gbxH2O)
@@ -554,20 +496,20 @@ Partial Class LINK_OPTION
         Me.Controls.Add(Me.gbxCRI)
         Me.Controls.Add(Me.gbxON)
         Me.Controls.Add(Me.gbxDET)
-        Me.Controls.Add(Me.gbxKAPPALIB)
         Me.Controls.Add(Me.gbxDEPLIB)
         Me.Controls.Add(Me.gbxXSLIB)
         Me.Controls.Add(Me.lblTitle)
-        Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(7)
+        Me.MaximizeBox = False
         Me.Name = "LINK_OPTION"
-        Me.Text = "Configure LINK_OPTION_[Reactor Code].dat"
+        Me.Text = "LINK_OPTION"
         Me.gbxXSLIB.ResumeLayout(False)
         Me.gbxXSLIB.PerformLayout()
         Me.gbxDEPLIB.ResumeLayout(False)
         Me.gbxDEPLIB.PerformLayout()
-        Me.gbxKAPPALIB.ResumeLayout(False)
-        Me.gbxKAPPALIB.PerformLayout()
         Me.gbxDET.ResumeLayout(False)
         Me.gbxDET.PerformLayout()
         Me.gbxON.ResumeLayout(False)
@@ -580,57 +522,52 @@ Partial Class LINK_OPTION
         Me.gbxH2O.PerformLayout()
         Me.gbxDEP.ResumeLayout(False)
         Me.gbxDEP.PerformLayout()
-        CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlTop.ResumeLayout(False)
-        CType(Me.pbxMinimize, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents gbxXSLIB As GroupBox
     Friend WithEvents lblTitle As Label
-    Friend WithEvents cbxXSLIB As ComboBox
+    Friend WithEvents gbxXSLIB As GroupBox
     Friend WithEvents lblXSLIB As Label
+    Friend WithEvents cbxXSLIB As ComboBox
     Friend WithEvents gbxDEPLIB As GroupBox
-    Friend WithEvents cbxDEPLIB As ComboBox
     Friend WithEvents lblDEPLIB As Label
-    Friend WithEvents gbxKAPPALIB As GroupBox
-    Friend WithEvents cbxKAPPALIB As ComboBox
-    Friend WithEvents lblKAPPALIB As Label
+    Friend WithEvents cbxDEPLIB As ComboBox
     Friend WithEvents gbxDET As GroupBox
-    Friend WithEvents cbxDET As ComboBox
     Friend WithEvents lblDET As Label
+    Friend WithEvents cbxDET As ComboBox
     Friend WithEvents gbxON As GroupBox
-    Friend WithEvents chkTHE As CheckBox
-    Friend WithEvents chkSTN As CheckBox
-    Friend WithEvents chkRESTART As CheckBox
-    Friend WithEvents chkHOMADF As CheckBox
-    Friend WithEvents chkRUP As CheckBox
     Friend WithEvents lblON As Label
-    Friend WithEvents lblONcf As Label
+    Friend WithEvents chkTHE As CheckBox
+    Friend WithEvents chkRUP As CheckBox
+    Friend WithEvents chkSTN As CheckBox
+    Friend WithEvents chkHOMADF As CheckBox
+    Friend WithEvents chkRESTART As CheckBox
     Friend WithEvents gbxCRI As GroupBox
-    Friend WithEvents cbxCRI As ComboBox
     Friend WithEvents lblCRI As Label
+    Friend WithEvents cbxCRI As ComboBox
     Friend WithEvents gbxBRANCH As GroupBox
-    Friend WithEvents cbxBRANCH As ComboBox
     Friend WithEvents lblBRANCH As Label
+    Friend WithEvents cbxBRANCH As ComboBox
     Friend WithEvents gbxH2O As GroupBox
-    Friend WithEvents txtH2OBoron As TextBox
-    Friend WithEvents txtH2OTemp As TextBox
-    Friend WithEvents lblH2OTemp As Label
+    Friend WithEvents lblBoron As Label
+    Friend WithEvents txtBoron As TextBox
+    Friend WithEvents txtInletTemp As TextBox
+    Friend WithEvents lblInletTemp As Label
     Friend WithEvents gbxDEP As GroupBox
+    Friend WithEvents lblBurnup As Label
+    Friend WithEvents txtBurnup As TextBox
+    Friend WithEvents txtPower As TextBox
+    Friend WithEvents lblPower As Label
     Friend WithEvents lblDEP As Label
-    Friend WithEvents txtDEPBurnup As TextBox
-    Friend WithEvents lblDEPBurnup As Label
-    Friend WithEvents txtDEPPower As TextBox
-    Friend WithEvents lblDEPPower As Label
     Friend WithEvents btnReset As Button
-    Friend WithEvents btnSave As Button
-    Friend WithEvents lblH2OBoron As Label
-    Friend WithEvents btnBRANCHHelp As Button
     Friend WithEvents btnClose As Button
-    Friend WithEvents pbxExit As PictureBox
-    Friend WithEvents pnlTop As Panel
-    Friend WithEvents pbxMinimize As PictureBox
+    Friend WithEvents btnSave As Button
+    Friend WithEvents btnHelp As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cbxKAPPALIB As ComboBox
 End Class

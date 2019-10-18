@@ -1,141 +1,28 @@
 ﻿Imports System.IO
-
 Public Class LINK_OPTION
 
     Private fileIndex As Integer
-    Private saveFile As OptionFile
-
+    Private saveFile As OPTIONFile
     Private Sub LINK_OPTION_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         If fileIndex = -1 Then
-            Dim reactorCode = MainMenu.getReactorCode()
-            Dim assemCount = MainMenu.getAssemCount()
-            Dim fileName = "LINK_OPTION_" & reactorCode & ".dat"
+            Dim fileName = "LINK_OPTION_" + MainMenu.ReactorID + ".dat"
             Me.Text = "Configure " & fileName
             lblTitle.Text = fileName & " Configurator"
-            saveFile = New OptionFile(fileName)
+            saveFile = New OPTIONFile(fileName)
             initialization()
         Else
-            saveFile = MainMenu.getFile(fileIndex)
-            Dim filename = saveFile.getFileName()
-            Me.Text = "Configure " & filename
-            lblTitle.Text = filename & " Configurator"
+            saveFile = MainMenu.fileList.getItem(fileIndex)
+            Dim fileName = saveFile.getFileName()
+            Me.Text = "Configure " & fileName
+            lblTitle.Text = fileName & " Configurator"
             initialization()
             loadConfiguration()
         End If
-
     End Sub
-
-
-
-    Private Sub SetUpComboBox(ByVal line As String, ByVal control As ComboBox)
-
-        Dim content = line.Split("#")
-        For i = 0 To content.Length - 1 Step 1
-            control.Items.Add(content(i))
-            If content(i).Contains("[Default]") Then control.SelectedIndex = i
-        Next
-        If control.SelectedIndex = -1 Then control.SelectedIndex = 0
+    Public Sub setFileIndex(ByVal index As Integer)
+        fileIndex = index
     End Sub
-          
-    Private Sub BtnBRANCHHelp_Click(sender As Object, e As EventArgs) Handles btnBRANCHHelp.Click
-
-        Dim information As String
-        information = "0: User creates branch cases manually" & vbNewLine
-        information = information & "1: Hot-state full case matrix created with coolant temperature of +-20K change without rod insertion" & vbNewLine
-        information = information & "2: Hot-state full case matrix created with coolant temperature of +-20K change [Default]" & vbNewLine
-        information = information & "3: Hot-state full case matrix created with coolant temperature of +-25K change" & vbNewLine
-        information = information & "4: Cold-state full case matrix created"
-
-        MessageBox.Show(information, "Branch calculation options")
-
-    End Sub
-    Private Sub BtnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-
-        initialization()
-        If fileIndex <> -1 Then loadConfiguration()
-
-    End Sub
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-
-        Me.Close()
-
-    End Sub
-    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-
-        If Not IsNumeric(txtH2OTemp.Text) Then
-            MessageBox.Show("Moderator Inlet Temperature is not a number", "Error")
-            Exit Sub
-        End If
-        If Not IsNumeric(txtH2OBoron.Text) Then
-            MessageBox.Show("Boron Concentration is not a number", "Error")
-            Exit Sub
-        End If
-        If Not IsNumeric(txtDEPPower.Text) Then
-            MessageBox.Show("Power Density is not a number", "Error")
-            Exit Sub
-        End If
-        If Not IsNumeric(txtDEPBurnup.Text) Then
-            MessageBox.Show("Final Burnup is not a number", "Error")
-            Exit Sub
-        End If
-        If Not IsNumeric("-" + txtDEPBurnup.Text) Then
-            MessageBox.Show("Final Burnup must be non-negative", "Error")
-            Exit Sub
-        End If
-
-        saveFile.setXSLIB(cbxXSLIB.SelectedIndex)
-        saveFile.setDEPLIB(cbxDEPLIB.SelectedIndex)
-        saveFile.setKAPPALIB(cbxKAPPALIB.SelectedIndex)
-        saveFile.setDET(cbxDET.SelectedIndex)
-
-        Dim ONstatus(4) As Boolean
-        ONstatus(0) = chkRUP.Checked
-        ONstatus(1) = chkHOMADF.Checked
-        ONstatus(2) = chkRESTART.Checked
-        ONstatus(3) = chkSTN.Checked
-        ONstatus(4) = chkTHE.Checked
-        saveFile.setON(ONstatus)
-
-        saveFile.setCRI(cbxCRI.SelectedIndex)
-        saveFile.setBRANCH(cbxBRANCH.SelectedIndex)
-        saveFile.setH2OTemp(CDbl(txtH2OTemp.Text))
-        saveFile.setH2OBoron(CDbl(txtH2OBoron.Text))
-        saveFile.setDEPPower(CDbl(txtDEPPower.Text))
-        saveFile.setDEPBurnup(CDbl(txtDEPBurnup.Text))
-
-
-        If fileIndex = -1 Then
-            MainMenu.addFile(saveFile)
-        Else
-            MainMenu.saveFile(saveFile, fileIndex)
-        End If
-
-        Me.Close()
-
-    End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    Public Sub setFileIndex(index As Integer)
-        Me.fileIndex = index
-    End Sub
-    Private Sub initialization()
-
+    Public Sub initialization()
         cbxXSLIB.Items.Clear()
         cbxDEPLIB.Items.Clear()
         cbxKAPPALIB.Items.Clear()
@@ -168,11 +55,11 @@ Public Class LINK_OPTION
                     line = reader.ReadLine
                     SetUpComboBox(line, cbxBRANCH)
                 Case "H2O"
-                    txtH2OTemp.Text = reader.ReadLine
-                    txtH2OBoron.Text = reader.ReadLine
+                    txtInletTemp.Text = reader.ReadLine
+                    txtBoron.Text = reader.ReadLine
                 Case "DEP"
-                    txtDEPPower.Text = reader.ReadLine
-                    txtDEPBurnup.Text = reader.ReadLine
+                    txtPower.Text = reader.ReadLine
+                    txtBurnup.Text = reader.ReadLine
             End Select
             line = reader.ReadLine
         Loop
@@ -182,11 +69,9 @@ Public Class LINK_OPTION
         chkRESTART.Checked = True
         chkSTN.Checked = True
         chkTHE.Checked = True
-
     End Sub
-    Private Sub loadConfiguration()
-
-        Dim saveFile = DirectCast(MainMenu.getFile(fileIndex), OptionFile)
+    Public Sub loadConfiguration()
+        Dim saveFile = DirectCast(MainMenu.fileList.getItem(fileIndex), OPTIONFile)
 
         cbxXSLIB.SelectedIndex = saveFile.getXSLIB()
         cbxDEPLIB.SelectedIndex = saveFile.getDEPLIB()
@@ -203,28 +88,91 @@ Public Class LINK_OPTION
 
         cbxCRI.SelectedIndex = saveFile.getCRI()
         cbxBRANCH.SelectedIndex = saveFile.getBRANCH()
-        txtH2OTemp.Text = saveFile.getH2OTemp()
-        txtH2OBoron.Text = saveFile.getH2OBoron()
-        txtDEPPower.Text = saveFile.getDEPPower()
-        txtDEPBurnup.Text = saveFile.getDEPBurnup()
+        txtInletTemp.Text = saveFile.getInletTemp()
+        txtBoron.Text = saveFile.getBoron()
+        txtPower.Text = saveFile.getPower()
+        txtBurnup.Text = saveFile.getBurnup()
 
         Me.Text = "Configure " & saveFile.getFileName
         lblTitle.Text = saveFile.getFileName & " Configurator"
-
     End Sub
+    Private Sub SetUpComboBox(ByVal line As String, ByVal control As ComboBox)
 
-    Private Sub PbxExit_Click(sender As Object, e As EventArgs) Handles pbxExit.Click
+        Dim content = line.Split("#")
+        For i = 0 To content.Length - 1 Step 1
+            control.Items.Add(content(i))
+            If content(i).Contains("[Default]") Then control.SelectedIndex = i
+        Next
+        If control.SelectedIndex = -1 Then control.SelectedIndex = 0
+    End Sub
+    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
+        Dim information As String
+        information = "0: User creates branch cases manually" & vbNewLine
+        information = information & "1: Hot-state full case matrix created with coolant temperature of +-20K change without rod insertion" & vbNewLine
+        information = information & "2: Hot-state full case matrix created with coolant temperature of +-20K change [Default]" & vbNewLine
+        information = information & "3: Hot-state full case matrix created with coolant temperature of +-25K change" & vbNewLine
+        information = information & "4: Cold-state full case matrix created"
+
+        MessageBox.Show(information, "Branch calculation options")
+    End Sub
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        initialization()
+        If fileIndex <> -1 Then loadConfiguration()
+    End Sub
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
-    Dim Pos As Point
-    Private Sub pnlTop_MouseMove(sender As Object, e As MouseEventArgs) Handles pnlTop.MouseMove
-        If e.Button = Windows.Forms.MouseButtons.Left Then
-            Me.Location += Control.MousePosition - Pos
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        If Not IsNumeric(txtInletTemp.Text) Then
+            MessageBox.Show("Moderator Inlet Temperature is not a number", "Error")
+            Exit Sub
         End If
-        Pos = Control.MousePosition
+        If Not IsNumeric(txtBoron.Text) Then
+            MessageBox.Show("Boron Concentration is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtPower.Text) Then
+            MessageBox.Show("Power Density is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric(txtBurnup.Text) Then
+            MessageBox.Show("Final Burnup is not a number", "Error")
+            Exit Sub
+        End If
+        If Not IsNumeric("-" + txtBurnup.Text) Then
+            MessageBox.Show("Final Burnup must be non-negative", "Error")
+            Exit Sub
+        End If
+
+        saveFile.setXSLIB(cbxXSLIB.SelectedIndex)
+        saveFile.setDEPLIB(cbxDEPLIB.SelectedIndex)
+        saveFile.setKAPPALIB(cbxKAPPALIB.SelectedIndex)
+        saveFile.setDET(cbxDET.SelectedIndex)
+
+        Dim ONstatus(4) As Boolean
+        ONstatus(0) = chkRUP.Checked
+        ONstatus(1) = chkHOMADF.Checked
+        ONstatus(2) = chkRESTART.Checked
+        ONstatus(3) = chkSTN.Checked
+        ONstatus(4) = chkTHE.Checked
+        saveFile.setON(ONstatus)
+
+        saveFile.setCRI(cbxCRI.SelectedIndex)
+        saveFile.setBRANCH(cbxBRANCH.SelectedIndex)
+        saveFile.setInletTemp(CDbl(txtInletTemp.Text))
+        saveFile.setBoron(CDbl(txtBoron.Text))
+        saveFile.setPower(CDbl(txtPower.Text))
+        saveFile.setBurnup(CDbl(txtBurnup.Text))
+
+
+        If fileIndex = -1 Then
+            MainMenu.fileList.addItem(saveFile)
+        Else
+            MainMenu.fileList.addItem(saveFile, fileIndex)
+        End If
+        MainMenu.updateFileList()
+        Me.Close()
     End Sub
 
-    Private Sub PbxMinimize_Click(sender As Object, e As EventArgs) Handles pbxMinimize.Click
-        Me.WindowState = WindowState.Minimized
-    End Sub
+
 End Class

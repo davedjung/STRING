@@ -37,7 +37,7 @@ Gram density (g/cc)# #
 ICN750
 Gram density (g/cc)# # 
 8.25# # 
-ICN 625
+ICN625
 Gram density (g/cc)# # 
 8.47# # 
 B4C

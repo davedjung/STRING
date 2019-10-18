@@ -22,448 +22,392 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
+        Me.pbxLogo = New System.Windows.Forms.PictureBox()
         Me.lblTitle = New System.Windows.Forms.Label()
+        Me.lblVersion = New System.Windows.Forms.Label()
+        Me.lblAffiliation = New System.Windows.Forms.Label()
         Me.lblCredit = New System.Windows.Forms.Label()
-        Me.lblVersionInfo = New System.Windows.Forms.Label()
-        Me.lblLabInfo = New System.Windows.Forms.Label()
         Me.gbxEssential = New System.Windows.Forms.GroupBox()
-        Me.lblReactorIDExample = New System.Windows.Forms.Label()
-        Me.lblReactorID = New System.Windows.Forms.Label()
-        Me.txtReactorID = New System.Windows.Forms.TextBox()
+        Me.lblIDeg = New System.Windows.Forms.Label()
+        Me.lblID = New System.Windows.Forms.Label()
+        Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtPath = New System.Windows.Forms.TextBox()
         Me.lblPath = New System.Windows.Forms.Label()
         Me.gbxCheckList = New System.Windows.Forms.GroupBox()
-        Me.btnConfAssem = New System.Windows.Forms.Button()
+        Me.lblFA = New System.Windows.Forms.Label()
+        Me.btnFA = New System.Windows.Forms.Button()
         Me.lblAssem = New System.Windows.Forms.Label()
-        Me.lblLinkFA = New System.Windows.Forms.Label()
-        Me.btnConfLinkFa = New System.Windows.Forms.Button()
-        Me.btnConfLinkMat = New System.Windows.Forms.Button()
-        Me.lblLinkMat = New System.Windows.Forms.Label()
-        Me.btnConfLinkOption = New System.Windows.Forms.Button()
-        Me.lblLinkOption = New System.Windows.Forms.Label()
-        Me.lbxFileList = New System.Windows.Forms.ListBox()
-        Me.gbpOverview = New System.Windows.Forms.GroupBox()
-        Me.btnEdit = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.lblFileList = New System.Windows.Forms.Label()
+        Me.btnAssem = New System.Windows.Forms.Button()
+        Me.lblMAT = New System.Windows.Forms.Label()
+        Me.btnMAT = New System.Windows.Forms.Button()
+        Me.lblOPTION = New System.Windows.Forms.Label()
+        Me.btnOPTION = New System.Windows.Forms.Button()
+        Me.gbxOverview = New System.Windows.Forms.GroupBox()
         Me.btnGenerate = New System.Windows.Forms.Button()
-        Me.pbxExit = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.pnlTop = New System.Windows.Forms.Panel()
-        Me.pbxLegacy = New System.Windows.Forms.PictureBox()
-        Me.pbxMinimize = New System.Windows.Forms.PictureBox()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.lbxList = New System.Windows.Forms.ListBox()
+        Me.lblList = New System.Windows.Forms.Label()
+        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxEssential.SuspendLayout()
         Me.gbxCheckList.SuspendLayout()
-        Me.gbpOverview.SuspendLayout()
-        CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlTop.SuspendLayout()
-        CType(Me.pbxLegacy, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbxOverview.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'pbxLogo
+        '
+        Me.pbxLogo.Image = Global.STREAM_Input_Generator.My.Resources.Resources.logo
+        Me.pbxLogo.Location = New System.Drawing.Point(1, 1)
+        Me.pbxLogo.Name = "pbxLogo"
+        Me.pbxLogo.Size = New System.Drawing.Size(150, 150)
+        Me.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbxLogo.TabIndex = 0
+        Me.pbxLogo.TabStop = False
         '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Georgia", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.lblTitle.Location = New System.Drawing.Point(78, 43)
+        Me.lblTitle.Location = New System.Drawing.Point(149, 23)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(501, 31)
-        Me.lblTitle.TabIndex = 0
+        Me.lblTitle.Size = New System.Drawing.Size(883, 61)
+        Me.lblTitle.TabIndex = 1
         Me.lblTitle.Text = "STRING: STReam INput Generator"
+        '
+        'lblVersion
+        '
+        Me.lblVersion.AutoSize = True
+        Me.lblVersion.Location = New System.Drawing.Point(156, 99)
+        Me.lblVersion.Name = "lblVersion"
+        Me.lblVersion.Size = New System.Drawing.Size(223, 31)
+        Me.lblVersion.TabIndex = 2
+        Me.lblVersion.Text = "version 0.3 [beta]"
+        '
+        'lblAffiliation
+        '
+        Me.lblAffiliation.AutoSize = True
+        Me.lblAffiliation.Location = New System.Drawing.Point(497, 99)
+        Me.lblAffiliation.Name = "lblAffiliation"
+        Me.lblAffiliation.Size = New System.Drawing.Size(136, 31)
+        Me.lblAffiliation.TabIndex = 3
+        Me.lblAffiliation.Text = "SNU MCL"
         '
         'lblCredit
         '
         Me.lblCredit.AutoSize = True
-        Me.lblCredit.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCredit.Location = New System.Drawing.Point(455, 89)
+        Me.lblCredit.Location = New System.Drawing.Point(732, 99)
         Me.lblCredit.Name = "lblCredit"
-        Me.lblCredit.Size = New System.Drawing.Size(121, 15)
-        Me.lblCredit.TabIndex = 1
+        Me.lblCredit.Size = New System.Drawing.Size(288, 31)
+        Me.lblCredit.TabIndex = 4
         Me.lblCredit.Text = "created by Jung Min Ki"
-        '
-        'lblVersionInfo
-        '
-        Me.lblVersionInfo.AutoSize = True
-        Me.lblVersionInfo.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVersionInfo.Location = New System.Drawing.Point(12, 89)
-        Me.lblVersionInfo.Name = "lblVersionInfo"
-        Me.lblVersionInfo.Size = New System.Drawing.Size(97, 15)
-        Me.lblVersionInfo.TabIndex = 2
-        Me.lblVersionInfo.Text = "version 0.2 [alpha]"
-        '
-        'lblLabInfo
-        '
-        Me.lblLabInfo.AutoSize = True
-        Me.lblLabInfo.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLabInfo.Location = New System.Drawing.Point(256, 89)
-        Me.lblLabInfo.Name = "lblLabInfo"
-        Me.lblLabInfo.Size = New System.Drawing.Size(61, 15)
-        Me.lblLabInfo.TabIndex = 3
-        Me.lblLabInfo.Text = "SNU MCL"
         '
         'gbxEssential
         '
-        Me.gbxEssential.Controls.Add(Me.lblReactorIDExample)
-        Me.gbxEssential.Controls.Add(Me.lblReactorID)
-        Me.gbxEssential.Controls.Add(Me.txtReactorID)
+        Me.gbxEssential.Controls.Add(Me.lblIDeg)
+        Me.gbxEssential.Controls.Add(Me.lblID)
+        Me.gbxEssential.Controls.Add(Me.txtID)
         Me.gbxEssential.Controls.Add(Me.txtPath)
         Me.gbxEssential.Controls.Add(Me.lblPath)
-        Me.gbxEssential.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxEssential.Location = New System.Drawing.Point(12, 107)
+        Me.gbxEssential.Location = New System.Drawing.Point(12, 157)
         Me.gbxEssential.Name = "gbxEssential"
-        Me.gbxEssential.Size = New System.Drawing.Size(564, 70)
+        Me.gbxEssential.Size = New System.Drawing.Size(1008, 131)
         Me.gbxEssential.TabIndex = 0
         Me.gbxEssential.TabStop = False
         Me.gbxEssential.Text = "Essential Settings"
         '
-        'lblReactorIDExample
+        'lblIDeg
         '
-        Me.lblReactorIDExample.AutoSize = True
-        Me.lblReactorIDExample.Location = New System.Drawing.Point(311, 45)
-        Me.lblReactorIDExample.Name = "lblReactorIDExample"
-        Me.lblReactorIDExample.Size = New System.Drawing.Size(110, 15)
-        Me.lblReactorIDExample.TabIndex = 4
-        Me.lblReactorIDExample.Text = "eg.) KORI, YGN3, ..."
+        Me.lblIDeg.AutoSize = True
+        Me.lblIDeg.Location = New System.Drawing.Point(564, 84)
+        Me.lblIDeg.Name = "lblIDeg"
+        Me.lblIDeg.Size = New System.Drawing.Size(255, 31)
+        Me.lblIDeg.TabIndex = 4
+        Me.lblIDeg.Text = "eg.) KORI, YGN3 ..."
         '
-        'lblReactorID
+        'lblID
         '
-        Me.lblReactorID.AutoSize = True
-        Me.lblReactorID.Location = New System.Drawing.Point(6, 45)
-        Me.lblReactorID.Name = "lblReactorID"
-        Me.lblReactorID.Size = New System.Drawing.Size(139, 15)
-        Me.lblReactorID.TabIndex = 3
-        Me.lblReactorID.Text = "Reactor Identification Code"
+        Me.lblID.AutoSize = True
+        Me.lblID.Location = New System.Drawing.Point(6, 84)
+        Me.lblID.Name = "lblID"
+        Me.lblID.Size = New System.Drawing.Size(217, 31)
+        Me.lblID.TabIndex = 3
+        Me.lblID.Text = "Reactor ID Code"
         '
-        'txtReactorID
+        'txtID
         '
-        Me.txtReactorID.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtReactorID.Location = New System.Drawing.Point(151, 43)
-        Me.txtReactorID.Name = "txtReactorID"
-        Me.txtReactorID.Size = New System.Drawing.Size(154, 20)
-        Me.txtReactorID.TabIndex = 2
-        Me.txtReactorID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtID.Location = New System.Drawing.Point(229, 81)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(329, 38)
+        Me.txtID.TabIndex = 1
+        Me.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtPath
         '
-        Me.txtPath.Font = New System.Drawing.Font("NanumSquare", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPath.Location = New System.Drawing.Point(146, 17)
+        Me.txtPath.Location = New System.Drawing.Point(307, 37)
         Me.txtPath.Name = "txtPath"
-        Me.txtPath.Size = New System.Drawing.Size(412, 20)
+        Me.txtPath.Size = New System.Drawing.Size(695, 38)
         Me.txtPath.TabIndex = 0
         Me.txtPath.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPath
         '
         Me.lblPath.AutoSize = True
-        Me.lblPath.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPath.Location = New System.Drawing.Point(6, 17)
+        Me.lblPath.Location = New System.Drawing.Point(6, 40)
         Me.lblPath.Name = "lblPath"
-        Me.lblPath.Size = New System.Drawing.Size(134, 15)
+        Me.lblPath.Size = New System.Drawing.Size(295, 31)
         Me.lblPath.TabIndex = 0
         Me.lblPath.Text = "Path to STREAM folder"
         '
         'gbxCheckList
         '
-        Me.gbxCheckList.Controls.Add(Me.btnConfAssem)
+        Me.gbxCheckList.Controls.Add(Me.lblFA)
+        Me.gbxCheckList.Controls.Add(Me.btnFA)
         Me.gbxCheckList.Controls.Add(Me.lblAssem)
-        Me.gbxCheckList.Controls.Add(Me.lblLinkFA)
-        Me.gbxCheckList.Controls.Add(Me.btnConfLinkFa)
-        Me.gbxCheckList.Controls.Add(Me.btnConfLinkMat)
-        Me.gbxCheckList.Controls.Add(Me.lblLinkMat)
-        Me.gbxCheckList.Controls.Add(Me.btnConfLinkOption)
-        Me.gbxCheckList.Controls.Add(Me.lblLinkOption)
-        Me.gbxCheckList.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxCheckList.Location = New System.Drawing.Point(12, 183)
+        Me.gbxCheckList.Controls.Add(Me.btnAssem)
+        Me.gbxCheckList.Controls.Add(Me.lblMAT)
+        Me.gbxCheckList.Controls.Add(Me.btnMAT)
+        Me.gbxCheckList.Controls.Add(Me.lblOPTION)
+        Me.gbxCheckList.Controls.Add(Me.btnOPTION)
+        Me.gbxCheckList.Location = New System.Drawing.Point(12, 294)
         Me.gbxCheckList.Name = "gbxCheckList"
-        Me.gbxCheckList.Size = New System.Drawing.Size(568, 140)
+        Me.gbxCheckList.Size = New System.Drawing.Size(1008, 241)
         Me.gbxCheckList.TabIndex = 1
         Me.gbxCheckList.TabStop = False
         Me.gbxCheckList.Text = "Check List"
         '
-        'btnConfAssem
+        'lblFA
         '
-        Me.btnConfAssem.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.btnConfAssem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfAssem.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfAssem.ForeColor = System.Drawing.Color.White
-        Me.btnConfAssem.Location = New System.Drawing.Point(237, 74)
-        Me.btnConfAssem.Name = "btnConfAssem"
-        Me.btnConfAssem.Size = New System.Drawing.Size(325, 25)
-        Me.btnConfAssem.TabIndex = 2
-        Me.btnConfAssem.Text = "Configure [Reactor Code]_&Assem_#.inp"
-        Me.btnConfAssem.UseVisualStyleBackColor = False
+        Me.lblFA.AutoSize = True
+        Me.lblFA.Location = New System.Drawing.Point(6, 194)
+        Me.lblFA.Name = "lblFA"
+        Me.lblFA.Size = New System.Drawing.Size(328, 31)
+        Me.lblFA.TabIndex = 11
+        Me.lblFA.Text = "4. LINK_FA_[Reactor].dat"
+        '
+        'btnFA
+        '
+        Me.btnFA.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnFA.FlatAppearance.BorderSize = 2
+        Me.btnFA.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnFA.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnFA.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFA.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnFA.Location = New System.Drawing.Point(482, 187)
+        Me.btnFA.Name = "btnFA"
+        Me.btnFA.Size = New System.Drawing.Size(520, 44)
+        Me.btnFA.TabIndex = 3
+        Me.btnFA.Text = "Configure LINK_&FA_[Reactor].dat"
+        Me.btnFA.UseVisualStyleBackColor = True
         '
         'lblAssem
         '
         Me.lblAssem.AutoSize = True
-        Me.lblAssem.Location = New System.Drawing.Point(6, 79)
+        Me.lblAssem.Location = New System.Drawing.Point(6, 144)
         Me.lblAssem.Name = "lblAssem"
-        Me.lblAssem.Size = New System.Drawing.Size(162, 15)
-        Me.lblAssem.TabIndex = 6
-        Me.lblAssem.Text = "3. [Reactor Code]_Assem_#.inp"
+        Me.lblAssem.Size = New System.Drawing.Size(328, 31)
+        Me.lblAssem.TabIndex = 9
+        Me.lblAssem.Text = "3. [Reactor]_Assem_#.inp"
         '
-        'lblLinkFA
+        'btnAssem
         '
-        Me.lblLinkFA.AutoSize = True
-        Me.lblLinkFA.Location = New System.Drawing.Point(6, 110)
-        Me.lblLinkFA.Name = "lblLinkFA"
-        Me.lblLinkFA.Size = New System.Drawing.Size(166, 15)
-        Me.lblLinkFA.TabIndex = 4
-        Me.lblLinkFA.Text = "4. LINK_FA_[Reactor Code].dat"
+        Me.btnAssem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnAssem.FlatAppearance.BorderSize = 2
+        Me.btnAssem.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnAssem.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnAssem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAssem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnAssem.Location = New System.Drawing.Point(482, 137)
+        Me.btnAssem.Name = "btnAssem"
+        Me.btnAssem.Size = New System.Drawing.Size(520, 44)
+        Me.btnAssem.TabIndex = 2
+        Me.btnAssem.Text = "Configure [Reactor]_&Assem_#.inp"
+        Me.btnAssem.UseVisualStyleBackColor = True
         '
-        'btnConfLinkFa
+        'lblMAT
         '
-        Me.btnConfLinkFa.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.btnConfLinkFa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfLinkFa.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfLinkFa.ForeColor = System.Drawing.Color.White
-        Me.btnConfLinkFa.Location = New System.Drawing.Point(237, 105)
-        Me.btnConfLinkFa.Name = "btnConfLinkFa"
-        Me.btnConfLinkFa.Size = New System.Drawing.Size(325, 25)
-        Me.btnConfLinkFa.TabIndex = 3
-        Me.btnConfLinkFa.Text = "Configure LINK_&FA_[Reactor Code].dat"
-        Me.btnConfLinkFa.UseVisualStyleBackColor = False
+        Me.lblMAT.AutoSize = True
+        Me.lblMAT.Location = New System.Drawing.Point(6, 94)
+        Me.lblMAT.Name = "lblMAT"
+        Me.lblMAT.Size = New System.Drawing.Size(350, 31)
+        Me.lblMAT.TabIndex = 7
+        Me.lblMAT.Text = "2. LINK_MAT_[Reactor].dat"
         '
-        'btnConfLinkMat
+        'btnMAT
         '
-        Me.btnConfLinkMat.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.btnConfLinkMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfLinkMat.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfLinkMat.ForeColor = System.Drawing.Color.White
-        Me.btnConfLinkMat.Location = New System.Drawing.Point(237, 43)
-        Me.btnConfLinkMat.Name = "btnConfLinkMat"
-        Me.btnConfLinkMat.Size = New System.Drawing.Size(325, 25)
-        Me.btnConfLinkMat.TabIndex = 1
-        Me.btnConfLinkMat.Text = "Configure LINK_&MAT_[Reactor Code].dat"
-        Me.btnConfLinkMat.UseVisualStyleBackColor = False
+        Me.btnMAT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnMAT.FlatAppearance.BorderSize = 2
+        Me.btnMAT.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnMAT.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnMAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMAT.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnMAT.Location = New System.Drawing.Point(482, 87)
+        Me.btnMAT.Name = "btnMAT"
+        Me.btnMAT.Size = New System.Drawing.Size(520, 44)
+        Me.btnMAT.TabIndex = 1
+        Me.btnMAT.Text = "Configure LINK_&MAT_[Reactor].dat"
+        Me.btnMAT.UseVisualStyleBackColor = True
         '
-        'lblLinkMat
+        'lblOPTION
         '
-        Me.lblLinkMat.AutoSize = True
-        Me.lblLinkMat.Location = New System.Drawing.Point(6, 48)
-        Me.lblLinkMat.Name = "lblLinkMat"
-        Me.lblLinkMat.Size = New System.Drawing.Size(179, 15)
-        Me.lblLinkMat.TabIndex = 2
-        Me.lblLinkMat.Text = "2. LINK_MAT_[Reactor Code].dat"
+        Me.lblOPTION.AutoSize = True
+        Me.lblOPTION.Location = New System.Drawing.Point(6, 44)
+        Me.lblOPTION.Name = "lblOPTION"
+        Me.lblOPTION.Size = New System.Drawing.Size(398, 31)
+        Me.lblOPTION.TabIndex = 5
+        Me.lblOPTION.Text = "1. LINK_OPTION_[Reactor].dat"
         '
-        'btnConfLinkOption
+        'btnOPTION
         '
-        Me.btnConfLinkOption.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.btnConfLinkOption.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfLinkOption.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfLinkOption.ForeColor = System.Drawing.Color.White
-        Me.btnConfLinkOption.Location = New System.Drawing.Point(237, 12)
-        Me.btnConfLinkOption.Name = "btnConfLinkOption"
-        Me.btnConfLinkOption.Size = New System.Drawing.Size(325, 25)
-        Me.btnConfLinkOption.TabIndex = 0
-        Me.btnConfLinkOption.Text = "Configure LINK_&OPTION_[Reactor Code].dat"
-        Me.btnConfLinkOption.UseVisualStyleBackColor = False
+        Me.btnOPTION.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnOPTION.FlatAppearance.BorderSize = 2
+        Me.btnOPTION.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnOPTION.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnOPTION.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOPTION.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnOPTION.Location = New System.Drawing.Point(482, 37)
+        Me.btnOPTION.Name = "btnOPTION"
+        Me.btnOPTION.Size = New System.Drawing.Size(520, 44)
+        Me.btnOPTION.TabIndex = 0
+        Me.btnOPTION.Text = "Configure LINK_&OPTION_[Reactor].dat"
+        Me.btnOPTION.UseVisualStyleBackColor = True
         '
-        'lblLinkOption
+        'gbxOverview
         '
-        Me.lblLinkOption.AutoSize = True
-        Me.lblLinkOption.Location = New System.Drawing.Point(6, 17)
-        Me.lblLinkOption.Name = "lblLinkOption"
-        Me.lblLinkOption.Size = New System.Drawing.Size(197, 15)
-        Me.lblLinkOption.TabIndex = 0
-        Me.lblLinkOption.Text = "1. LINK_OPTION_[Reactor Code].dat"
-        '
-        'lbxFileList
-        '
-        Me.lbxFileList.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbxFileList.FormattingEnabled = True
-        Me.lbxFileList.ItemHeight = 15
-        Me.lbxFileList.Location = New System.Drawing.Point(6, 35)
-        Me.lbxFileList.Name = "lbxFileList"
-        Me.lbxFileList.Size = New System.Drawing.Size(556, 64)
-        Me.lbxFileList.TabIndex = 0
-        '
-        'gbpOverview
-        '
-        Me.gbpOverview.Controls.Add(Me.btnEdit)
-        Me.gbpOverview.Controls.Add(Me.btnDelete)
-        Me.gbpOverview.Controls.Add(Me.lblFileList)
-        Me.gbpOverview.Controls.Add(Me.lbxFileList)
-        Me.gbpOverview.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbpOverview.Location = New System.Drawing.Point(12, 329)
-        Me.gbpOverview.Name = "gbpOverview"
-        Me.gbpOverview.Size = New System.Drawing.Size(568, 135)
-        Me.gbpOverview.TabIndex = 2
-        Me.gbpOverview.TabStop = False
-        Me.gbpOverview.Text = "Overview"
-        '
-        'btnEdit
-        '
-        Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEdit.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(382, 105)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(87, 25)
-        Me.btnEdit.TabIndex = 2
-        Me.btnEdit.Text = "&Edit"
-        Me.btnEdit.UseVisualStyleBackColor = False
-        '
-        'btnDelete
-        '
-        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelete.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.Location = New System.Drawing.Point(475, 105)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(87, 25)
-        Me.btnDelete.TabIndex = 3
-        Me.btnDelete.Text = "&Delete"
-        Me.btnDelete.UseVisualStyleBackColor = False
-        '
-        'lblFileList
-        '
-        Me.lblFileList.AutoSize = True
-        Me.lblFileList.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFileList.Location = New System.Drawing.Point(234, 17)
-        Me.lblFileList.Name = "lblFileList"
-        Me.lblFileList.Size = New System.Drawing.Size(99, 15)
-        Me.lblFileList.TabIndex = 9
-        Me.lblFileList.Text = "List of Files Added"
+        Me.gbxOverview.Controls.Add(Me.btnGenerate)
+        Me.gbxOverview.Controls.Add(Me.btnDelete)
+        Me.gbxOverview.Controls.Add(Me.btnEdit)
+        Me.gbxOverview.Controls.Add(Me.lbxList)
+        Me.gbxOverview.Controls.Add(Me.lblList)
+        Me.gbxOverview.Location = New System.Drawing.Point(12, 541)
+        Me.gbxOverview.Name = "gbxOverview"
+        Me.gbxOverview.Size = New System.Drawing.Size(1008, 247)
+        Me.gbxOverview.TabIndex = 2
+        Me.gbxOverview.TabStop = False
+        Me.gbxOverview.Text = "Overview"
         '
         'btnGenerate
         '
-        Me.btnGenerate.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnGenerate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnGenerate.FlatAppearance.BorderSize = 2
+        Me.btnGenerate.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight
         Me.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGenerate.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGenerate.ForeColor = System.Drawing.Color.White
-        Me.btnGenerate.Location = New System.Drawing.Point(12, 470)
+        Me.btnGenerate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnGenerate.Location = New System.Drawing.Point(753, 180)
         Me.btnGenerate.Name = "btnGenerate"
-        Me.btnGenerate.Size = New System.Drawing.Size(568, 61)
+        Me.btnGenerate.Size = New System.Drawing.Size(249, 57)
         Me.btnGenerate.TabIndex = 3
-        Me.btnGenerate.Text = "&Generate Input File(s)"
-        Me.btnGenerate.UseVisualStyleBackColor = False
+        Me.btnGenerate.Text = "&Generate File(s)"
+        Me.btnGenerate.UseVisualStyleBackColor = True
         '
-        'pbxExit
+        'btnDelete
         '
-        Me.pbxExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbxExit.Image = Global.Project_Joshua.My.Resources.Resources._exit
-        Me.pbxExit.InitialImage = Nothing
-        Me.pbxExit.Location = New System.Drawing.Point(574, 0)
-        Me.pbxExit.Name = "pbxExit"
-        Me.pbxExit.Size = New System.Drawing.Size(20, 20)
-        Me.pbxExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbxExit.TabIndex = 4
-        Me.pbxExit.TabStop = False
+        Me.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnDelete.FlatAppearance.BorderSize = 2
+        Me.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelete.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnDelete.Location = New System.Drawing.Point(753, 129)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(249, 45)
+        Me.btnDelete.TabIndex = 2
+        Me.btnDelete.Text = "&Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'btnEdit
         '
-        Me.PictureBox1.Image = Global.Project_Joshua.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 26)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(60, 60)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
+        Me.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnEdit.FlatAppearance.BorderSize = 2
+        Me.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEdit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btnEdit.Location = New System.Drawing.Point(753, 78)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(249, 45)
+        Me.btnEdit.TabIndex = 1
+        Me.btnEdit.Text = "&Edit"
+        Me.btnEdit.UseVisualStyleBackColor = True
         '
-        'pnlTop
+        'lbxList
         '
-        Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pnlTop.Controls.Add(Me.pbxLegacy)
-        Me.pnlTop.Controls.Add(Me.pbxMinimize)
-        Me.pnlTop.Controls.Add(Me.pbxExit)
-        Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlTop.Location = New System.Drawing.Point(0, 0)
-        Me.pnlTop.Name = "pnlTop"
-        Me.pnlTop.Size = New System.Drawing.Size(594, 20)
-        Me.pnlTop.TabIndex = 6
+        Me.lbxList.FormattingEnabled = True
+        Me.lbxList.ItemHeight = 31
+        Me.lbxList.Location = New System.Drawing.Point(6, 78)
+        Me.lbxList.Name = "lbxList"
+        Me.lbxList.Size = New System.Drawing.Size(741, 159)
+        Me.lbxList.TabIndex = 0
         '
-        'pbxLegacy
+        'lblList
         '
-        Me.pbxLegacy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbxLegacy.InitialImage = Nothing
-        Me.pbxLegacy.Location = New System.Drawing.Point(536, 0)
-        Me.pbxLegacy.Name = "pbxLegacy"
-        Me.pbxLegacy.Size = New System.Drawing.Size(20, 20)
-        Me.pbxLegacy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbxLegacy.TabIndex = 6
-        Me.pbxLegacy.TabStop = False
-        '
-        'pbxMinimize
-        '
-        Me.pbxMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbxMinimize.Image = Global.Project_Joshua.My.Resources.Resources.minimize
-        Me.pbxMinimize.InitialImage = Nothing
-        Me.pbxMinimize.Location = New System.Drawing.Point(555, 0)
-        Me.pbxMinimize.Name = "pbxMinimize"
-        Me.pbxMinimize.Size = New System.Drawing.Size(20, 20)
-        Me.pbxMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbxMinimize.TabIndex = 5
-        Me.pbxMinimize.TabStop = False
+        Me.lblList.AutoSize = True
+        Me.lblList.Location = New System.Drawing.Point(271, 34)
+        Me.lblList.Name = "lblList"
+        Me.lblList.Size = New System.Drawing.Size(255, 31)
+        Me.lblList.TabIndex = 0
+        Me.lblList.Text = "List of File(s) Added"
         '
         'MainMenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(594, 544)
-        Me.Controls.Add(Me.pnlTop)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.btnGenerate)
-        Me.Controls.Add(Me.gbpOverview)
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ClientSize = New System.Drawing.Size(1034, 804)
+        Me.Controls.Add(Me.gbxOverview)
         Me.Controls.Add(Me.gbxCheckList)
         Me.Controls.Add(Me.gbxEssential)
-        Me.Controls.Add(Me.lblLabInfo)
-        Me.Controls.Add(Me.lblVersionInfo)
         Me.Controls.Add(Me.lblCredit)
+        Me.Controls.Add(Me.lblAffiliation)
+        Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.lblTitle)
-        Me.Font = New System.Drawing.Font("NanumSquare Bold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Controls.Add(Me.pbxLogo)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.MaximizeBox = False
         Me.Name = "MainMenu"
-        Me.Text = "Project Joshua"
+        Me.ShowIcon = False
+        Me.Text = "STRING version 0.3"
+        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxEssential.ResumeLayout(False)
         Me.gbxEssential.PerformLayout()
         Me.gbxCheckList.ResumeLayout(False)
         Me.gbxCheckList.PerformLayout()
-        Me.gbpOverview.ResumeLayout(False)
-        Me.gbpOverview.PerformLayout()
-        CType(Me.pbxExit, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlTop.ResumeLayout(False)
-        CType(Me.pbxLegacy, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxMinimize, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbxOverview.ResumeLayout(False)
+        Me.gbxOverview.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
+    Friend WithEvents pbxLogo As PictureBox
     Friend WithEvents lblTitle As Label
+    Friend WithEvents lblVersion As Label
+    Friend WithEvents lblAffiliation As Label
     Friend WithEvents lblCredit As Label
-    Friend WithEvents lblVersionInfo As Label
-    Friend WithEvents lblLabInfo As Label
     Friend WithEvents gbxEssential As GroupBox
+    Friend WithEvents lblIDeg As Label
+    Friend WithEvents lblID As Label
+    Friend WithEvents txtID As TextBox
     Friend WithEvents txtPath As TextBox
     Friend WithEvents lblPath As Label
-    Friend WithEvents txtReactorID As TextBox
     Friend WithEvents gbxCheckList As GroupBox
-    Friend WithEvents btnConfAssem As Button
+    Friend WithEvents lblFA As Label
+    Friend WithEvents btnFA As Button
     Friend WithEvents lblAssem As Label
-    Friend WithEvents btnConfLinkFa As Button
-    Friend WithEvents lblLinkFA As Label
-    Friend WithEvents btnConfLinkMat As Button
-    Friend WithEvents lblLinkMat As Label
-    Friend WithEvents btnConfLinkOption As Button
-    Friend WithEvents lblLinkOption As Label
-    Friend WithEvents lbxFileList As ListBox
-    Friend WithEvents gbpOverview As GroupBox
-    Friend WithEvents btnEdit As Button
-    Friend WithEvents btnDelete As Button
-    Friend WithEvents lblFileList As Label
+    Friend WithEvents btnAssem As Button
+    Friend WithEvents lblMAT As Label
+    Friend WithEvents btnMAT As Button
+    Friend WithEvents lblOPTION As Label
+    Friend WithEvents btnOPTION As Button
+    Friend WithEvents gbxOverview As GroupBox
     Friend WithEvents btnGenerate As Button
-    Friend WithEvents lblReactorIDExample As Label
-    Friend WithEvents lblReactorID As Label
-    Friend WithEvents pbxExit As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents pnlTop As Panel
-    Friend WithEvents pbxMinimize As PictureBox
-    Friend WithEvents pbxLegacy As PictureBox
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents btnEdit As Button
+    Friend WithEvents lbxList As ListBox
+    Friend WithEvents lblList As Label
 End Class

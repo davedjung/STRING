@@ -5,7 +5,7 @@
     Private dimension As Integer
     Private pinConfiguration(,) As Integer
     Private pinSelected(,) As Boolean
-    Private assemFile(0) As AssemblyFile
+    Private assemFile As List
 
     Dim graphicsFA As Graphics
     Dim penFA As Pen
@@ -16,23 +16,22 @@
     Dim brushPin As Brush
 
     Private Sub LINK_FA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        assemFile = New List()
         If fileIndex = -1 Then
-            Dim reactorCode = MainMenu.getReactorCode()
-            Dim assemcount = MainMenu.getAssemCount()
-            Dim fileName = "LINK_FA_" & reactorCode & ".dat"
+            Dim fileName = "LINK_FA_" + MainMenu.ReactorID + ".dat"
             Me.Text = "Configure " & fileName
             lblTitle.Text = fileName & " Configurator"
             saveFile = New FAFile(fileName)
             initialization()
         Else
-            saveFile = MainMenu.getFile(fileIndex)
+            saveFile = MainMenu.fileList.getItem(fileIndex)
             Dim filename = saveFile.getFileName()
             Me.Text = "Configure " & filename
             lblTitle.Text = filename & " Configurator"
             initialization()
             loadConfiguration()
         End If
+
 
     End Sub
 
@@ -65,11 +64,88 @@
 
         pbxFA.Enabled = True
 
-        drawFAView()
+        graphicsFA = pbxFA.CreateGraphics()
+        graphicsFA.Clear(pbxFA.BackColor)
+        Dim paletteDimension As Single
+        paletteDimension = pbxFA.Size.Width
+        Dim pinDimension As Single
+        pinDimension = paletteDimension / dimension
+        Dim r As Single
+        r = pinDimension * 0.8
+        Dim x, y As Single
+
+        penFA = New Pen(Drawing.Color.Black, 2)
+
+        For i = 0 To paletteDimension Step pinDimension
+            For j = 0 To paletteDimension Step pinDimension
+                x = i + pinDimension * 0.1
+                y = j + pinDimension * 0.1
+                graphicsFA.DrawEllipse(penFA, x, y, r, r)
+            Next
+        Next
 
     End Sub
-    Private Sub drawFAView()
+    Private Sub drawFAView(i, j)
 
+        graphicsFA = pbxFA.CreateGraphics()
+
+        Dim paletteDimension As Single
+        paletteDimension = pbxFA.Size.Width
+        Dim pinDimension As Single
+        pinDimension = paletteDimension / dimension
+        Dim r As Single
+        r = pinDimension * 0.8
+        Dim x, y As Single
+
+        brushFA = New SolidBrush(Color.White)
+        graphicsFA.FillRectangle(brushFA, i * pinDimension, j * pinDimension, pinDimension, pinDimension)
+
+        If pinConfiguration(i, j) <> 0 Then
+            fontFA = New System.Drawing.Font(“Arial”, pinDimension / 2)
+
+            Select Case pinConfiguration(i, j)
+                Case 1
+                    brushFA = New SolidBrush(Color.ForestGreen)
+                Case 2
+                    brushFA = New SolidBrush(Color.IndianRed)
+                Case 3
+                    brushFA = New SolidBrush(Color.Goldenrod)
+                Case 4
+                    brushFA = New SolidBrush(Color.MidnightBlue)
+                Case 5
+                    brushFA = New SolidBrush(Color.MediumPurple)
+                Case 6
+                    brushFA = New SolidBrush(Color.LightPink)
+                Case 7
+                    brushFA = New SolidBrush(Color.RosyBrown)
+                Case 8
+                    brushFA = New SolidBrush(Color.LightSlateGray)
+                Case 9
+                    brushFA = New SolidBrush(Color.Indigo)
+                Case Else
+                    brushFA = New SolidBrush(Color.Black)
+            End Select
+            x = i * pinDimension + pinDimension * 0.1
+            y = j * pinDimension + pinDimension * 0.1
+            graphicsFA.FillEllipse(brushFA, x, y, r, r)
+            brushFA = New SolidBrush(Color.White)
+            graphicsFA.DrawString(pinConfiguration(i, j), fontFA, brushFA, x, y)
+            penFA = New Pen(Drawing.Color.Black, 1)
+            graphicsFA.DrawEllipse(penFA, x, y, r, r)
+        End If
+
+        x = i * pinDimension + pinDimension * 0.1
+                y = j * pinDimension + pinDimension * 0.1
+        If pinSelected(i, j) Then
+            penFA = New Pen(Drawing.Color.Coral, 2)
+            graphicsFA.DrawEllipse(penFA, x, y, r, r)
+        Else
+            penFA = New Pen(Drawing.Color.Black, 2)
+            graphicsFA.DrawEllipse(penFA, x, y, r, r)
+        End If
+
+    End Sub
+    Private Sub drawFAView_old()
         graphicsFA = pbxFA.CreateGraphics()
         penFA = New Pen(Drawing.Color.Black, 1)
         graphicsFA.Clear(pbxFA.BackColor)
@@ -139,7 +215,7 @@
         y = e.Y
 
         Dim paletteDimension As Single
-        paletteDimension = pbxFA.Size.Width - 1
+        paletteDimension = pbxFA.Size.Width
         Dim pinDimension As Single
         pinDimension = paletteDimension / dimension
 
@@ -147,30 +223,29 @@
         indexX = x \ pinDimension
         indexY = y \ pinDimension
 
+
+
         If pinSelected(indexX, indexY) Then
             pinSelected(indexX, indexY) = False
         Else
             pinSelected(indexX, indexY) = True
         End If
-
-        drawFAView()
-
+        drawFAView(indexX, indexY)
     End Sub
     Private Sub BtnSetPin_Click(sender As Object, e As EventArgs) Handles btnSetPin.Click
 
         Dim currentAssemFileIndex = cbxAssemFile.SelectedIndex
         Dim currentPinIndex = lbxPinList.SelectedIndex
-        Dim currentPinID = assemFile(currentAssemFileIndex).getAllPin()(currentPinIndex).getPinID
+        Dim currentPinID = assemFile.getItem(currentAssemFileIndex).getAllPin().getItem(currentPinIndex).getPinID
         For i = 0 To dimension Step 1
             For j = 0 To dimension Step 1
                 If pinSelected(i, j) = True Then
                     pinConfiguration(i, j) = currentPinID
                     pinSelected(i, j) = False
+                    drawFAView(i, j)
                 End If
             Next
         Next
-
-        drawFAView()
 
     End Sub
     Private Sub BtnSelectAll_Click(sender As Object, e As EventArgs) Handles btnSelectAll.Click
@@ -178,20 +253,20 @@
         For i = 0 To dimension Step 1
             For j = 0 To dimension Step 1
                 pinSelected(i, j) = True
+                drawFAView(i, j)
             Next
         Next
 
-        drawFAView()
 
     End Sub
     Private Sub BtnClearSelection_Click(sender As Object, e As EventArgs) Handles btnClearSelection.Click
         For i = 0 To dimension Step 1
             For j = 0 To dimension Step 1
                 pinSelected(i, j) = False
+                drawFAView(i, j)
             Next
         Next
 
-        drawFAView()
     End Sub
     Private Sub BtnErase_Click(sender As Object, e As EventArgs) Handles btnErase.Click
 
@@ -206,10 +281,10 @@
         For i = 0 To dimension Step 1
             For j = 0 To dimension Step 1
                 pinSelected(i, j) = False
+                drawFAView(i, j)
             Next
         Next
 
-        drawFAView()
 
     End Sub
     Private Sub BtnEraseAll_Click(sender As Object, e As EventArgs) Handles btnEraseAll.Click
@@ -218,10 +293,10 @@
             For j = 0 To dimension Step 1
                 pinConfiguration(i, j) = 0
                 pinSelected(i, j) = False
+                drawFAView(i, j)
             Next
         Next
 
-        drawFAView()
 
     End Sub
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -237,10 +312,10 @@
         Me.saveFile.addFuelAssembly(fuelAssembly)
 
         lbxFAList.Items.Clear()
-        Dim FAList() = Me.saveFile.getAllFuelAssembly()
+        Dim FAList = Me.saveFile.getAllFuelAssembly()
         Dim FACount = FAList.Length()
-        For i = 0 To FACount - 1 Step 1
-            lbxFAList.Items.Add("FA _ " & FAList(i).getIndex)
+        For i = 0 To FACount Step 1
+            lbxFAList.Items.Add("FA _ " & FAList.getItem(i).getIndex)
         Next
 
     End Sub
@@ -252,10 +327,10 @@
             Exit Sub
         End If
         Dim assemFileIndex = cbxAssemFile.SelectedIndex
-        Dim pinList() = assemFile(assemFileIndex).getAllPin()
+        Dim pinList = assemFile.getItem(assemFileIndex).getAllPin()
         Dim pinCount = pinList.Length()
-        For i = 0 To pinCount - 1 Step 1
-            lbxPinList.Items.Add("Pin " & pinList(i).getPinID)
+        For i = 0 To pinCount Step 1
+            lbxPinList.Items.Add("Pin " & pinList.getItem(i).getPinID)
         Next
 
     End Sub
@@ -268,11 +343,11 @@
         End If
         Dim assemFileIndex = cbxAssemFile.SelectedIndex
         Dim PinIndex = lbxPinList.SelectedIndex
-        Dim currentPin = assemFile(assemFileIndex).getAllPin()(PinIndex)
-        Dim pinMaterialList() = currentPin.getAllPinMaterial()
+        Dim currentPin = assemFile.getItem(assemFileIndex).getAllPin().getItem(PinIndex)
+        Dim pinMaterialList = currentPin.getAllPinMaterial()
         Dim pinMaterialCount = pinMaterialList.Length()
-        For i = 0 To pinMaterialCount - 1 Step 1
-            lbxPinInfo.Items.Add(pinMaterialList(i).ToString())
+        For i = 0 To pinMaterialCount Step 1
+            lbxPinInfo.Items.Add(pinMaterialList.getitem(i).ToString())
         Next
 
         drawPinView(currentPin)
@@ -283,11 +358,11 @@
         graphicsPin = pbxPin.CreateGraphics()
         graphicsPin.Clear(pbxPin.BackColor)
 
-        Dim pinMaterialList() = pin.getAllPinMaterial()
+        Dim pinMaterialList = pin.getAllPinMaterial()
         Dim pinMaterialCount = pinMaterialList.Length()
-        Dim radii(pinMaterialCount - 1) As Double
-        For i = 0 To pinMaterialCount - 1 Step 1
-            radii(i) = pinMaterialList(i).getOuterRadius()
+        Dim radii(pinMaterialCount) As Double
+        For i = 0 To pinMaterialCount Step 1
+            radii(i) = pinMaterialList.getItem(i).getOuterRadius()
         Next
 
         Array.Sort(radii)
@@ -299,7 +374,7 @@
         Else
             large = False
         End If
-        For i = 0 To pinMaterialCount - 1 Step 1
+        For i = 0 To pinMaterialCount Step 1
             Select Case i
                 Case 0
                     brushPin = New SolidBrush(Color.Goldenrod)
@@ -369,11 +444,11 @@
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
         If fileIndex = -1 Then
-            MainMenu.addFile(saveFile)
+            MainMenu.fileList.addItem(saveFile)
         Else
-            MainMenu.saveFile(saveFile, fileIndex)
+            MainMenu.fileList.addItem(saveFile, fileIndex)
         End If
-
+        MainMenu.updateFileList()
         Me.Close()
 
     End Sub
@@ -405,60 +480,36 @@
         txtPinNoCalc.Text = ""
         txtPinPitchCalc.Text = ""
 
-        Dim allFile() = MainMenu.getAllFile()
+        Dim allFile = MainMenu.fileList
         Dim fileCount As Integer
-        If allFile.Length() = 0 Then
+        If allFile.isEmpty() Then
             Exit Sub
         Else
             fileCount = allFile.Length()
         End If
-        For i = 0 To fileCount - 1 Step 1
-            If allFile(i).getFileType = 2 Then
-                Dim assemFileCount As Integer
-                If IsNothing(Me.assemFile(0)) Then
-                    assemFileCount = 0
-                Else
-                    assemFileCount = Me.assemFile.Length()
-                End If
-                Dim newAssemFileList(assemFileCount) As AssemblyFile
-                For j = 0 To assemFileCount - 1 Step 1
-                    newAssemFileList(i) = Me.assemFile(i)
-                Next
-                newAssemFileList(assemFileCount) = allFile(i)
-                Me.assemFile = newAssemFileList
+        For i = 0 To fileCount Step 1
+            If allFile.getItem(i).getFileType = 2 Then
+                Me.assemFile.addItem(allFile.getItem(i))
             End If
         Next
 
-        Dim finalAssemFileCount = Me.assemFile.Length()
-        For i = 0 To finalAssemFileCount - 1 Step 1
-            cbxAssemFile.Items.Add(Me.assemFile(i).getFileName())
-        Next
+        Dim finalAssemFileCount = Me.assemFile.length()
+        If Not Me.assemFile.isEmpty() Then
+            For i = 0 To finalAssemFileCount Step 1
+                cbxAssemFile.Items.Add(Me.assemFile.getItem(i).getFileName())
+            Next
+        End If
+
 
     End Sub
     Private Sub loadConfiguration()
 
-        Dim FAList() = DirectCast(saveFile, FAFile).getAllFuelAssembly
+        Dim FAList = DirectCast(saveFile, FAFile).getAllFuelAssembly
         Dim FACount = FAList.Length()
-        For i = 0 To FACount - 1 Step 1
-            lbxFAList.Items.Add("FA " & FAList(i).getIndex())
+        For i = 0 To FACount Step 1
+            lbxFAList.Items.Add("FA " & FAList.getItem(i).getIndex())
         Next
 
-    End Sub
-
-    Private Sub PbxExit_Click(sender As Object, e As EventArgs) Handles pbxExit.Click
-        Me.Close()
-    End Sub
-
-    Dim Pos As Point
-    Private Sub pnlTop_MouseMove(sender As Object, e As MouseEventArgs) Handles pnlTop.MouseMove
-        If e.Button = Windows.Forms.MouseButtons.Left Then
-            Me.Location += Control.MousePosition - Pos
-        End If
-        Pos = Control.MousePosition
-    End Sub
-
-    Private Sub PbxMinimize_Click(sender As Object, e As EventArgs) Handles pbxMinimize.Click
-        Me.WindowState = WindowState.Minimized
     End Sub
 
 End Class

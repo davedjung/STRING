@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Project-Joshua")>
+<Assembly: AssemblyTitle("STREAM Input Generator")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Project-Joshua")>
+<Assembly: AssemblyProduct("STREAM Input Generator")>
 <Assembly: AssemblyCopyright("Copyright ©  2019")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("c2a1303c-31a6-41a7-9208-3e19c908c39c")>
+<Assembly: Guid("ec00678f-f929-40e6-8bac-1f9bd6b714c9")>
 
 ' Version information for an assembly consists of the following four values:
 '

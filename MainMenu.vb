@@ -1,178 +1,110 @@
 ﻿Public Class MainMenu
 
-    Private path As String
-    Private ReactorCode As String
-    Private assemCount As Integer
-    Private fileList(255) As File
-    Private fileListIndex As Integer
+    Public ReactorID As String
+    Public AssemCounter As Integer
+    Public fileList As List
+    Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtPath.Text = My.Computer.FileSystem.SpecialDirectories.Desktop & "\STREAM"
+        ReactorID = ""
+        AssemCounter = 1
+        fileList = New List()
+        ReactorID = txtID.Text
 
-    Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        initialize()
+        If ReactorID = "" Then
+            ReactorID = "[Reactor]"
+        End If
+        lblAssem.Text = "3. " + ReactorID + "_Assem_" + CStr(AssemCounter) + ".inp"
+        btnAssem.Text = "Configure " + ReactorID + "_Assem_" + CStr(AssemCounter) + ".inp"
     End Sub
-    Private Sub TxtPath_TextChanged(sender As Object, e As EventArgs) Handles txtPath.TextChanged
-        path = txtPath.Text
+    Private Sub lblVersion_Click(sender As Object, e As EventArgs) Handles lblVersion.Click
+        Dim info As String
+        info = "Check out https://www.github.com/davedjung/STRING for updates and more information"
+        MessageBox.Show(info, "Information")
     End Sub
-    Private Sub txtReactorID_MouseDown(sender As Object, e As MouseEventArgs) Handles txtReactorID.MouseDown
-        txtReactorID.Text = ""
+    Private Sub lblCredit_Click(sender As Object, e As EventArgs) Handles lblCredit.Click
+        Dim info As String
+        info = "Email: davedjung@gmail.com" + vbNewLine + "Github: http://www.github.com/davedjung" + vbNewLine
+        info += vbNewLine + "Department of Nuclear Engineering" + vbNewLine + "Seoul National University"
+        MessageBox.Show(info, "Contact Information")
     End Sub
-    Private Sub TxtReactorID_TextChanged(sender As Object, e As EventArgs) Handles txtReactorID.TextChanged
-        ReactorCode = txtReactorID.Text
+    Private Sub txtID_TextChanged(sender As Object, e As EventArgs) Handles txtID.TextChanged
 
-        lblLinkOption.Text = "1. LINK_OPTION_" & ReactorCode & ".dat"
-        lblLinkMat.Text = "2. LINK_MAT_" & ReactorCode & ".dat"
-        lblAssem.Text = "3. " & ReactorCode & "_Assem_" & assemCount & ".dat"
-        lblLinkFA.Text = "4. LINK_FA_" & ReactorCode & ".dat"
-        btnConfLinkOption.Text = "Configure LINK_&OPTION_" & ReactorCode & ".dat"
-        btnConfLinkMat.Text = "Configure LINK_&MAT_" & ReactorCode & ".dat"
-        btnConfAssem.Text = "Configure " & ReactorCode & "_&Assem_" & assemCount & ".dat"
-        btnConfLinkFa.Text = "Configure LINK_&FA_" & ReactorCode & ".dat"
+        txtID.Text = txtID.Text.Replace(" ", "")
+        ReactorID = txtID.Text
+
+        If ReactorID = "" Then
+            ReactorID = "[Reactor]"
+        End If
+
+        lblOPTION.Text = "1. LINK_OPTION_" + ReactorID + ".dat"
+        lblMAT.Text = "2. LINK_MAT_" + ReactorID + ".dat"
+        lblAssem.Text = "3. " + ReactorID + "_Assem_" + CStr(AssemCounter) + ".inp"
+        lblFA.Text = "4. LINK_FA_" + ReactorID + ".dat"
+        btnOPTION.Text = "Configure LINK_OPTION_" + ReactorID + ".dat"
+        btnMAT.Text = "Configure LINK_MAT_" + ReactorID + ".dat"
+        btnAssem.Text = "Configure " + ReactorID + "_Assem_" + CStr(AssemCounter) + ".inp"
+        btnFA.Text = "Configure LINK_FA_" + ReactorID + ".dat"
 
     End Sub
-    Private Sub BtnConfLinkOption_Click(sender As Object, e As EventArgs) Handles btnConfLinkOption.Click
-
+    Private Sub btnOPTION_Click(sender As Object, e As EventArgs) Handles btnOPTION.Click
         LINK_OPTION.setFileIndex(-1)
         LINK_OPTION.Show()
-
     End Sub
-    Private Sub BtnConfLinkMat_Click(sender As Object, e As EventArgs) Handles btnConfLinkMat.Click
 
+    Private Sub btnMAT_Click(sender As Object, e As EventArgs) Handles btnMAT.Click
         LINK_MAT.setFileIndex(-1)
         LINK_MAT.Show()
-
     End Sub
-    Private Sub BtnConfAssem_Click(sender As Object, e As EventArgs) Handles btnConfAssem.Click
 
+    Private Sub btnAssem_Click(sender As Object, e As EventArgs) Handles btnAssem.Click
         Assem.setFileIndex(-1)
         Assem.Show()
-
     End Sub
-    Private Sub BtnConfLinkFa_Click(sender As Object, e As EventArgs) Handles btnConfLinkFa.Click
 
+    Private Sub btnFA_Click(sender As Object, e As EventArgs) Handles btnFA.Click
         LINK_FA.setFileIndex(-1)
         LINK_FA.Show()
-
     End Sub
-    Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
 
-        Dim fileIndex As Integer
-        fileIndex = lbxFileList.SelectedIndex
-        Dim targetFile As File
-        targetFile = fileList(fileIndex)
-        Select Case targetFile.getFileType
-            Case 0
-                LINK_OPTION.setFileIndex(fileIndex)
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        Dim index = lbxList.SelectedIndex
+        Dim fileType = fileList.getItem(index).GetFileType()
+        Select Case fileType
+            Case 0 'OPTION
+                LINK_OPTION.setFileIndex(index)
                 LINK_OPTION.Show()
-            Case 1
-                LINK_MAT.setFileIndex(fileIndex)
+            Case 1 'MAT
+                LINK_MAT.setFileIndex(index)
                 LINK_MAT.Show()
-            Case 2
-                Assem.setFileIndex(fileIndex)
+            Case 2 'Assem
+                Assem.setFileIndex(index)
                 Assem.Show()
-            Case 3
-                LINK_FA.setFileIndex(fileIndex)
+            Case 3 'FA
+                LINK_FA.setFileIndex(index)
                 LINK_FA.Show()
         End Select
-
-
     End Sub
-    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
-        If lbxFileList.SelectedIndex = -1 Then
-            MessageBox.Show("No file selected", "Error")
-            Exit Sub
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        Dim index = lbxList.SelectedIndex
+        If fileList.getItem(index).GetfileType() = 2 Then
+            AssemCounter -= 1
         End If
-
-        Dim fileIndex = lbxFileList.SelectedIndex
-        For i = fileIndex To fileListIndex - 1 Step 1
-            fileList(i) = fileList(i + 1)
+        fileList.removeItem(index)
+        updateFileList()
+    End Sub
+    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+        Dim length = fileList.length()
+        For i = 0 To length
+            fileList.getItem(i).generateFile(txtPath.Text)
         Next
-
-        fileListIndex = fileListIndex - 1
-
-        lbxFileList.Items.Clear()
-        For i = 0 To fileListIndex Step 1
-            lbxFileList.Items.Add(fileList(i).getFileName())
+    End Sub
+    Public Sub updateFileList()
+        Dim length = fileList.length()
+        lbxList.Items.Clear()
+        For i = 0 To length
+            lbxList.Items.Add(fileList.getItem(i).getFileName())
         Next
-
-    End Sub
-    Private Sub BtnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-
-        'Dim inputFile As String
-        'inputFile = "YGN3_Assem_1.inp"
-        'Process.Start("CMD", "/K cd " & path & "&&stream.exe " & inputFile)
-
-        If fileListIndex = -1 Then
-            MessageBox.Show("No file to generate.", "Error")
-            Exit Sub
-        End If
-        For i = 0 To fileListIndex Step 1
-            fileList(i).generateFile()
-        Next
-
-        MessageBox.Show("Files generated.", "Result")
-
     End Sub
 
-    Public Sub initialize()
-        path = My.Computer.FileSystem.SpecialDirectories.Desktop & "\STREAM"
-        txtPath.Text = path
-        ReactorCode = ""
-        assemCount = 1
-        lblAssem.Text = "3. [Reactor Code]_Assem_" & assemCount & ".dat"
-        btnConfAssem.Text = "Configure [Reactor Code]_&Assem_" & assemCount & ".dat"
-        fileListIndex = -1
-    End Sub
-    Public Function getPath() As String
-        Return Me.path
-    End Function
-    Public Function getReactorCode() As String
-        Return Me.ReactorCode
-    End Function
-    Public Function getAssemCount() As Integer
-        Return Me.assemCount
-    End Function
-    Public Function getFile(index As Integer) As File
-        Return Me.fileList(index)
-    End Function
-    Public Function getAllFile() As File()
-        Dim compactFileList(fileListIndex) As File
-        For i = 0 To fileListIndex Step 1
-            compactFileList(i) = Me.fileList(i)
-        Next
-        Return compactFileList
-    End Function
-    Public Sub saveFile(file As File, index As Integer)
-        fileList(index) = file
-    End Sub
-    Public Sub addFile(file As File)
-
-        fileListIndex = fileListIndex + 1
-        fileList(fileListIndex) = file
-
-        lbxFileList.Items.Clear()
-        For i = 0 To fileListIndex Step 1
-            lbxFileList.Items.Add(fileList(i).getFileName())
-        Next
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles pbxExit.Click
-        Me.Close()
-    End Sub
-
-    Dim Pos As Point
-    Private Sub pnlTop_MouseMove(sender As Object, e As MouseEventArgs) Handles pnlTop.MouseMove
-        If e.Button = Windows.Forms.MouseButtons.Left Then
-            Me.Location += Control.MousePosition - Pos
-        End If
-        Pos = Control.MousePosition
-    End Sub
-
-    Private Sub PbxMinimize_Click(sender As Object, e As EventArgs) Handles pbxMinimize.Click
-        Me.WindowState = WindowState.Minimized
-    End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles pbxLegacy.Click
-        Legacy.Show()
-    End Sub
 End Class

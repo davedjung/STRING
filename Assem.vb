@@ -3,21 +3,19 @@
     Dim graphics As Graphics
     Dim brush As Brush
     Private fileIndex As Integer
-    Private saveFile As AssemblyFile
+    Private saveFile As AssemFile
     Private pinOfInterest As Pin
 
     Private Sub Assem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If fileIndex = -1 Then
-            Dim reactorCode = MainMenu.getReactorCode()
-            Dim assemCount = MainMenu.getAssemCount()
-            Dim fileName = reactorCode & "_Assem_" & assemCount & ".inp"
+            Dim fileName = MainMenu.ReactorID & "_Assem_" & MainMenu.AssemCounter & ".inp"
             Me.Text = "Configure " & fileName
             lblTitle.Text = fileName & " Configurator"
-            saveFile = New AssemblyFile(fileName)
+            saveFile = New AssemFile(fileName)
             initialization()
         Else
-            saveFile = MainMenu.getFile(fileIndex)
+            saveFile = MainMenu.fileList.getItem(fileIndex)
             Dim fileName = saveFile.getFileName()
             Me.Text = "Configure " & fileName
             lblTitle.Text = fileName & " Configurator"
@@ -50,11 +48,11 @@
         Dim newPinMaterial = New PinMaterial(Format(CDbl(txtOuterRadius.Text), "0.0000"), cbxMaterial.Text, Format(CDbl(txtTemperature.Text), "0.0"))
 
         pinOfInterest.addPinMaterial(newPinMaterial)
-        Dim pinMaterialList() = pinOfInterest.getAllPinMaterial()
+        Dim pinMaterialList = pinOfInterest.getAllPinMaterial()
 
         lbxPinInfo.Items.Clear()
-        For i = 0 To pinMaterialList.Length - 1 Step 1
-            lbxPinInfo.Items.Add(pinMaterialList(i).ToString())
+        For i = 0 To pinMaterialList.length() Step 1
+            lbxPinInfo.Items.Add(pinMaterialList.getItem(i).ToString())
         Next
 
         txtOuterRadius.Text = ""
@@ -71,11 +69,11 @@
 
         graphics.Clear(pbxPreview.BackColor)
 
-        Dim allPinMaterial() = pinOfInterest.getAllPinMaterial()
+        Dim allPinMaterial = pinOfInterest.getAllPinMaterial()
 
-        Dim allRadii(allPinMaterial.Length() - 1) As Double
-        For i = 0 To allPinMaterial.Length() - 1 Step 1
-            allRadii(i) = allPinMaterial(i).getOuterRadius()
+        Dim allRadii(allPinMaterial.length()) As Double
+        For i = 0 To allPinMaterial.length() Step 1
+            allRadii(i) = allPinMaterial.getItem(i).getOuterRadius()
         Next
 
         Array.Sort(allRadii)
@@ -87,7 +85,7 @@
         Else
             large = False
         End If
-        For i = 0 To allPinMaterial.Length() - 1 Step 1
+        For i = 0 To allPinMaterial.length() Step 1
             Select Case i
                 Case 0
                     brush = New SolidBrush(Color.Goldenrod)
@@ -146,9 +144,9 @@
         saveFile.addPin(pinOfInterest)
 
         lbxPinList.Items.Clear()
-        Dim allPin() = saveFile.getAllPin()
-        For i = 0 To allPin.Length() - 1 Step 1
-            lbxPinList.Items.Add("Pin " & allPin(i).getPinID)
+        Dim allPin = saveFile.getAllPin()
+        For i = 0 To allPin.Length() Step 1
+            lbxPinList.Items.Add("Pin " & allPin.getitem(i).getPinID)
         Next
 
         graphics = pbxPreview.CreateGraphics()
@@ -216,16 +214,16 @@
         txtCOREAssemY.Text = ""
         txtCOREAssemIndex.Text = ""
 
-        Dim allFile() = MainMenu.getAllFile()
+        Dim allFile = MainMenu.fileList
         Dim fileCount As Integer
-        If allFile.Length() = 0 Then
+        If allFile.length() = -1 Then
             Exit Sub
         Else
             fileCount = allFile.Length()
         End If
-        For i = 0 To fileCount - 1 Step 1
-            If allFile(i).getFileType = 1 Then
-                Dim materialList() = DirectCast(allFile(i), MaterialFile).getAllMaterial()
+        For i = 0 To fileCount Step 1
+            If allFile.getItem(i).getFileType = 1 Then
+                Dim materialList() = DirectCast(allFile.getItem(i), MATFile).getAllMaterial()
                 Dim materialCount = materialList.Length()
                 For j = 0 To materialCount - 1 Step 1
                     cbxMaterial.Items.Add(materialList(j).getIdentifier())
@@ -253,9 +251,9 @@
         txtSPASpacerGrid.Text = SPA(1)
         txtSPALinDensity.Text = SPA(2)
 
-        Dim pin() = saveFile.getAllPin()
-        For i = 0 To pin.Length - 1 Step 1
-            lbxPinList.Items.Add(pin(i).getPinID())
+        Dim pin = saveFile.getAllPin()
+        For i = 0 To pin.Length() Step 1
+            lbxPinList.Items.Add(pin.getitem(i).getPinID())
         Next
 
         Dim CORE() = saveFile.getCORE()
@@ -281,9 +279,9 @@
         Dim index = lbxPinList.SelectedIndex
         saveFile.removePin(index)
         lbxPinList.Items.Clear()
-        Dim allPin() = saveFile.getAllPin()
-        For i = 0 To allPin.Length() - 1 Step 1
-            lbxPinList.Items.Add("Pin " & allPin(i).getPinID)
+        Dim allPin = saveFile.getAllPin()
+        For i = 0 To allPin.Length() Step 1
+            lbxPinList.Items.Add("Pin " & allPin.getitem(i).getPinID)
         Next
 
         If lbxPinList.Items.Count = 0 Then
@@ -332,29 +330,14 @@
         saveFile.setCORE(CORE)
 
         If fileIndex = -1 Then
-            MainMenu.addFile(saveFile)
+            MainMenu.fileList.addItem(saveFile)
+            MainMenu.AssemCounter += 1
         Else
-            MainMenu.saveFile(saveFile, fileIndex)
+            MainMenu.fileList.addItem(saveFile, fileIndex)
         End If
-
+        MainMenu.updateFileList()
         Me.Close()
 
     End Sub
 
-    Private Sub PbxExit_Click(sender As Object, e As EventArgs) Handles pbxExit.Click
-        Me.Close()
-    End Sub
-
-
-    Dim Pos As Point
-    Private Sub pnlTop_MouseMove(sender As Object, e As MouseEventArgs) Handles pnlTop.MouseMove
-        If e.Button = Windows.Forms.MouseButtons.Left Then
-            Me.Location += Control.MousePosition - Pos
-        End If
-        Pos = Control.MousePosition
-    End Sub
-
-    Private Sub PbxMinimize_Click(sender As Object, e As EventArgs) Handles pbxMinimize.Click
-        Me.WindowState = WindowState.Minimized
-    End Sub
 End Class

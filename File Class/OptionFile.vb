@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 
-Public Class OptionFile
+Public Class OPTIONFile
     Inherits File
 
     Private XSLIB As Integer 'Index
@@ -10,10 +10,10 @@ Public Class OptionFile
     Private ONstatus() As Boolean
     Private CRI As Integer 'Index
     Private BRANCH As Integer 'Index
-    Private H2OTemp As String 'Format(,"0.0")
-    Private H2OBoron As String 'Format(,"0.0")
-    Private DEPPower As String 'Format(,"0.00")
-    Private DEPBurnup As String ' Format(,"0.0")
+    Private InletTemp As String 'Format(,"0.0")
+    Private Boron As String 'Format(,"0.0")
+    Private Power As String 'Format(,"0.00")
+    Private Burnup As String ' Format(,"0.0")
 
     Sub New(ByVal fileName As String)
         Me.fileName = fileName
@@ -40,17 +40,17 @@ Public Class OptionFile
     Public Function getBRANCH() As Integer
         Return Me.BRANCH
     End Function
-    Public Function getH2OTemp() As String
-        Return Me.H2OTemp
+    Public Function getInletTemp() As String
+        Return Me.InletTemp
     End Function
-    Public Function getH2OBoron() As String
-        Return Me.H2OBoron
+    Public Function getBoron() As String
+        Return Me.Boron
     End Function
-    Public Function getDEPPower() As String
-        Return Me.DEPPower
+    Public Function getPower() As String
+        Return Me.Power
     End Function
-    Public Function getDEPBurnup() As String
-        Return Me.DEPBurnup
+    Public Function getBurnup() As String
+        Return Me.Burnup
     End Function
     Public Sub setXSLIB(XSLIB As Integer)
         Me.XSLIB = XSLIB
@@ -73,24 +73,23 @@ Public Class OptionFile
     Public Sub setBRANCH(BRANCH As Integer)
         Me.BRANCH = BRANCH
     End Sub
-    Public Sub setH2OTemp(temp As Double)
-        Me.H2OTemp = Format(temp, "0.0")
+    Public Sub setInletTemp(temp As Double)
+        Me.InletTemp = Format(temp, "0.0")
     End Sub
-    Public Sub setH2OBoron(boron As Double)
-        Me.H2OBoron = Format(boron, "0.0")
+    Public Sub setBoron(boron As Double)
+        Me.Boron = Format(boron, "0.0")
     End Sub
-    Public Sub setDEPPower(power As Double)
-        Me.DEPPower = Format(power, "0.00")
+    Public Sub setPower(power As Double)
+        Me.Power = Format(power, "0.00")
     End Sub
-    Public Sub setDEPBurnup(burnup As Double)
-        Me.DEPBurnup = Format(burnup, "0.0")
+    Public Sub setBurnup(burnup As Double)
+        Me.Burnup = Format(burnup, "0.0")
     End Sub
 
 
 
-    Public Overrides Sub generateFile()
-        Dim filePath As String
-        filePath = MainMenu.getPath() & "\" & Me.fileName
+    Public Overrides Sub generateFile(ByVal path As String)
+        Dim filePath = path & "\" & Me.fileName
         Dim output As String
         output = ""
 
@@ -117,8 +116,8 @@ Public Class OptionFile
         findContent("BRANCH", content)
         output = output & "BRANCH " & content(Me.BRANCH) & vbNewLine
 
-        output = output & "H2O " & Me.H2OTemp & " " & Me.H2OBoron & vbNewLine
-        output = output & "DEP " & Me.DEPPower & " -" & Me.DEPBurnup
+        output = output & "H2O " & Me.InletTemp & " " & Me.Boron & vbNewLine
+        output = output & "DEP " & Me.Power & " -" & Me.Burnup
 
         Dim UTFwithoutBOM As New System.Text.UTF8Encoding(False)
         My.Computer.FileSystem.WriteAllText(filePath, output, False, UTFwithoutBOM)
